@@ -1,0 +1,116 @@
+$theme-color: #7E54C6;
+$primary-color: darken($theme-color, 40%);
+$primaryNav-color: darken($theme-color, 32%);
+$secondary-color: darken($theme-color, 14%);
+$tertiary-color: darken($theme-color, 8%);
+$background-color: lighten($theme-color, 50%);
+$background-color-secondary: lighten($theme-color, 40%);
+$background-color-tertiary: lighten($theme-color, 34%);
+$gradient-color-stage1: #F97372;
+$gradient-color-stage2: #F6A681;
+$content-colorInvert: lighten($theme-color, 42%);
+$gradient-color-stage3: #563bd1;
+$gradient-color-stage4: #90298f;
+$color-error: #970000;
+$color-positive: #0a8131;
+$color-nav: desaturate($primaryNav-color, 24%);
+
+
+.navBar {
+    background-color: $color-nav!important;
+    color: $content-colorInvert !important;
+}
+
+
+.searchTopBar{
+    border-radius:0px 0px 1.2rem 1.2rem;
+}
+.searchTopBar_area{
+    width:100%;
+    border:1px solid $tertiary-color;
+    padding:0.4rem;
+    margin:0.32rem;
+    border-radius:1rem;
+}
+
+.searchTopBar_content{
+    width: 100%;
+    gap: 0.4rem;
+    align-items: center;
+    flex-flow: row;
+    flex-wrap: nowrap;
+}
+
+.searchTopBar_content .tripTypeArea {
+    width: 50%;
+    flex-grow: 1;
+    border:1px solid $tertiary-color;
+    border-radius: 0.4rem;
+    align-items:center;
+    padding:.4rem;
+
+}
+
+.searchTopBar_content .v-field{
+    font-size:.94rem!important;
+    border-radius:.4rem;
+}
+
+
+.searchTopBar_content .destinationSwap{
+    background:$background-color-secondary;
+    color:$primary-color;
+}
+
+.searchTopBar_area .searchButton{
+    background: linear-gradient(90deg, $gradient-color-stage1 0%, $gradient-color-stage2 100%) !important;
+    color: $primary-color !important;
+    margin-right: 0.4rem;
+    margin-left: 0.2rem;
+}
+
+
+.searchTopBar_content .destinationArea{
+    width:100%;
+    align-items: center;
+    border:1px solid $tertiary-color;
+    border-radius: 0.4rem;
+    padding:.4rem;
+}
+
+.searchTopBar_content .destinationAreaContent{
+    width:100%;
+    align-items: center;
+    background-color:$background-color;
+    flex-grow:2;
+    border:1px solid $tertiary-color;
+    border-radius: 0.4rem;
+    
+}
+
+.searchTopBar_content .dateArea{width:60%;  padding: 0px 0.4rem;
+    border:1px solid $tertiary-color;
+    border-radius: 0.4rem;
+    align-items:center;  flex-grow:1;
+    padding:.4rem;
+    gap:.2rem;
+}
+.searchTopBar_content .extraInfosArea{width:40%; padding: 0px 0.4rem;
+    border:1px solid $tertiary-color;
+    border-radius: 0.4rem;
+    align-items:center;   flex-grow:1;
+    padding:.4rem;
+
+}
+.dateFixVisual{
+    width:80px!important;
+}
+.userMenu{
+    gap:.6rem;
+}
+
+@media screen and (max-width:800px){
+.hideTablet{
+    display:none!important
+}
+}

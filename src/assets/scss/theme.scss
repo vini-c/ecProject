@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700;800;900&display=swap');
+
+$theme-color: #7E54C6;
+$primary-color: darken($theme-color, 40%);
+$secondary-color: darken($theme-color, 14%);
+$tertiary-color: darken($theme-color, 8%);
+$background-color: lighten($theme-color, 50%);
+$background-color-secondary: lighten($theme-color, 40%);
+$background-color-tertiary: lighten($theme-color, 34%);
+$gradient-color-stage1: #F97372;
+$gradient-color-stage2: #F6A681;
+$content-colorInvert: lighten($theme-color, 42%);
+$gradient-color-stage3: #563bd1;
+$gradient-color-stage4: #90298f;
+$color-error: #970000;
+$color-positive: #0a8131;
