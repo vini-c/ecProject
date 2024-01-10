@@ -1,0 +1,81 @@
+@import 'theme';
+
+.advisoryComponent{
+    border-radius:.48rem;
+}
+
+.advisoryComponent .v-tab.v-tab{
+    font-size:.8rem;
+    color:$primary-color;
+}
+
+.advisoryComponent .iaLogo{
+    position:absolute;
+    right:1rem;
+    top:1rem;
+}
+.advisoryComponent .v-slide-group-item--active {
+    font-weight:600;
+    color:$gradient-color-stage1!important;
+
+}
+
+.advisoryComponent .v-btn::after{
+    border:2px solid $gradient-color-stage2!important;
+}
+.advisoryArea{
+    padding:.4rem;
+    border:1px solid $background-color-secondary;
+    border-radius:.64rem;
+    color:$primary-color;
+}
+.advisoryComponent .tabsHeader{
+    background:$background-color-secondary;
+}
+.advisoryArea .v-card-text{
+    padding:.4rem;
+}
+.aiAdivisoryOption{
+    padding:.8rem;
+    margin:.4rem!important;
+    border:2px solid $background-color-secondary;
+    border-radius:.4rem;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.aiAdivisoryOption.advisoryChoosed{
+   border:2px solid $gradient-color-stage2
+}
+.aiAdivisoryOption .ciaLogo{
+    max-height: 24px;
+    max-width: 100px;
+    height: auto;
+}
+.aiAdivisoryOption h3{
+    font-size:1rem;
+}
+.aiAdivisoryOption .advisoryContent{
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.aiAdivisoryOption .detailsfoFlightInfo{
+    border-top:1px solid $background-color-tertiary;
+    margin-top:.8rem;
+    flex-direction:column;
+    gap: 0.16rem;
+    padding:0;
+    padding-top:.8rem;
+    align-items: flex-start;
+
+}
+
+@media screen and (max-width:545px) {
+    .advisoryComponent .iaLogo{
+        display:none;
+    }
+}

@@ -1,162 +1,15 @@
 <template>
   <v-app>
     <eC_mainNavBar />
-    <eC_searchMainBar class="hideTablet" />
-    
-    <v-navigation-drawer class="eCfilter filterbar">
-      <v-list-item title="Filtros"
-        subtitle="Modifique sua busca através dos filtros inteligentes Embarque Certo"></v-list-item>
-      <v-divider></v-divider>
-      <div class="priceSection pa-2">
-        <v-expansion-panels>
-          <v-expansion-panel class="appbar" elevation="0">
-            <v-expansion-panel-title class="px-2 py-4">
-              <v-row class="flex-row align-center justify-space-between" no-gutters>
-                <div class="d-flex flex-row align-center">
-                  <v-icon size="small" icon="mdi-airplane"></v-icon>
-                  <p class="text-body pl-2">Preço</p>
-                </div>
-                <v-chip>Ativo</v-chip>
-              </v-row>
-            </v-expansion-panel-title>
-            <v-expansion-panel-text>
-              <div class="priceFilterSectiond flex-row">
-                <v-theme-provider theme="dark">
-                <v-range-slider class="px-2"></v-range-slider>
-              </v-theme-provider>
-                <v-row class="justify-space-between px-4 pb-2">
-                  <p class="text-caption ">R$ 0.00</p>
-                  <p class="text-caption ">R$ 489.924,00</p>
-                </v-row>
-              </div>
-            </v-expansion-panel-text>
-          </v-expansion-panel>
-          <v-expansion-panel  class="appbar" elevation="0">
-            <v-expansion-panel-title class="px-2 py-4">
-              <v-row class="flex-row align-center justify-space-between" no-gutters>
-                <div class="d-flex flex-row align-center">
-                  <v-icon size="small" icon="mdi-clock-outline"></v-icon>
-                  <p class="text-body pl-2">Escalas</p>
-                </div>
-                <v-chip>Ativo</v-chip>
-              </v-row>
-            </v-expansion-panel-title>
-            <v-expansion-panel-text>
-              <v-row class="justify-center pb-4">
-                <v-btn variant="tonal" density="compact">Selecionar todas</v-btn>
-              </v-row>
-              <div class="priceFilterSectiond">
-                <v-checkbox label="Direto" value="direct"></v-checkbox>
-                <v-checkbox label="1 Escala" value="with1Scale"></v-checkbox>
-                <v-checkbox label="+ 2 Escalas" value="withScales"></v-checkbox>
-              </div>
-            </v-expansion-panel-text>
-          </v-expansion-panel>
-          <v-expansion-panel class="appbar" elevation="0">
-            <v-expansion-panel-title class="px-2 py-4">
-              <v-row class="flex-row align-center justify-space-between" no-gutters>
-                <div class="d-flex flex-row align-center">
-                  <v-icon size="small" icon="mdi-airplane"></v-icon>
-                  <p class="text-body pl-2">Companhias</p>
-                </div>
-                <v-chip>Ativo</v-chip>
-              </v-row>
-            </v-expansion-panel-title>
-            <v-expansion-panel-text class="pa-2">
-              <div class="priceFilterSectiond">
-                <v-row class="justify-center pb-4">
-                  <v-btn variant="tonal" density="compact">Selecionar todas</v-btn>
-                </v-row>
-                <v-checkbox label="ciaName" value="ciaName"></v-checkbox>
-                <v-checkbox label="ciaName" value="ciaName"></v-checkbox>
-                <v-checkbox label="ciaName" value="ciaName"></v-checkbox>
-                <v-checkbox label="ciaName" value="ciaName"></v-checkbox>
-                <v-checkbox label="ciaName" value="ciaName"></v-checkbox>
-              </div>
-            </v-expansion-panel-text>
-          </v-expansion-panel>
-          <v-expansion-panel class="appbar" elevation="0">
-            <v-expansion-panel-title class="px-2 py-4"> <v-row class="flex-row align-center justify-space-between"
-                no-gutters>
-                <div class="d-flex flex-row align-center">
-                  <v-icon size="small" icon="mdi-bag-suitcase"></v-icon>
-                  <p class="text-body pl-2">Bagagens</p>
-                </div>
-                <v-chip>Ativo</v-chip>
-              </v-row>
-            </v-expansion-panel-title>
-            <v-expansion-panel-text>
-              <div class="priceFilterSectiond">
-                <v-row class="justify-center pb-4">
-                  <v-btn variant="tonal" density="compact">Selecionar todas</v-btn>
-                </v-row>
-                <v-checkbox label="Itens Pessoais" value="Itens Pessoais"></v-checkbox>
-                <v-checkbox label="Mala de mão" value="Mala de mão"></v-checkbox>
-                <v-checkbox label="Bagagem Despachada" value="Bagagem Despachada"></v-checkbox>
-              </div>
-            </v-expansion-panel-text>
-          </v-expansion-panel>
-          <v-expansion-panel class="appbar" elevation="0">
-            <v-expansion-panel-title class="px-2 py-4">
-              <v-row class="flex-row align-center justify-space-between" no-gutters>
-                <div class="d-flex flex-row align-center">
-                  <v-icon size="small" icon="mdi-seat-passenger"></v-icon>
-                  <p class="text-body pl-2">Assentos</p>
-                </div>
-                <v-chip>Ativo</v-chip>
-              </v-row>
-            </v-expansion-panel-title>
-            <v-expansion-panel-text>
-              <div class="priceFilterSectiond">
-                <v-row class="justify-center pb-4">
-                  <v-btn variant="tonal" density="compact">Selecionar todas</v-btn>
-                </v-row>
-                <v-checkbox label="Econômica" value="Econômica"></v-checkbox>
-                <v-checkbox label="Premium Economy" value="Premium Economy"></v-checkbox>
-                <v-checkbox label="Executiva" value="Executiva"></v-checkbox>
-              </div>
-            </v-expansion-panel-text>
-          </v-expansion-panel>
-          <v-expansion-panel class="appbar" elevation="0">
-            <v-expansion-panel-title class="px-2 py-4">
-              <v-row class="flex-row align-center justify-space-between" no-gutters>
-                <div class="d-flex flex-row align-center">
-                  <v-icon size="small" icon="mdi-clock-outline"></v-icon>
-                  <p class="text-body pl-2">Horários</p>
-                </div>
-                <v-chip>Ativo</v-chip>
-              </v-row>
-            </v-expansion-panel-title>
-            <v-expansion-panel-text>
-              <div class="priceFilterSectiond flex-row">
-                <p class="text-caption">Horário de partida</p>
-                <v-range-slider class="px-2"></v-range-slider>
-                <v-row class="justify-space-between px-4 pb-2">
-                  <p class="text-caption ">0:00</p>
-                  <p class="text-caption ">23:59</p>
-                </v-row>
-              </div>
-              <div class="priceFilterSectiond flex-row pt-4">
-                <p class="text-caption">Horário de retorno</p>
-                <v-range-slider class="px-2"></v-range-slider>
-                <v-row class="justify-space-between px-4 pb-2">
-                  <p class="text-caption ">0:00</p>
-                  <p class="text-caption ">23:59</p>
-                </v-row>
-              </div>
-
-            </v-expansion-panel-text>
-          </v-expansion-panel>
-        </v-expansion-panels>
-        <v-row class="justify-end pa-5 pt-7">
-          <v-btn class="rounded-xl " variant="outlined" elevation="0" prepend-icon="mdi-filter-outline">Filtrar</v-btn>
-        </v-row>
-      </div>
-    </v-navigation-drawer>
+    <eC_searchMainBar />
+    <eC_filters />
     <!-- test-->
     <div class="bg-body">
       <v-main>
-        <v-container class="">
+
+        <v-container class="">        
+          <ec_AIadvisory class="mb-4" elevation="0" v-bind:flightOptionData="flightOptionData"></ec_AIadvisory>
+
           <div class="searchResultsContent">
             <v-expansion-panels variant="popout" multiple class="flightOptionsExpansion">
               <flightOptionComponent v-bind:flightOptionData="flightOptionData" />
@@ -176,6 +29,8 @@
 import flightOptionComponent from '@/components/flightOptionComponent.vue'
 import eC_mainNavBar from '@/components/organisms/mainNavBar.vue'
 import eC_searchMainBar from '@/components/organisms/searchMainBar.vue'
+import eC_filters from '@/components/organisms/filters.vue'
+import ec_AIadvisory from '@/components/organisms/aiAdvisory.vue'
 
 </script>
 
@@ -340,8 +195,8 @@ export default {
                     mainOperation: 'Gol',
                     generalInfos: '*1 mala por adulto. *Em todo voo você tem direito a levar uma bolsa pequena com seus pertences. **O limite de peso da bagagem pode variar em cada compania aérea, confira o limite exato no site oficial da companhia',                    
                     isRefundable: false,
-                    betterPrice: false,
-                    betterOption: true,
+                    betterPrice: true,
+                    betterOption: false,
                     hasKids: true,
                     hasBabys: false,
                     personalBag: false,

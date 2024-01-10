@@ -1,15 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700;800;900&display=swap');
 
+// theme
 $theme-color: #7E54C6;
 $primary-color: darken($theme-color, 40%);
+$primaryNav-color: darken($theme-color, 32%);
 $secondary-color: darken($theme-color, 14%);
 $tertiary-color: darken($theme-color, 8%);
-$background-color: lighten($theme-color, 50%);
+$background-color: lighten($theme-color, 48%);
 $background-color-secondary: lighten($theme-color, 40%);
 $background-color-tertiary: lighten($theme-color, 34%);
+$content-colorInvert: lighten($theme-color, 48%);
+$color-nav: desaturate($primaryNav-color, 24%);
+$primary-colorDesat: desaturate($primaryNav-color, 44%);
+$secondary-colorDesat: desaturate($secondary-color, 24%);
+$color-shadow: $primary-color;
+$color-navlevel2: lighten($color-nav, 5%);
+
+
+
+
+// custom color
 $gradient-color-stage1: #F97372;
 $gradient-color-stage2: #F6A681;
-$content-colorInvert: lighten($theme-color, 42%);
 $gradient-color-stage3: #563bd1;
 $gradient-color-stage4: #90298f;
 $color-error: #970000;

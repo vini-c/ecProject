@@ -1,5 +1,5 @@
 <template>
-     <v-row class="px-2 pb-4">
+     <div class="flightInfoSection">
         <div class="foFlightInfo arrivalFInfo d-flex">
             <div class="foFinfoVisual">
                 <div class="foFinfoVisualLine"></div>
@@ -18,7 +18,7 @@
                     {{ arrivalInfoData.arrivalAirport }}</p>
             </div>
         </div>
-      </v-row>
+    </div>
     </template>
     
 <script>

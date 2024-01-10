@@ -1,6 +1,6 @@
 <template>
     <div v-for="connections in flightOptionData">
-        <v-row class="px-2">
+        <div class="flightInfoSection">
             <div class="foFlightInfo connectingFInfo d-flex">
                 <div class="foFinfoVisual">
                     <div class="foFinfoVisualLine"></div>
@@ -37,8 +37,8 @@
                         {{ connections.connectionAirport }}</p>
                 </div>
             </div>
-        </v-row>
-        <v-row class="px-2 pb-2">
+        </div>
+      <div class="flightInfoSection">
             <div class="foFlightInfo foFlightInfoResume d-flex">
                 <div class="foFinfoVisual">
                     <div class="foFinfoVisualLine"></div>
@@ -50,7 +50,7 @@
                             class="EC-colorContentSecondary">{{ connections.connectionFlightDuration }}</b></p>
                 </div>
             </div>
-        </v-row>
+        </div>
     </div>
 </template>
     

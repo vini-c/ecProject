@@ -1,0 +1,120 @@
+
+@import 'theme';
+.filterbar .v-list-item-title, .filterOrdenationContent .title
+{   
+    font-size:.75rem;
+    font-weight:700;
+    text-transform: uppercase;
+    letter-spacing:.1rem;
+    color:$secondary-colorDesat;
+}
+.filterbar .v-list-item-subtitle
+{
+    font-size:.9rem;
+    color:$secondary-colorDesat;
+    padding-bottom:.24rem;
+}
+.filterbar {
+    background-color: $background-color-secondary !important;
+    color: $primary-color !important;
+}
+.filterbar .v-expansion-panel-title{
+    font-size:.9rem;
+}
+
+.filterbar .v-expansion-panel-text__wrapper {
+    padding:.64rem;
+}
+
+.filterbar .v-checkbox .v-label{
+    font-size:.9rem;
+}
+
+.filterbar .v-selection-control--dirty .v-selection-control__input > .v-icon {
+    color:$secondary-color;
+}
+
+.filterbar .header{
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-left:1rem;
+}
+.filterbar .header .v-btn{
+    background:$background-color-secondary!important;
+}
+
+
+@media screen and (max-width:959px){
+    .ec_filterMobile {
+        font-weight:700;
+        text-transform: uppercase;
+        letter-spacing:.1rem;
+        position: fixed;
+        z-index: 2;
+        background-color:$color-nav;
+        padding:.48rem .40rem .48rem .88rem;
+        border-radius:1.4rem;
+        color:$background-color;
+        font-size:.76rem;
+        display:flex;
+    bottom: 6%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    box-shadow:.4rem 1.1rem 1rem -1rem $color-shadow;
+    }
+    .v-bottom-sheet > .v-bottom-sheet__content.v-overlay__content > .v-card, .v-bottom-sheet > .v-bottom-sheet__content.v-overlay__content > .v-sheet{
+        border-radius:1rem 1rem 0 0!important;
+    }
+    .tabletFlexSection{
+        display:flex;
+        justify-content: flex-start;
+    }
+    .filterbar .header{
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding-left:1rem;
+    }
+    .filterbar .header .v-btn{
+        background:$background-color-secondary!important;
+    }
+
+    .filterbar .header .headerBottomSheet {
+        font-size:.75rem;
+        font-weight:700;
+        text-transform: uppercase;
+        letter-spacing:.1rem;
+        color:$secondary-colorDesat
+    }
+    .filterSection{
+        padding:4rem;
+    }
+
+    .actionButton{
+        background: linear-gradient(90deg, $gradient-color-stage1 0%, $gradient-color-stage2 100%) !important;
+    color: $primary-color !important;
+    font-weight:600;
+    border:0;
+    }
+}
+
+@media screen and (min-width:960px){
+    .ec_filterMobile {
+        display:none;
+    }
+}
+
+@media screen and (max-width:638px){
+    .ec_filterMobile {
+       width:310px;
+       font-size:.71rem
+    }
+}
+@media screen and (max-width:600px){
+.tabletFlexSection{
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+}
+}

@@ -16,7 +16,7 @@ import { aliases, fa } from 'vuetify/iconsets/fa'
 
 
 
-// https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
+
 
 
 

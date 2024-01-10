@@ -1,5 +1,5 @@
 <template>
-  <v-row class="px-2 pt-4">
+<div class="flightInfoSection">
     <div class="foFlightInfo departureFInfo d-flex">
       <div class="foFinfoVisual">
         <div class="foFinfoVisualRounded">
@@ -21,8 +21,8 @@
           {{ departureInfoData.departureAirport }}</p>
       </div>
     </div>
-  </v-row>
-  <v-row class="px-2">
+  </div>
+  <div class="flightInfoSection">
     <div class="foFlightInfo foFlightInfoResume d-flex">
       <div class="foFinfoVisual">
         <div class="foFinfoVisualLine"></div>
@@ -31,7 +31,7 @@
         <p class="observationText font-weight-regular EC-colorContentSecondary">Tempo de voo: <b class=""> {{departureInfoData.departureFlightDuration }} </b></p>
       </div>
     </div>
-  </v-row>
+  </div>
 </template>
 
 <script>
