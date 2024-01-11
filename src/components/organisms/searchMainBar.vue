@@ -48,7 +48,7 @@ import ec_counterComponent from '../atoms/counterComponent.vue'
                 <div class="d-flex dateArea rounded-lg">
                     <v-menu v-model="calendarDeparture" :close-on-content-click="true" location="bottom">
                         <template v-slot:activator="{ props }">
-                            <v-text-field v-bind="props" hide-details="true" dirt="true" label="De"
+                            <v-text-field v-bind="props" type="date" hide-details="true" dirt="true" label="De"
                                 variant="solo"></v-text-field>
 
                         </template>
@@ -63,7 +63,7 @@ import ec_counterComponent from '../atoms/counterComponent.vue'
                     </v-menu>
                     <v-menu v-model="arrivalCalendar" :close-on-content-click="true" location="bottom">
                         <template v-slot:activator="{ props }">
-                            <v-text-field v-bind="props" hide-details="true" dirt="true" label="Até"
+                            <v-text-field v-bind="props" type="date" hide-details="true" dirt="true" label="Até"
                                 variant="solo"></v-text-field>
 
                         </template>
@@ -188,11 +188,11 @@ import ec_counterComponent from '../atoms/counterComponent.vue'
                         <ec_autocompleteAirportDestination></ec_autocompleteAirportDestination>
                     </div>
                     <div class="d-flex dateArea rounded-lg">
-                        <v-menu v-model="calendarDeparture" :close-on-content-click="true" location="bottom">
-                            <template v-slot:activator="{ props }">
-                                <v-text-field v-bind="props" hide-details="true" dirt="true" label="De"
+                        <!-- <v-menu v-model="calendarDeparture" :close-on-content-click="true" location="bottom">
+                            <template v-slot:activator="{ props }"> -->
+                                <v-text-field type="date" v-bind="props" hide-details="true" dirt="true" label="De"
                                     variant="solo"></v-text-field>
-                            </template>
+                            <!-- </template>
 
                             <v-card min-width="300">
                                 <v-container>
@@ -203,11 +203,11 @@ import ec_counterComponent from '../atoms/counterComponent.vue'
                             </v-card>
                         </v-menu>
                         <v-menu v-model="arrivalCalendar" :close-on-content-click="true" location="bottom">
-                            <template v-slot:activator="{ props }">
-                                <v-text-field v-bind="props" hide-details="true" dirt="true" label="Até"
+                            <template v-slot:activator="{ props }"> -->
+                                <v-text-field  type="date" v-bind="props" hide-details="true" dirt="true" label="Até"
                                     variant="solo"></v-text-field>
 
-                            </template>
+                            <!-- </template>
 
                             <v-card min-width="300">
                                 <v-container>
@@ -216,7 +216,7 @@ import ec_counterComponent from '../atoms/counterComponent.vue'
                                     </v-row>
                                 </v-container>
                             </v-card>
-                        </v-menu>
+                        </v-menu> -->
                     </div>
                     <div class="d-flex extraInfosArea">
                         <ec_counterComponent title="Adultos" subtitle="" iconName="mdi-human-non-binary">
