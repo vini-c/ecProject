@@ -1,0 +1,98 @@
+@import '@/assets/scss/theme';
+
+
+.confirmationContent{
+    background-color:$background-color;
+    border-radius:1rem;
+}
+
+.confirmationContent .foCard .foResumeContent{
+    flex-direction: column;
+    width:100%;
+}
+
+.confirmationContent .foCard .foResumeContent .foHeader{
+    width:100%;
+}
+
+.confirmationContent .foCardCheckout .v-expansion-panel, .v-expansion-panels, .paymentData{
+    background-color:transparent;
+}
+
+
+.confirmationContent .travelersRow{
+    display:flex;
+    justify-content: space-between;
+}
+
+.confirmationContent .travelerInfo{
+    margin-top:.75rem;
+}
+
+.mobileResizerCol{
+    padding:0 1rem!important;
+}
+
+.travelersRow, .paymentInfo{
+    padding:0 .6rem
+}
+
+.confirmationPage{
+    padding:0 10%;
+    padding-top:1%
+}
+
+.mobileButtons{
+    background-color:$color-nav;
+    color:$background-color;
+    font-weight: 700;
+}
+
+@media screen and (min-width:1900px){
+    .checkoutPage{
+        padding:0 20%;
+        padding-top:1%
+    }
+}
+@media screen and (max-width:840px){
+
+.confirmationContent .travelersRow{
+    display:flex;
+    flex-direction:column;
+    gap:.2rem;
+    justify-content: space-between;
+}
+
+.confirmationPage{
+    padding:0 2%;
+    padding-top:1%
+}
+.mobileResizerCol{
+    padding:0!important;
+}
+
+
+}
+
+@media screen and (max-width:640px){
+    .mobileResizerCol{
+        flex-direction:column!important;
+        padding:.75rem;
+    }
+}
+
+
+@media screen and (max-width:562px){
+    .mobileButtons{
+        width:100%;
+        text-align:center;
+    }
+    .mobileButtons.v-btn.v-btn--density-default{justify-content: center!important;}
+}
+
+@media screen and (max-width:324px){
+    .confirmationPage{
+        padding:0%;
+        padding-top:2%;
+    }
+}

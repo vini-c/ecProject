@@ -1,0 +1,17 @@
+@import 'theme';
+
+.flightRequirements{
+    font-size:.8rem;
+    background: $background-color-secondary;
+    border-radius:.75rem;
+    padding:1rem;
+    color:$primary-color;
+    border:2px solid $background-color-tertiary
+    
+}
+.flightRequirements .title{
+    color:$secondary-color
+}
+.flightRequirements li{
+    list-style: none;;
+}

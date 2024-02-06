@@ -1,0 +1,28 @@
+@import 'theme';
+
+.instalmentsOption h4{
+    color:$primary-color;
+    font-size:1.2rem;
+}
+.instalmentsOption .detailed{
+    color:$primary-color;
+    font-size:.9rem;
+}
+.instalmentsOption .total{
+    color:$primary-color;
+    font-size:1rem;
+    font-weight:600
+}
+
+.instalmentsOption.v-selection-control{
+    flex-direction: row-reverse!important;
+    width:100%;
+    justify-content: space-between;
+}
+.instalmentsOption{
+    padding:.8rem 0;
+}
+
+.instalmentsOption .v-label{
+    opacity:1!important;
+}

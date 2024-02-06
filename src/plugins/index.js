@@ -11,4 +11,4 @@ export function registerPlugins (app) {
   app.use(vuetify)
 }
 
-import '@/assets/embarque_certo.scss'
+import '@/assets/scss/embarque_certo.scss'

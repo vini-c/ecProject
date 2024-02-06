@@ -1,0 +1,20 @@
+@import '@/assets/scss/theme';
+
+.ecBanner{
+    background:$background-color-quartiary;
+    border-radius:.60rem;
+    border:2px solid $background-color-quinteary;
+    color:$primary-color;
+}
+@media screen and (max-width:800px){
+    .ecBanner{padding:.64rem;padding-left:.25rem;}
+}
+
+
+.ecBanner.positive{
+    background:$background-color-secondary;
+    border-radius:.60rem;
+    border:2px solid $background-color-tertiary;
+    color:$primary-color;
+    padding:.3rem;
+}

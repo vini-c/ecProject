@@ -9,6 +9,9 @@ $tertiary-color: darken($theme-color, 8%);
 $background-color: lighten($theme-color, 48%);
 $background-color-secondary: lighten($theme-color, 40%);
 $background-color-tertiary: lighten($theme-color, 34%);
+$background-color-quartiary: lighten($theme-color, 28%);
+$background-color-quinteary: lighten($theme-color, 20%);
+
 $content-colorInvert: lighten($theme-color, 48%);
 $color-nav: desaturate($primaryNav-color, 24%);
 $primary-colorDesat: desaturate($primaryNav-color, 44%);

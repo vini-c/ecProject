@@ -1,6 +1,6 @@
 <template>
 
-<v-navigation-drawer mobile-breakpoint="md" v-if="!isMobile" class="eCfilter filterbar">
+<v-navigation-drawer v-bind:width="300" mobile-breakpoint="md" v-if="!isMobile" class="eCfilter filterbar">
   <div class="classArea filterOrdenationContent pt-4 px-4 pb-2">
       <p class="title pb-1">Ordenação</p>
       <v-select placeholder="Melhores opções"

@@ -1,0 +1,277 @@
+@import '@/assets/scss/theme';
+
+.checkoutPage .v-expansion-panel-title__overlay {
+    background: $background-color !important;
+}
+
+.checkoutPage .v-main{
+    padding-top:0!important
+}
+.paymentData {
+    background: $background-color;
+}
+
+.v-expansion-panel,
+.v-expansion-panels,
+.paymentData {
+    border-radius: 1rem !important;
+}
+
+.flightCheckoutNav{
+    display:flex
+}
+
+#app .v-application{
+    background-color: $background-color-tertiary!important;
+}
+
+.foCardCheckout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+
+.foCardCheckout .foResumeContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.foCardCheckout .foHeader {
+    flex-direction: row;
+    display: flex;
+
+    justify-content: space-between;
+    gap: 0.6rem;
+    width: 100%;
+}
+
+.foCardCheckout .foBody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.foCardCheckout .foSpecwTitle {
+    width: 100%;
+    margin-bottom: .45rem;
+}
+
+.foCardCheckout .foBody {
+    border: $background-color-tertiary 1px solid;
+    padding: 0rem .75rem;
+    padding-top: .45rem;
+    background-color: $background-color
+}
+
+.foCardCheckout .foSpecwTitle h4 {
+    width: 90px
+}
+
+.foCardCheckout .foSpecwTitle .foResume {
+    display: flex;
+    width: 100%;
+    gap: 1rem
+}
+
+.foCardCheckout .durationFlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 36%;
+}
+
+.foCardCheckout .foResume .foTime {
+    font-weight: 600 !important
+}
+
+.flightOptionCard.checkoutFlightDetail {
+    background-color: $background-color-secondary
+}
+
+.flightOptionCard.checkoutFlightDetail .priceTable,
+.priceVdetail {
+    background-color: $background-color
+}
+
+.foCardCheckout .v-expansion-panel,
+.v-expansion-panels,
+.paymentData {
+    background-color: $background-color;
+
+}
+
+.mobileCheckoutContainer .v-stepper-header {
+    box-shadow: none !important;
+    background-color: $background-color-secondary
+}
+
+.foCardCheckout .v-expansion-panel-title {
+    background-color: $background-color-secondary
+}
+
+.foCardCheckout .v-expansion-panel-text {
+    padding: 0;
+}
+
+.foCardCheckout .foDetails {
+    width: 100%;
+}
+
+.foCardCheckout .foDetails:first-child {
+    margin-bottom: 1rem;
+}
+
+.foCardCheckout .flightOptionCard .v-expansion-panel-text__wrapper {
+    padding: 0;
+}
+
+.v-stepper-item {
+    // padding:.2!important;  
+}
+
+.flightOptionCard .v-expansion-panel-text__wrapper {
+    border-radius: 1rem !important;
+}
+
+.mobileCheckoutInfos .flightOptionCard.checkoutFlightDetail,
+.mobileCheckoutInfos .foCardCheckout .v-expansion-panel-title {
+    background: $background-color !important;
+}
+
+.v-card-text.mobileResumeCheckout {
+    padding: .75rem !important;
+}
+
+.mobileResumeCheckout .foDate {
+    display: none;
+}
+
+.flightCheckoutNav {
+    background-color: $color-nav;
+    color: $background-color !important;
+    padding: .32rem;
+    border-radius: 0 0 .60rem .60rem;
+}
+
+.flightCheckoutNav .infoCaption {
+    text-transform: uppercase;
+    font-size: .75rem;
+    letter-spacing: .20rem;
+    font-weight: 600;
+}
+
+.flightCheckoutNav .infoColor {
+    color: $background-color-tertiary;
+}
+
+.checkoutBarContent {
+    padding: .2rem;
+    border-radius: .60rem;
+    border: 1px solid $background-color;
+    width:100%;
+}
+
+.v-stepper-item__title {
+    width: 75px;
+    text-align: left;
+    font-size: .84rem !important;
+}
+
+.v-stepper-item:first-child {
+    padding-left: 1rem !important;
+}
+
+.paymentMethodStepper .v-stepper-header {
+    display: none !important;
+}
+
+.paymentOptionMobileTrigger .v-stepper-item {
+    width: 100%;
+    display: flex !important;
+}
+
+.paymentOptionMobileTrigger .v-stepper-item .v-stepper-item__content {
+    width: 100%;
+    display: flex !important;
+    padding: .8rem 0;
+}
+
+.paymentOptionMobileTrigger .v-stepper-item {
+    border-bottom: 1px solid $background-color-tertiary;
+}
+
+.v-stepper-item__title {
+    width: 70px;
+    text-align: left;
+    font-size: .8rem !important;
+}
+
+.instalmentsOption.noFee h4 {
+    color: $color-positive;
+}
+
+@media screen and (max-width:324px) {
+    .v-stepper-item__title {
+        width: 60px;
+        text-align: left;
+        font-size: .8rem !important;
+    }
+}
+
+.mobileCheckoutContainer .v-window {
+    margin: 1rem !important;
+}
+
+.mobileCheckoutContainer {
+    border-radius: .4rem;
+}
+
+.nextButtonStepper.v-stepper-item {
+    opacity: 1 !important;
+    padding: 0 !important;
+}
+
+.nextButtonStepper.v-stepper-item .v-stepper-item__avatar {
+    display: none !important;
+}
+
+.travelerData {
+    width: 100%;
+}
+
+@media screen and (max-width:999px) {
+    .hideMobileCheckout {
+        display: flex
+    }
+
+    .hideDesktopCheckout {
+        display: none
+    }
+}
+
+.priceTd {
+    text-align: right;
+}
+
+@media screen and (min-width:1000px) {
+    .hideMobileCheckout {
+        display: none
+    }
+
+    .hideDesktopCheckout {
+        display: flex
+    }
+
+}
+
+@media screen and (min-width:1400px) {
+    .checkoutPage {
+        padding: 0% 10%;
+    }
+}

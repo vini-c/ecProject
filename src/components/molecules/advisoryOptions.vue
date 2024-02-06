@@ -15,9 +15,6 @@
     </v-sheet>
 
 </template>
-<script setup>
-import ec_flightDuration from '@/components/atoms/durationFlight.vue'
-</script>
 <script>
 
 import '@/assets/scss/advisoryAi.scss'
