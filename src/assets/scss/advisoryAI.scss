@@ -10,9 +10,16 @@
 }
 
 .advisoryComponent .iaLogo{
-    position:absolute;
-    right:1rem;
-    top:1rem;
+    margin-left:1rem;
+
+}
+.advisoryComponent .v-window__container{
+    display:flex;
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:space-between;
+}
+.advisoryComponent .options{
 }
 .advisoryComponent .v-slide-group-item--active {
     font-weight:600;
@@ -43,24 +50,40 @@
     display:flex;
     flex-wrap:wrap;
     justify-content: center;
-    align-items: flex-end;
+    background:$background-color-secondary;
+    align-items:center!important;
 }
 
+
 .aiAdivisoryOption.advisoryChoosed{
-   border:2px solid $gradient-color-stage2
+   border:2px solid $gradient-color-stage2;
+   align-items:center!important;
 }
 .aiAdivisoryOption .ciaLogo{
-    max-height: 24px;
-    max-width: 100px;
+    max-height: 20px;
+    max-width: 80px;
     height: auto;
+}
+
+.flightOptionAdvisory{
+    background-color: $background-color;
+    padding:.6rem;
+    border-radius:.5rem;;
+    border:1.5px solid $background-color-tertiary;
 }
 .aiAdivisoryOption h3{
     font-size:1rem;
 }
 .aiAdivisoryOption .advisoryContent{
-    flex-direction:column;
+    flex-direction:row;
     justify-content: flex-start;
     align-items: center;
+    gap:1rem;
+    padding: 0.2rem 0.2rem 0.2rem 0.8rem;;
+}
+.aiAdivisoryOption .advisoryContent p{
+    font-weight:600;
+    color:$secondary-color
 }
 
 .aiAdivisoryOption .detailsfoFlightInfo{
@@ -74,8 +97,29 @@
 
 }
 
+@media screen and (max-width:1919px) {
+    .advisoryComponent .iaLogo{margin-top:.4rem;margin-left:.4rem;}
+.advisoryComponent .v-window__container{
+    display:flex;
+    flex-direction:column!important;
+    align-items:flex-start!important;}
+}
+
+@media screen and (max-width:1279px) {
+    .advisoryComponent .iaLogo{margin-bottom:.4rem;}
+    
+    .aiAdivisoryOption .advisoryContent{
+        flex-direction:column!important;
+        padding:.2rem;
+        gap:.2rem;;
+    }
+    .advisoryComponent .aiAdivisoryOption p{
+        font-size:.75rem;
+    }
+}
+
 @media screen and (max-width:545px) {
-    .advisoryComponent .iaLogo{
-        display:none;
+    .advisoryComponent .aiAdivisoryOption h3{
+        font-size:.8rem;
     }
 }

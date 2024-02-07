@@ -1,27 +1,16 @@
 <template>
         <div class="advisoryArea">
     <v-card elevation="0" class="advisoryComponent">
-        <v-tabs class="tabsHeader" v-model="tab">
-            <v-tab value="bestPrice">Melhor Preço</v-tab>
-            <v-tab value="cheaper">Mais Barata</v-tab>
-            <v-tab value="faster">Mais Rápida</v-tab>
-            <div class="iaLogo">
-                <img src="../../assets/ecIA.svg">
-            </div>
-        </v-tabs>
-
         <v-card-text>
-            <v-window v-model="tab">
-                <v-window-item value="bestPrice">
+            <v-window>  
+            <div class="iaLogo">
+                <img width="140" src="@/assets/ecIA.svg">
+                <p>O Embarque Certo encontrou 532 opções e sugeriu as opções:</p>
+            </div>
+            <div class="options">
                     <ec_advisoryOptions v-bind:flightOptionData="flightOptionData"  />
-                </v-window-item>
-                <v-window-item value="cheaper">
-                    <ec_advisoryOptions v-bind:flightOptionData="flightOptionData"  />
-                </v-window-item>
-                <v-window-item value="faster">
-                    <ec_advisoryOptions v-bind:flightOptionData="flightOptionData"  />
-                </v-window-item>
-            </v-window>
+            </div>
+            </v-window>   
         </v-card-text>
     </v-card>
 </div>
@@ -38,7 +27,7 @@ export default {
     name: 'ec_AIadvisory',
     props: { flightOptionData: Array },
     data: () => ({
-        tab: null,
+        // tab: null,
     }),
 }
 </script>

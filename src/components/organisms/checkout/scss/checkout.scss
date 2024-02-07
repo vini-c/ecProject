@@ -106,6 +106,10 @@
 
 }
 
+.paymentOptionMobileTrigger h4{
+    font-size:1.32rem;
+}
+
 .mobileCheckoutContainer .v-stepper-header {
     box-shadow: none !important;
     background-color: $background-color-secondary
@@ -244,6 +248,13 @@
 .travelerData {
     width: 100%;
 }
+
+@media screen and (max-width:500px) {
+
+.paymentOptionMobileTrigger h4{
+    font-size:.98rem;
+}}
+
 
 @media screen and (max-width:999px) {
     .hideMobileCheckout {

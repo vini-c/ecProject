@@ -267,7 +267,7 @@ export default {
     },
     methods: {
         onResize() {
-            this.isMobile = window.innerWidth < 600;
+            this.isMobile = window.innerWidth < 820;
         },
         increment() {
             this.counterNumber++;

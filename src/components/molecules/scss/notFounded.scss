@@ -1,0 +1,46 @@
+.notFounded .flexNotFounded{
+    display:flex;
+}
+
+.notFounded {
+    padding-top:14%;
+    padding-bottom:14%;
+}
+
+.illustrationSide{
+    width:50%;
+    align-items: center;
+    display:flex;
+    justify-content: center;;
+}
+.illustrationSide img{width:60%;}
+
+.contentSide{
+    width:50%;
+}
+
+@media screen and (max-width: 767px){
+    .notFounded .flexNotFounded{
+        display:flex;
+        flex-direction:column;
+    }
+    
+    .illustrationSide{
+        width:100%;
+        align-items: center;
+        display:flex;
+        justify-content: center;;
+    }
+    .contentSide{
+        width:100%;
+        padding-top:4%;
+        align-items: center;
+        display:flex;
+        justify-content: center;
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .mobileActions{justify-content: center;}
+    
+}

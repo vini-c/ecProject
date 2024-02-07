@@ -12,3 +12,4 @@ export function registerPlugins (app) {
 }
 
 import '@/assets/scss/embarque_certo.scss'
+

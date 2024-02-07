@@ -162,7 +162,7 @@ import ec_FlightRequirements from '@/components/molecules/flightRequirements.vue
                 </div>
             </div>
         </div>
-        <div v-if="item.isRefundable" class=" hideDesktop pt-4 justify-end d-flex px-4">
+        <div v-if="item.isRefundable && confirmation === false" class=" hideDesktop pt-4 justify-end d-flex px-4">
             <ec_Refundable />
         </div>
 

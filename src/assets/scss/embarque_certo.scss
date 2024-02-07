@@ -9,6 +9,9 @@ html {
     scroll-behavior: smooth;
 }
 
+.ec_defaultBG{
+    background:$background-color-tertiary
+}
 
 .confirmationIllustration{
     display:flex;
@@ -31,6 +34,10 @@ html {
     flex-wrap: nowrap;
     align-items: flex-start;
     gap: .8rem;
+}
+
+.homeContent{
+    padding:0 2%
 }
 
 .EC-colorContentPrimary {
@@ -310,6 +317,7 @@ html {
 .main-btn {
     background: linear-gradient(90deg, $gradient-color-stage1 0%, $gradient-color-stage2 100%) !important;
     color: $primary-color !important;
+    box-shadow: 0px 00px 30px rgba($gradient-color-stage1,.4)!important; 
 }
 
 .v-slider-track__fill {
@@ -341,6 +349,7 @@ html {
     text-align: right;
     color: $primary-color;
 }
+
 
 .foDetailsContent .finalPrice {
     display: flex;
@@ -391,7 +400,7 @@ html {
     background-color: lighten($gradient-color-stage2, 8%) !important;
 }
 
-
+.bordedDetail{border:1.4px $background-color solid;}
 
 .chipAdvisory {
     border-radius: .4rem !important;
@@ -1480,6 +1489,8 @@ width:80%;
 
 
 @media screen and (min-width:1800px) {
+
+    .homeContent{padding:0 8%;}
 
     .foCard .foBody .foSpec {
         display: flex;

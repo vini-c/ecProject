@@ -42,9 +42,11 @@
       <img src="@//assets/ecLogo_full.svg" class="ecLogo ml-4">
       </a>
       <template v-slot:append>
-        <v-btn size="small" href="#/" class="hideTablet" type="plain" density="default">Resultado</v-btn>
+        <v-btn size="small" href="#/results" class="hideTablet" type="plain" density="default">Resultado</v-btn>
         <v-divider vertical class="hideTablet" inset></v-divider>
         <v-btn size="small" href="#/checkout" class="hideTablet" type="plain" density="default">Checkout</v-btn>
+        <v-divider vertical class="hideTablet" inset></v-divider>
+        <v-btn size="small" href="#/confirmation" class="hideTablet" type="plain" density="default">Confirmation</v-btn>
         <v-divider vertical class="hideTablet" inset></v-divider>
         <v-btn size="small" class="hideTablet" type="plain" density="default">Atendimento</v-btn>
         <v-divider vertical class="hideTablet" inset></v-divider>

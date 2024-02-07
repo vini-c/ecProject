@@ -3,7 +3,7 @@
     <!-- Banners de feedback -->
       <ec_banner positive title="Reserva confirmada" subtitle="Sua passagem foi emitida" class="mt-4"></ec_banner>
       <ec_banner waiting title="Reserva em processamento" subtitle="Sua compra foi solicitada, aguarde a confirmação de emissão da passagem." class="mt-4"></ec_banner>
-      <ec_banner error title="Erro no processamento" subtitle="Sua compra foi solicitada, aguarde a confirmação de emissão da passagem." actionName="Alterar dados de pagamento" actionValue="#" class="mt-4"></ec_banner>
+      <ec_banner error title="Erro no processamento" subtitle="Sua compra não foi aprovada, por favor confira os dados do método de pagamento." actionName="Alterar dados de pagamento" actionValue="#" class="mt-4"></ec_banner>
     <!-- Conteúdo -->
       <div class="confirmationContent">
           <v-row no-gutters>

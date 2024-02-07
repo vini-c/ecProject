@@ -1,42 +1,48 @@
 @import '@/assets/scss/theme';
 
-.navBar,.searchMobileTopBar,{
-    background-color: $color-nav!important;
-    color: $content-colorInvert !important;
+.navBar,
+.searchMobileTopBar,
+{
+background-color: $color-nav !important;
+color: $content-colorInvert !important;
 }
 
 .mobileSearchArea {
-    background-color: $background-color-secondary!important;
+    background-color: $background-color-secondary !important;
 }
 
 .searchTopBar .v-btn__content {
-    font-size:.9rem!important;
+    font-size: .9rem !important;
 }
 
-.filterbar .v-expansion-panel-title:hover > .v-expansion-panel-title__overlay {
-    opacity:0
+.filterbar .v-expansion-panel-title:hover>.v-expansion-panel-title__overlay {
+    opacity: 0
 }
 
-.filterbar .v-expansion-panel-title--active:hover > .v-expansion-panel-title__overlay, .filterbar .v-expansion-panel-title[aria-haspopup=menu][aria-expanded=true]:hover > .v-expansion-panel-title__overlay {
-    opacity:.02;
+.filterbar .v-expansion-panel-title--active:hover>.v-expansion-panel-title__overlay,
+.filterbar .v-expansion-panel-title[aria-haspopup=menu][aria-expanded=true]:hover>.v-expansion-panel-title__overlay {
+    opacity: .02;
 }
 
-.filterbar .v-expansion-panel-title--active > .v-expansion-panel-title__overlay, .v-expansion-panel-title[aria-haspopup=menu][aria-expanded=true] > .v-expansion-panel-title__overlay{
-    opacity:.02;
+.filterbar .v-expansion-panel-title--active>.v-expansion-panel-title__overlay,
+.v-expansion-panel-title[aria-haspopup=menu][aria-expanded=true]>.v-expansion-panel-title__overlay {
+    opacity: .02;
 }
 
-.searchTopBar,.searchMobileTopBar{
-    border-radius:0px 0px 1.2rem 1.2rem;
-}
-.searchTopBar_area{
-    width:100%;
-    border:1px solid $tertiary-color;
-    padding:0.4rem;
-    margin:0.32rem;
-    border-radius:1rem;
+.searchTopBar,
+.searchMobileTopBar {
+    border-radius: 0px 0px 1.2rem 1.2rem;
 }
 
-.searchTopBar_content{
+.searchTopBar_area {
+    width: 100%;
+    border: 1px solid $tertiary-color;
+    padding: 0.4rem;
+    margin: 0.32rem;
+    border-radius: 1rem;
+}
+
+.searchTopBar_content {
     width: 100%;
     gap: 0.4rem;
     align-items: center;
@@ -47,371 +53,683 @@
 .searchTopBar_content .tripTypeArea {
     width: 32%;
     flex-grow: 1;
-    border:1px solid $tertiary-color;
+    border: 1px solid $tertiary-color;
     border-radius: 0.4rem;
-    align-items:center;
-    padding:.4rem;
+    align-items: center;
+    padding: .4rem;
 
 }
 
-.searchTopBar_content .v-field{
-    font-size:.94rem!important;
-    border-radius:.4rem;
+.searchTopBar_content .v-field {
+    font-size: .94rem !important;
+    border-radius: .4rem;
 }
 
-.searchTopBar_content .v-field--variant-solo, .searchTopBar_content .v-field--variant-solo .v-field--variant-solo-filled{
-    box-shadow: none!important;
+.searchTopBar_content .v-field--variant-solo,
+.searchTopBar_content .v-field--variant-solo .v-field--variant-solo-filled {
+    box-shadow: none !important;
 }
 
-.searchTopBar_content .destinationSwap{
-    background:$background-color-secondary;
-    color:$primary-color;
+.searchTopBar_content .destinationSwap {
+    background: $background-color-secondary;
+    color: $primary-color;
 }
 
-.searchTopBar_area .searchButton{
+.searchTopBar_area .searchButton {
     background: linear-gradient(90deg, $gradient-color-stage1 0%, $gradient-color-stage2 100%) !important;
     color: $primary-color !important;
     margin-right: 0.4rem;
     margin-left: 0.2rem;
 }
 
-.searchButton{
+.searchButton {
     background: linear-gradient(90deg, $gradient-color-stage1 0%, $gradient-color-stage2 100%) !important;
     color: $primary-color !important;
 }
 
 
-.searchTopBar_content .destinationArea{
-    width:100%;
+.searchTopBar_content .destinationArea {
+    width: 100%;
     align-items: center;
-    border:1px solid $tertiary-color;
+    border: 1px solid $tertiary-color;
     border-radius: 0.4rem;
-    padding:.4rem;
+    padding: .4rem;
 }
 
-.searchTopBar_content .destinationAreaContent{
-    width:100%;
+.searchTopBar_content .destinationAreaContent {
+    width: 100%;
     align-items: center;
-    background-color:$background-color;
-    flex-grow:2;
-    border:1px solid $tertiary-color;
+    background-color: $background-color;
+    flex-grow: 2;
+    border: 1px solid $tertiary-color;
     border-radius: 0.4rem;
-    
+
 }
 
-.searchTopBar_content .dateArea{width:60%;  padding: 0px 0.4rem;
-    border:1px solid $tertiary-color;
+.searchTopBar_content .dateArea {
+    width: 60%;
+    padding: 0px 0.4rem;
+    border: 1px solid $tertiary-color;
     border-radius: 0.4rem;
-    align-items:center;  flex-grow:1;
-    padding:.4rem;
-    gap:.2rem;
+    align-items: center;
+    flex-grow: 1;
+    padding: .4rem;
+    gap: .2rem;
 }
-.searchTopBar_content .extraInfosArea{width:40%; padding: 0px 0.4rem;
-    border:1px solid $tertiary-color;
+
+.searchTopBar_content .extraInfosArea {
+    width: 40%;
+    padding: 0px 0.4rem;
+    border: 1px solid $tertiary-color;
     border-radius: 0.4rem;
-    align-items:center;   flex-grow:1;
-    padding:.4rem;
+    align-items: center;
+    flex-grow: 1;
+    padding: .4rem;
 
 }
-.dateFixVisual{
-    width:80px!important;
-}
-.userMenu{
-    gap:.6rem;
+
+.dateFixVisual {
+    width: 80px !important;
 }
 
-.extraInfosArea{
-    font-size:.9rem!important;
+.userMenu {
+    gap: .6rem;
 }
 
-.extraInfosArea .v-select .v-select__selection-text, .v-list-items {
-    font-size:.9rem!important;
+.extraInfosArea {
+    font-size: .9rem !important;
+}
+
+.extraInfosArea .v-select .v-select__selection-text,
+.v-list-items {
+    font-size: .9rem !important;
 }
 
 
+.searchEngineBig {
+    background: $color-nav;
+    color: $background-color;
+    padding: 1% 1.4% 1.4% 1.4%;
+    border-radius: 0 0 1rem 1rem
+}
 
-@media screen and (max-width: 600px){
-    .searchTopBar_area{display: flex;justify-content: space-between;width:100%;margin-top:0px;}
-    .searchTopBar_area .flightInfos .iata{
-        font-weight:800;
-        font-size:1rem
+.searchEngineBig .v-radio-group>.v-input__control {
+    flex-direction: row;
+}
+
+.searchEngineBig .v-selection-control-group {
+    flex-direction: row !important;
+    ;
+}
+
+.searchEngineBig .v-selection-control {
+    width: 150px;
+}
+
+.searchEngineContainer {
+    border: 1px solid $tertiary-color;
+    border-radius: .5rem;
+    padding: .4rem .4rem;
+    margin-top: 1.2rem;
+}
+
+.typeSelector {
+    display: flex;
+    align-items: center;
+    border: 1px solid $tertiary-color;
+    border-radius: .5rem;
+    padding: 0.6rem 1rem;
+    ;
+    margin-bottom: .5rem;
+}
+
+.searchEngineBig .searchOption {
+    display: flex;
+}
+
+.searchEngineBig .illustrationBrand {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: center;
+    width: 100%
+}
+
+.searchEngineBig .illustrationBrand .line {
+    display: flex;
+    height: 1px;
+    background: $tertiary-color;
+    flex-grow: 2;
+    width: 100%;
+}
+
+.searchEngineBig .illustrationBrand .planeSearch {
+    display: flex;
+    flex-grow: 1;
+    mix-blend-mode: overlay;
+    opacity: 1;
+}
+
+.typeSelector .desktopFlightSelector {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.searchEngineSelector {
+    width: 30%;
+}
+
+
+.radioButtonSearchArea .v-label{
+    white-space:nowrap;
+}
+
+@media screen and (max-width: 600px) {
+    .searchEngineSelector {
+        width: 100%;
     }
-    .searchTopBar_area .flightInfos .date{
-        font-weight:400;
-        font-size:.72rem;
+
+    .searchTopBar_area {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 0px;
     }
-    .searchTopBar_area .flightInfos.arrival{
-        text-align:right;
+
+    .searchTopBar_area .flightInfos .iata {
+        font-weight: 800;
+        font-size: 1rem
     }
-    .searchTopBar_area .flightInfos{
-       padding:0 .48rem;
+
+    .searchTopBar_area .flightInfos .date {
+        font-weight: 400;
+        font-size: .72rem;
     }
-    .searchTopBar_area .flightInfos:last-child{
-        padding-right:.72rem;
+
+    .searchTopBar_area .flightInfos.arrival {
+        text-align: right;
     }
-    .searchTopBar_area .passengerArea{
-        padding:.48rem;
-        padding-left:0;
-        padding-right:.8rem;
+
+    .searchTopBar_area .flightInfos {
+        padding: 0 .48rem;
     }
-    .searchTopBar_area .classArea{
-        padding:.22rem;
-        padding-left:.45rem;
-        font-size:.8rem;
+
+    .searchTopBar_area .flightInfos:last-child {
+        padding-right: .72rem;
     }
-    .searchTopBar_area .searchButton{
-        margin:0
+
+    .searchTopBar_area .passengerArea {
+        padding: .48rem;
+        padding-left: 0;
+        padding-right: .8rem;
     }
-    .v-bottom-sheet > .v-bottom-sheet__content.v-overlay__content > .v-card, .v-bottom-sheet > .v-bottom-sheet__content.v-overlay__content > .v-sheet{
-        border-radius:1rem 1rem 0 0!important;
+
+    .searchTopBar_area .classArea {
+        padding: .22rem;
+        padding-left: .45rem;
+        font-size: .8rem;
     }
-    .mobileSearchArea .tripTypeArea{
-        margin: 0 .64rem .64rem; 
-        padding:.64rem ;
-        flex-direction:row;
-        border:1px solid $background-color-tertiary;
-        border-radius:.48rem;
+
+    .searchTopBar_area .searchButton {
+        margin: 0
+    }
+
+    .v-bottom-sheet>.v-bottom-sheet__content.v-overlay__content>.v-card,
+    .v-bottom-sheet>.v-bottom-sheet__content.v-overlay__content>.v-sheet {
+        border-radius: 1rem 1rem 0 0 !important;
+    }
+
+    .mobileSearchArea .tripTypeArea {
+        margin: 0 .64rem .64rem;
+        padding: .64rem;
+        flex-direction: row;
+        border: 1px solid $background-color-tertiary;
+        border-radius: .48rem;
 
     }
-    .mobileSearchArea .destinationAreaContent{
-        margin:0 .64rem .64rem;
-        padding:.48rem ;
-        flex-direction:column;
-        border:1px solid $background-color-tertiary;
-        border-radius:.48rem;
+
+    .mobileSearchArea .destinationAreaContent {
+        margin: 0 .64rem .64rem;
+        padding: .48rem;
+        flex-direction: column;
+        border: 1px solid $background-color-tertiary;
+        border-radius: .48rem;
     }
-    .mobileSearchArea .tripTypeArea .v-selection-control-group{
-        flex-direction:row;
+
+    .mobileSearchArea .tripTypeArea .v-selection-control-group {
+        flex-direction: row;
     }
-    .mobileSearchArea .destinationAreaContent .dateFixVisual{
-        width:100%!important;
+
+    .mobileSearchArea .destinationAreaContent .dateFixVisual {
+        width: 100% !important;
     }
-    .mobileSearchArea .destinationAreaContent{
+
+    .mobileSearchArea .destinationAreaContent {
         position: relative;
     }
 
-    .mobileSearchArea .v-field--variant-solo, .mobileSearchArea .v-field--variant-solo-filled{
-        background:$background-color!important;
-        box-shadow:none!important;
-        border-radius:.24rem!important;
-        border:1px solid $background-color-tertiary;
-        font-size:.9rem!important;
-    }
-    .destinationSwap{
-        background-color: $background-color-tertiary!important;
-        color:$primary-color!important;
-        position:absolute;
-        margin-top:-10%;
-        right:1.24rem;
-        bottom:2.72rem;
-        z-index:4;
-    }
-    .mobileSearchArea .dateArea{
-        margin:0 .64rem .64rem;
-        padding:.48rem ;
-        border:1px solid $background-color-tertiary;
-        border-radius:.48rem;
-        gap:.24rem;
-    }
-    .mobileSearchArea .extraInfosArea{
-        margin:0 .64rem .64rem;
-        padding:.48rem ;
-        border:1px solid $background-color-tertiary;
-        border-radius:.48rem;
-        gap:.24rem;
-        flex-direction: column;
-    }
-    .counterComponent{
-        width:100%;
-        margin:0px!important;padding-left:.1rem!important;
-    }
-    .mobileSearchArea .classArea{
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
-        gap:1rem;
-        color:$primary-color;
-    }
-    .autoCompleteAirportOption{
-        width:100%;
-    }
-    .mobileSearchArea .buttonArea{
-        width: 100%;
-        justify-content: flex-end;
-        padding:0 .64rem 1rem 
+    .mobileSearchArea .v-field--variant-solo,
+    .mobileSearchArea .v-field--variant-solo-filled {
+        background: $background-color !important;
+        box-shadow: none !important;
+        border-radius: .24rem !important;
+        border: 1px solid $background-color-tertiary;
+        font-size: .9rem !important;
     }
 
-    .mobileSearchArea .header{
+    .destinationSwap {
+        background-color: $background-color-tertiary !important;
+        color: $primary-color !important;
+        position: absolute;
+        margin-top: -10%;
+        right: 1.24rem;
+        bottom: 2.72rem;
+        z-index: 4;
+    }
+
+    .mobileSearchArea .dateArea {
+        margin: 0 .64rem .64rem;
+        padding: .48rem;
+        border: 1px solid $background-color-tertiary;
+        border-radius: .48rem;
+        gap: .24rem;
+    }
+
+    .mobileSearchArea .extraInfosArea {
+        margin: 0 .64rem .64rem;
+        padding: .48rem;
+        border: 1px solid $background-color-tertiary;
+        border-radius: .48rem;
+        gap: .24rem;
+        flex-direction: column;
+    }
+
+    .counterComponent {
+        width: 100%;
+        margin: 0px !important;
+        padding-left: .1rem !important;
+    }
+
+    .mobileSearchArea .classArea {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        color: $primary-color;
+    }
+
+    .autoCompleteAirportOption {
+        width: 100%;
+    }
+
+    .mobileSearchArea .buttonArea {
+        width: 100%;
+        justify-content: flex-end;
+        padding: 0 .64rem 1rem
+    }
+
+    .mobileSearchArea .header {
         width: 100%;
         justify-content: space-between;
         align-items: center;
-        padding-left:1rem;
+        padding-left: 1rem;
     }
-    .mobileSearchArea .header .v-btn{
-        background:$background-color-secondary!important;
+
+    .mobileSearchArea .header .v-btn {
+        background: $background-color-secondary !important;
     }
 
     .mobileSearchArea .header .headerBottomSheet {
-        font-size:.75rem;
-        font-weight:700;
+        font-size: .75rem;
+        font-weight: 700;
         text-transform: uppercase;
-        letter-spacing:.1rem;
-        color:$secondary-colorDesat
+        letter-spacing: .1rem;
+        color: $secondary-colorDesat
     }
-    
+
 }
 
 
-@media screen and (max-width: 376px){
-    .searchTopBar_area .flightInfos .iata{
-        font-size:.9rem
+@media screen and (max-width: 376px) {
+    .searchTopBar_area .flightInfos .iata {
+        font-size: .9rem
     }
-    .searchTopBar_area .flightInfos .date{
-        font-weight:400;
-        font-size:.64rem;
+
+    .searchTopBar_area .flightInfos .date {
+        font-weight: 400;
+        font-size: .64rem;
     }
-    .searchTopBar_area .passengerArea{
-        padding:.3rem;
-        padding-right:.7rem;
+
+    .searchTopBar_area .passengerArea {
+        padding: .3rem;
+        padding-right: .7rem;
     }
-    .searchTopBar_area .classArea{
-        padding:.22rem;
-        padding-left:.45rem;
-        font-size:.75rem;
+
+    .searchTopBar_area .classArea {
+        padding: .22rem;
+        padding-left: .45rem;
+        font-size: .75rem;
     }
-    .mobileSearchArea .buttonArea .v-btn{
+
+    .mobileSearchArea .buttonArea .v-btn {
         width: 100%;
     }
-   
+
+
+}
+
+@media screen and (max-width: 700px) {
+    .searchEngineBig .searchOption {
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .searchEngineBig .searchTopBar_content .dateArea,
+    .searchEngineBig .searchTopBar_content .extraInfosArea,
+    .searchEngineBig .buttonArea {
+        width: 100% !important
+    }
+
+    .searchEngineBig .buttonArea {
+        justify-content: flex-end;
+    }
+}
+
+
+
+@media screen and (max-width: 720px) {
+    .searchEngineSelector {
+        width: 100%;
+    }
+
+    .searchEngineBig .searchOption {
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .searchEngineBig .searchTopBar_content .dateArea,
+    .searchEngineBig .searchTopBar_content .extraInfosArea,
+    .searchEngineBig .buttonArea {
+        width: 100% !important
+    }
+
+    .searchEngineBig .buttonArea .v-btn {
+        width: 100%;
+    }
+
+    .searchEngineBig .buttonArea {
+        padding: .4rem .5rem !important;
+    }
+
+    .searchEngineBig .illustrationBrand {
+        display: none;
+    }
+
+    .searchEngineBig .v-divider {
+        display: none;
+    }
+
+    .typeSelector {
+        padding-top: 0.6rem;
+        justify-content: center;
+        padding-bottom: 0.6rem;
+    }
+
+    .searchEngineBig .v-radio-group>.v-input__control,
+    .searchEngineBig .v-selection-control-group {
+        width: 100%;
+    }
+
+    .searchEngineBig .v-selection-control {
+        justify-content: center;
+    }
+
+    .searchEngineBig .v-selection-control:first-child {
+        border-right: 1px solid $tertiary-color
+    }
+
+    .searchEngineBig .searchTopBar_content .destinationAreaContent {
+        display: flex;
+        flex-direction: column;
+        background-color: $color-nav;
+        border: 0;
+    }
+
+    .searchEngineBig .destinationAreaContent {
+        position: relative;
+    }
+
+    .searchEngineBig .searchTopBar_content .destinationSwap {
+        position: absolute;
+        margin-top: -10%;
+        right: 1.24rem;
+        bottom: 2.4rem;
+        z-index: 4;
+    }
+
+    .searchEngineBig .searchTopBar_content .destinationAreaContent .dateFixVisual {
+        margin-bottom: .2rem;
+        width: 100% !important;
+    }
+
+    .searchEngineBig .searchTopBar_content .destinationArea {
+        margin-bottom: .4rem;
+    }
+
+    .searchEngineBig h1 {
+        padding-left: .8rem;
+        font-size: 1.4rem
+    }
+
+    .searchEngineBig p {
+        padding-left: .8rem;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .desktopFlightSelector {
+        display: none;
+    }
+
+    .tabletFlightSelector {
+        display: flex;
+        width: 100%;
+    }
     
 }
 
-
-@media screen and (min-width: 601px){
-    .desktopFlightSelector{
-        display:none;
+@media screen and (min-width: 1024px) {
+    .desktopFlightSelector {
+        display: flex;
+        width: 100%;
     }
-    .tabletFlightSelector{display:flex;width: 100%;}
-}
-@media screen and (min-width: 1024px){
-    .desktopFlightSelector{
-        display:flex;    width: 100%;
+
+    .tabletFlightSelector {
+        display: none;
     }
-    .tabletFlightSelector{display:none;}
+
+    .searchEngineSelector {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .searchEngineSelector {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .searchEngineSelector {
+        width: 60%;
+    }
+
+    .searchTopBar_area {
+        justify-content: space-between;
+    }
+
+    .searchTopBar_area .destinationAreaContent {
+        gap: 1rem;
+    }
+
+    .destinationAreaContent .flightInfos {
+        display: flex;
+        flex-direction: row;
+        gap: .4rem;
+        align-items: center;;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .searchEngineSelector {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .destinationAreaContent .flightInfos {
+        display: flex;
+        flex-direction: column;
+        gap: 0rem;
+    }
+    .searchEngineSelector {
+        width: 100%;
+    }
 }
 
 
-
-@media screen and (min-width:600px) and (max-width:999px){
+@media screen and (min-width:600px) and (max-width:999px) {
     .airportSelectorResult p.citySelector {
-        display:none;
-}
-.v-autocomplete .v-field .v-text-field__prefix, .airportSelectorResult .v-autocomplete .v-field .v-text-field__suffix, .v-autocomplete .v-field .v-field__input, .airportSelectorResult .v-autocomplete .v-field.v-field{
- max-height:3.45rem!important
-}
-.searchTopBar_content .tripTypeArea{
-    width:50%;
-}
-.flightTypeselector .v-radio:first-child{
-    border-bottom:1px solid $secondary-color
-}
+        display: none;
+    }
+
+    .v-autocomplete .v-field .v-text-field__prefix,
+    .airportSelectorResult .v-autocomplete .v-field .v-text-field__suffix,
+    .v-autocomplete .v-field .v-field__input,
+    .airportSelectorResult .v-autocomplete .v-field.v-field {
+        max-height: 3.45rem !important
+    }
+
+    .searchTopBar_content .tripTypeArea {
+        width: 50%;
+    }
+
+    .flightTypeselector .v-radio:first-child {
+        border-bottom: 1px solid $secondary-color
+    }
 }
 
 @media screen and (min-width:1000px) {
     .airportSelectorResult p.citySelector {
-        max-width:3ch;
-        text-overflow:ellipsis;
-}
-.searchTopBar_content .tripTypeArea{
-    width:50%;
-}
-.flightTypeselector .v-radio:first-child{
-    border-bottom:1px solid $secondary-color
-}
+        max-width: 3ch;
+        text-overflow: ellipsis;
+    }
+
+    .searchTopBar_content .tripTypeArea {
+        width: 50%;
+    }
+
+    .flightTypeselector .v-radio:first-child {
+        border-bottom: 1px solid $secondary-color
+    }
 }
 
 @media screen and (min-width:1080px) {
     .airportSelectorResult p.citySelector {
-        max-width:5ch
-}
+        max-width: 5ch
+    }
 }
 
 @media screen and (min-width:1220px) {
     .airportSelectorResult p.citySelector {
-        max-width:8ch
-}
-}
-
-@media screen and (min-width:1320px) {
-    .airportSelectorResult p.citySelector {
-        max-width:10ch
-}
-.searchTopBar_content .tripTypeArea{
-    width:28%;
-}
+        max-width: 8ch
+    }
 }
 
 @media screen and (min-width:1320px) {
     .airportSelectorResult p.citySelector {
-        max-width:10ch
+        max-width: 10ch
+    }
+
+    .searchTopBar_content .tripTypeArea {
+        width: 28%;
+    }
 }
+
+@media screen and (min-width:1320px) {
+    .airportSelectorResult p.citySelector {
+        max-width: 10ch
+    }
 }
 
 
 @media screen and (min-width:1439px) {
     .airportSelectorResult p.citySelector {
-        max-width:12ch
-}
+        max-width: 12ch
+    }
 }
 
 @media screen and (min-width:1520px) {
     .airportSelectorResult p.citySelector {
-        max-width:14ch
+        max-width: 14ch
+    }
 }
-}
+
 @media screen and (min-width:1680px) {
+    .searchEngineBig {
+        padding: 1% 4%;
+    }
+
     .airportSelectorResult p.citySelector {
-        max-width:17ch
-}
-.searchTopBar_content .v-selection-control-group{
-    flex-direction:row;
-    height:3.6rem;
-    justify-content: center;
-}
-.searchTopBar_content .tripTypeArea {
-    width: 50%;
-}
-.flightTypeselector .v-radio:first-child{
-    border-bottom:0px solid $secondary-color;
-    border-right:1px solid $secondary-color
+        max-width: 17ch
+    }
 
-}
-.flightTypeselector .v-radio:last-child{
-    padding-left:.4rem;
+    .searchTopBar_content .v-selection-control-group {
+        flex-direction: row;
+        height: 3.6rem;
+        justify-content: center;
+    }
 
-}
+    .searchTopBar_content .tripTypeArea {
+        width: 50%;
+    }
+
+    .flightTypeselector .v-radio:first-child {
+        border-bottom: 0px solid $secondary-color;
+        border-right: 1px solid $secondary-color
+    }
+
+    .flightTypeselector .v-radio:last-child {
+        padding-left: .4rem;
+
+    }
 }
 
 @media screen and (min-width:1880px) {
     .airportSelectorResult p.citySelector {
-        max-width:30ch
-}
+        max-width: 30ch
+    }
+
 }
 
 
 @media screen and (min-width:2000px) {
     .airportSelectorResult p.citySelector {
-        max-width:17ch
-}
-.searchTopBar_content .v-selection-control-group{
-    flex-direction:row;
-    height:3.6rem;
-    justify-content: center;
-}
-.searchTopBar_content .tripTypeArea {
-    width:28%;
-}
-.autoCompleteAirportOption{
-    width:100%;
-}
+        max-width: 17ch
+    }
+
+    .searchTopBar_content .v-selection-control-group {
+        flex-direction: row;
+        height: 3.6rem;
+        justify-content: center;
+    }
+
+    .searchTopBar_content .tripTypeArea {
+        width: 28%;
+    }
+
+    .autoCompleteAirportOption {
+        width: 100%;
+    }
 }
