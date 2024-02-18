@@ -9,7 +9,7 @@
                             subtitle="Apenas 4 lugares disponíveis para o voo selecionado"></ec_banner>
                         <v-stepper class="mobileCheckoutContainer" elevation="0">
                             <template
-                                v-slot:default="{ pixPage, paymentMethodsPage, creditCardPage, instalmentsPage, travelersData, tedPage, boletoPage, invoicePage }">
+                                v-slot:default="{ pixPage, paymentMethodsPage, creditCardPage, instalmentsPage, travelersData, tedPage, boletoPage, payerAdress }">
                                 <v-stepper-header>
                                     <v-stepper-item complete editable title="Dados do Viajante"
                                         value="travelersData"></v-stepper-item>
@@ -19,7 +19,7 @@
 
                                     <v-divider></v-divider>
 
-                                    <v-stepper-item editable title="Nota Fiscal" value="invoicePage"></v-stepper-item>
+                                    <v-stepper-item editable title="Endereço" value="payerAdress"></v-stepper-item>
                                 </v-stepper-header>
 
                                 <v-stepper-window>
@@ -126,7 +126,7 @@
                                                 <v-btn class="rounded-xl font-weight-bold" variant="outlined"
                                                     elevation="0">voltar</v-btn>
                                             </v-stepper-item>
-                                            <v-stepper-item class="nextButtonStepper" editable value="invoicePage">
+                                            <v-stepper-item class="nextButtonStepper" editable value="payerAdress">
                                                 <v-btn class="rounded-xl main-btn font-weight-bold"
                                                     elevation="0">Continuar</v-btn>
                                             </v-stepper-item>
@@ -152,7 +152,7 @@
                                                 <v-btn class="rounded-xl font-weight-bold" variant="outlined"
                                                     elevation="0">voltar</v-btn>
                                             </v-stepper-item>
-                                            <v-stepper-item class="nextButtonStepper" editable value="invoicePage">
+                                            <v-stepper-item class="nextButtonStepper" editable value="payerAdress">
                                                 <v-btn class="rounded-xl main-btn font-weight-bold"
                                                     elevation="0">Continuar</v-btn>
                                             </v-stepper-item>
@@ -165,7 +165,7 @@
                                                 <v-btn class="rounded-xl font-weight-bold" variant="outlined"
                                                     elevation="0">voltar</v-btn>
                                             </v-stepper-item>
-                                            <v-stepper-item class="nextButtonStepper" editable value="invoicePage">
+                                            <v-stepper-item class="nextButtonStepper" editable value="payerAdress">
                                                 <v-btn class="rounded-xl main-btn font-weight-bold"
                                                     elevation="0">Continuar</v-btn>
                                             </v-stepper-item>
@@ -178,14 +178,18 @@
                                                 <v-btn class="rounded-xl font-weight-bold" variant="outlined"
                                                     elevation="0">voltar</v-btn>
                                             </v-stepper-item>
-                                            <v-stepper-item class="nextButtonStepper" editable value="invoicePage">
+                                            <v-stepper-item class="nextButtonStepper" editable value="payerAdress">
                                                 <v-btn class="rounded-xl main-btn font-weight-bold"
                                                     elevation="0">Continuar</v-btn>
                                             </v-stepper-item>
                                         </v-row>
                                     </v-stepper-window-item>
-                                    <v-stepper-window-item value="invoicePage">
-                                        <ec_invoiceData />
+                                    <v-stepper-window-item value="payerAdress">
+                                        <!-- <ec_invoiceData /> -->
+                                        <div class="checkoutTitleSection  mb-4">
+                                            <h2>Endereço do pagador</h2>
+                                        </div>
+                                        <ec_adressData/>
                                         <div class="divider"></div>
                                         <v-row cols="12">
                                             <v-checkbox v-model="checkbox">
@@ -239,11 +243,13 @@ import ec_cardInstalments from '@/components/organisms/dataOrganisms/ec_cardInst
 import ec_boletoData from '@/components/organisms/dataOrganisms/ec_boletoData.vue'
 import ec_pixData from '@/components/organisms/dataOrganisms/ec_pixData.vue'
 import ec_tedData from '@/components/organisms/dataOrganisms/ec_tedData.vue'
-import ec_invoiceData from '@/components/organisms/dataOrganisms/ec_invoiceData.vue'
+// import ec_invoiceData from '@/components/organisms/dataOrganisms/ec_invoiceData.vue'
 import ec_travelersData from '@/components/organisms/dataOrganisms/ec_travelersData.vue'
 import ec_ticketContactData from '@/components/organisms/dataOrganisms/ec_ticketContactData.vue'
 import ec_priceRules from '@/components/molecules/priceRules.vue'
 import ec_checkoutResumeMobile from '@/components/organisms/checkout/ec_checkoutResumeMobile.vue'
+import ec_adressData from '@/components/organisms/dataOrganisms/ec_adressData.vue'
+
 
 </script>
 

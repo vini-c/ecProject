@@ -5,7 +5,6 @@
         <div class="checkoutTitleSection  mb-4">
             <h2>Dados para Nota Fiscal</h2>
         </div>
-
             <v-radio-group inline>
                 <v-radio label="Pessoa Física" value="pessoa-fisica"></v-radio>
                 <v-radio label="Pessoa Jurídica" value="pessoa-juridica"></v-radio>
@@ -15,8 +14,6 @@
             <ec_cnpj />
             <div class="divider"></div>
             <ec_adressData/>
-
-
     </section>
 </template>
 

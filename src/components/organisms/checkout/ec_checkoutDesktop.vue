@@ -15,7 +15,7 @@
                 subtitle="Apenas 4 lugares disponíveis para o voo selecionado"></ec_banner>
 
             <div class="paymentData">
-              
+
               <v-expansion-panels v-model="panel" multiple variant="accordion">
                 <v-expansion-panel id="travelersData" expand v-model="panel" elevation="0" class="travelersData">
                   <v-expansion-panel-title>
@@ -29,10 +29,9 @@
                   </v-expansion-panel-title>
                   <v-expansion-panel-text>
                     <v-form v-model="isTravelersFormValid">
-                      <ec_travelersData></ec_travelersData>
+                      <ec_travelersInputs title="Adulto 1" :hasTitle="true" :hasClose="false" :hasButtons="false"></ec_travelersInputs>
                       <div class="divider"></div>
                       <ec_ticketContactData />
-                      <ec_priceRules exchanges="" refundable="" />
                     </v-form>
                     <v-row justify="end" no-gutters>
                       <v-btn class="rounded-xl font-weight-bold mr-3" variant="outlined" elevation="0"
@@ -65,63 +64,69 @@
                       <v-sheet v-if="model == 0">
                         <section class="paymentOption pix">
                           <ec_pixData></ec_pixData>
-                          <v-row justify="end" no-gutters>
+                          <div class="divider"></div>
+                          <div class="checkoutTitleSection  mb-4">
+                            <h4>Endereço do pagador:</h4>
+                        </div>
+                        <ec_adressData/>
+                          <!-- <v-row justify="end" no-gutters>
                             <v-btn class="rounded-xl font-weight-bold mr-3" variant="outlined" elevation="0"
                               >Limpar dados</v-btn>
                             <v-btn class="rounded-xl main-btn font-weight-bold" elevation="0" @click="$refs.invoice.$el.scrollIntoView()">Salvar e
                               continuar</v-btn>
-                          </v-row>
+                          </v-row> -->
                         </section>
                       </v-sheet>
                       <v-sheet v-if="model == 1">
                         <section class="paymentOption creditCard">
                           <ec_creditData></ec_creditData>
                           <ec_cardInstalments />
-                          <v-row justify="end" no-gutters>
+                          <div class="divider"></div>
+                          <div class="checkoutTitleSection  mb-4">
+                            <h4>Endereço do pagador:</h4>
+                        </div>
+                        <ec_adressData/>
+                          <!-- <v-row justify="end" no-gutters>
                             <v-btn class="rounded-xl font-weight-bold mr-3" variant="outlined" elevation="0"
                               >Limpar dados</v-btn>
                             <v-btn class="rounded-xl main-btn font-weight-bold" elevation="0"  @click="$refs.invoice.$el.scrollIntoView()">Salvar e
                               continuar</v-btn>
-                          </v-row>
+                          </v-row> -->
                         </section>
                       </v-sheet>
                       <v-sheet v-if="model == 2">
                         <section class="paymentOption boleto">
                           <ec_boletoData></ec_boletoData>
-                          <v-row justify="end" no-gutters>
+                          <div class="divider"></div>
+                          <div class="checkoutTitleSection  mb-4">
+                            <h4>Endereço do pagador:</h4>
+                        </div>
+                        <ec_adressData/>
+                          <!-- <v-row justify="end" no-gutters>
                             <v-btn class="rounded-xl font-weight-bold mr-3" variant="outlined" elevation="0"
                               >Limpar dados</v-btn>
                             <v-btn class="rounded-xl main-btn font-weight-bold" elevation="0"  @click="$refs.invoice.$el.scrollIntoView()">Salvar e
                               continuar</v-btn>
-                          </v-row>
+                          </v-row> -->
                         </section>
                       </v-sheet>
                       <v-sheet v-if="model == 3">
                         <section class="paymentOption ted">
                           <ec_tedData></ec_tedData>
-                          <v-row justify="end" no-gutters>
+                          <div class="divider"></div>
+                          <div class="checkoutTitleSection  mb-4">
+                            <h4>Endereço do pagador:</h4>
+                        </div>
+                        <ec_adressData/>
+                          <!-- <v-row justify="end" no-gutters>
                             <v-btn class="rounded-xl font-weight-bold mr-3" variant="outlined" elevation="0"
                               >Limpar dados</v-btn>
                             <v-btn class="rounded-xl main-btn font-weight-bold" elevation="0"  @click="$refs.invoice.$el.scrollIntoView()">Salvar e
                               continuar</v-btn>
-                          </v-row>
+                          </v-row> -->
                         </section>
                       </v-sheet>
                     </v-expand-transition>
-                  </v-expansion-panel-text>
-                </v-expansion-panel>
-                <v-expansion-panel id="invoice" ref="invoice" elevation="0" expand v-model="panel" class="invoice">
-                  <v-expansion-panel-title>
-                    <v-row no-gutters align="center">
-                      <h2 class="mr-2">
-                        Nota Fiscal
-                      </h2>
-                      <v-icon class="successIcon" icon="mdi-check-circle-outline" size="default"></v-icon>
-                      <v-icon class="errorIcon" icon="mdi-close-circle-outline" size="default"></v-icon>
-                    </v-row>
-                  </v-expansion-panel-title>
-                  <v-expansion-panel-text>
-                    <ec_invoiceData />
                     
                   </v-expansion-panel-text>
                 </v-expansion-panel>
@@ -164,7 +169,6 @@
       </div>
 </template>
 
-
 <script setup>
 
 import ec_banner from '@/components/molecules/ec_banner.vue'
@@ -173,10 +177,9 @@ import ec_cardInstalments from '@/components/organisms/dataOrganisms/ec_cardInst
 import ec_boletoData from '@/components/organisms/dataOrganisms/ec_boletoData.vue'
 import ec_pixData from '@/components/organisms/dataOrganisms/ec_pixData.vue'
 import ec_tedData from '@/components/organisms/dataOrganisms/ec_tedData.vue'
-import ec_invoiceData from '@/components/organisms/dataOrganisms/ec_invoiceData.vue'
-import ec_travelersData from '@/components/organisms/dataOrganisms/ec_travelersData.vue'
+import ec_adressData from '@/components/organisms/dataOrganisms/ec_adressData.vue'
+import ec_travelersInputs from '@/components/organisms/dataOrganisms/ec_travelersInputs.vue'
 import ec_ticketContactData from '@/components/organisms/dataOrganisms/ec_ticketContactData.vue'
-import ec_priceRules from '@/components/molecules/priceRules.vue'
 import ec_flightOptionCheckout from '@/components/organisms/checkout/flightOptionCheckout.vue'
 </script>
 

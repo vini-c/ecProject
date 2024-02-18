@@ -7,8 +7,10 @@
             <p>Estes dados são fundamentais para que você receba seus tickets de embarque e informação importante sobre a
                 sua viagem.</p>
         </div>
+        <div class="rowDesktop">
             <ec_mail/>
             <ec_phone/>
+        </div>
     </section>
 </template>
 

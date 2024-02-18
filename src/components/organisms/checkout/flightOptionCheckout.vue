@@ -3,6 +3,8 @@ import ec_bestOption from '@/components/atoms/bestOption.vue'
 import ec_Bestprice from '@/components/atoms/bestPrice.vue'
 import ec_FlightResume from '@/components/molecules/flightResume.vue'
 import ec_FlightDetails from '@/components/molecules/flightDetails.vue'
+import ec_priceRules from '@/components/molecules/priceRules.vue'
+
 </script>
 <template>
     <section class="flightOptionCard checkoutFlightDetail rounded-lg pb-1 " v-for="(item, x) in flightOptionData" :key="x">
@@ -62,6 +64,9 @@ import ec_FlightDetails from '@/components/molecules/flightDetails.vue'
                             </v-row>
                         </div>
                     </div>
+                </div>
+                <div class="foBody mt-2 rounded-lg">
+                    <ec_priceRules exchanges="" refundable="" />
                 </div>
                 <div class="foBodyDetailsBar pt-3">
                     <div class="detailsfoFlightInfo d-flex">

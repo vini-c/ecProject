@@ -4,9 +4,10 @@
     background: $background-color !important;
 }
 
-.checkoutPage .v-main{
-    padding-top:0!important
+.checkoutPage .v-main {
+    padding-top: 0 !important
 }
+
 .paymentData {
     background: $background-color;
 }
@@ -17,12 +18,12 @@
     border-radius: 1rem !important;
 }
 
-.flightCheckoutNav{
-    display:flex
+.flightCheckoutNav {
+    display: flex
 }
 
-#app .v-application{
-    background-color: $background-color-tertiary!important;
+#app .v-application {
+    background-color: $background-color-tertiary !important;
 }
 
 .foCardCheckout {
@@ -106,8 +107,8 @@
 
 }
 
-.paymentOptionMobileTrigger h4{
-    font-size:1.32rem;
+.paymentOptionMobileTrigger h4 {
+    font-size: 1.32rem;
 }
 
 .mobileCheckoutContainer .v-stepper-header {
@@ -178,7 +179,7 @@
     padding: .2rem;
     border-radius: .60rem;
     border: 1px solid $background-color;
-    width:100%;
+    width: 100%;
 }
 
 .v-stepper-item__title {
@@ -249,11 +250,40 @@
     width: 100%;
 }
 
+.rowDesktop {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin:.8rem 0;
+}
+
+.cardBrands {
+    display: flex;
+    gap: 1rem;
+    margin-top: .8rem;
+    padding-bottom: .8rem;
+}
+
+.cardBrands img {
+    width: auto;
+    height: 25px;
+}
+
+.choiceContent {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: .5rem .8rem;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: .3rem;
+}
+
 @media screen and (max-width:500px) {
 
-.paymentOptionMobileTrigger h4{
-    font-size:.98rem;
-}}
+    .paymentOptionMobileTrigger h4 {
+        font-size: .98rem;
+    }
+}
 
 
 @media screen and (max-width:999px) {
@@ -261,6 +291,25 @@
         display: flex
     }
 
+    .rowDesktop {
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .rowDesktop .v-input {
+        width: 100%;
+    }
+    .rowDesktop .v-row {
+        width: 100%; 
+    }
+    .rowDesktop .v-row .v-col-4{padding-right:.5rem}
+
+    .choiceContent{
+        width:100%;
+        margin-bottom:1rem;
+    }
     .hideDesktopCheckout {
         display: none
     }
