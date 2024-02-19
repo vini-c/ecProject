@@ -5,6 +5,8 @@ import Results from '@/components/screens/ec_flightResultsPage.vue'
 import Checkout from '@/components/screens/ec_checkoutPage.vue'
 import Confirm from '@/components/screens/ec_confirmationPage.vue'
 import NotFound from '@/components/screens/notFound.vue'
+import Construction from '@/components/screens/ec_construction.vue'
+
 
 
 const routes = {
@@ -12,6 +14,8 @@ const routes = {
   '/checkout': Checkout,
   '/confirmation': Confirm,
   '/results': Results,
+  '/construction': Construction,
+
 }
 
 const currentPath = ref(window.location.hash)

@@ -217,7 +217,7 @@ html {
     margin: .2rem 0;
 }
 
-.arrivalIcon {
+.arrivalIcon, .bell-icon {
     margin-top: .1rem;
     color: darken($gradient-color-stage2, 14%) !important;
 }
@@ -314,7 +314,8 @@ html {
     flex-direction: column
 }
 
-.main-btn {
+.main-btn,.v-progress-linear__determinate
+    {
     background: linear-gradient(90deg, $gradient-color-stage1 0%, $gradient-color-stage2 100%) !important;
     color: $primary-color !important;
     box-shadow: 0px 00px 30px rgba($gradient-color-stage1,.4)!important; 
@@ -525,6 +526,87 @@ width:80%;
    font-size:.7rem!important;
 }
 
+.ec_containerConstruction{
+    background: url('@/assets/backgroundTile.svg'), radial-gradient(circle,$color-nav 50%,  $primary-color   100%);
+    background-size:cover;
+    color:$background-color;
+    height:100vh;
+    display: flex;
+    align-items: center;
+}
+
+.constructionContent{
+    display:flex;
+    width:100%;
+    justify-content: center;
+
+}
+.underConstructionContent .logo{
+    width:28em;
+}
+
+.underConstructionContent{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.columnConstruction{
+    padding:10% 2%;
+    display:flex;flex-direction: column;gap:1rem;
+}
+
+
+.ec_containerConstruction .middleScreen{
+}
+.columnConstruction h4{
+    font-size:1.4rem
+}
+.columnConstruction .socialMediasection{
+    padding-top:4%;
+    align-items: center;
+}
+.columnConstruction .socialMediasection p{
+    font-size:1.2rem;
+    font-weight:bold
+}
+.columnConstruction .subscrition{
+    background-color: $background-color-secondary;
+    color:$primary-color;
+    padding:2rem 2.4rem;
+    border-radius:.8rem;
+}
+.subscrition .bell-icon{
+    margin-right:.4rem
+}
+.columnConstruction .subscrition h3{
+    font-size:1.3rem
+}
+
+.leftZero{padding-left:0!important;margin-left:0!important;}
+.columnConstruction .progressIndicator{
+    display:flex;
+    align-items: center;
+}
+.columnConstruction.textSide{
+    display:flex;
+    justify-content:center;
+}
+.columnConstruction .subscrition .subscriptionForm{
+    padding-top:1rem;
+}
+
+.socialMediasection.hideTablet{
+    display:none!important;
+}
+
+.underConstructionContent .title{
+    display:flex;
+    flex-direction: row;
+    gap:.4rem;
+    align-items: center;
+}
+
 @media screen and (min-width:360px) {
     .foFlightInfo {
         padding-left: .4rem;
@@ -534,6 +616,47 @@ width:80%;
 
 
 @media screen and (max-width:599px) {
+    .underConstructionContent .logo{
+        width:80%;
+    } 
+
+    .underConstructionContent .title{
+        display:flex;
+        flex-direction: row;
+        gap:.4rem;
+        align-items: center;
+    }
+    .underConstructionContent .socialTitle{
+        display:flex;
+        flex-direction: column;
+    }
+    
+    .columnConstruction .subscrition{
+        padding:3%;
+    }
+    .constructionContent{
+        padding:0 3%;
+    }
+    .columnConstruction.textSide h1{
+        text-align: center;
+    }
+    .columnConstruction .socialMediasection{flex-direction: column;justify-content: flex-start; align-items: center;padding-top:4%} 
+    .socialMediasection.hideMobile{
+        display:none!important;
+    }
+    .socialMediasection.hideTablet{
+        display:flex!important;
+    }
+    .constructionContent{
+        flex-direction:column;
+    }
+    .columnConstruction{padding:2%;}
+    .columnConstruction.textSide{
+        align-items: center;
+    }
+    .columnConstruction .progressIndicator{
+        width:90%;
+    }
     .hideMobile {
         display: none !important;
     }
@@ -637,6 +760,31 @@ width:80%;
 }
 
 @media screen and (min-width:600px) and (max-width:766px) {
+  
+    .constructionContent{
+        padding:0 3%;
+    }
+    .columnConstruction.textSide h1{
+        text-align: center;
+    }
+    .columnConstruction .socialMediasection{flex-direction: column;justify-content: flex-start; align-items: center;padding-top:4%} 
+    .socialMediasection.hideMobile{
+        display:none!important;
+    }
+    .socialMediasection.hideTablet{
+        display:flex!important;
+    }
+    .constructionContent{
+        flex-direction:column;
+    }
+    .columnConstruction{padding:2%;}
+    .columnConstruction.textSide{
+        align-items: center;
+    }
+    .columnConstruction .progressIndicator{
+        width:90%;
+    }
+
     .foCard .foBody .foSpec {
         display: flex;
         flex-direction: row;
@@ -813,6 +961,24 @@ width:80%;
 }
 
 @media screen and (min-width:767px) and (max-width:1022px) {
+
+    .columnConstruction .socialMediasection{flex-direction: column;justify-content: flex-start; align-items: center;padding-top:4%} 
+    .socialMediasection.hideMobile{
+        display:none!important;
+    }
+    .socialMediasection.hideTablet{
+        display:flex!important;
+    }
+    .constructionContent{
+        flex-direction:column;
+    }
+    .columnConstruction{padding:2%;}
+    .columnConstruction.textSide{
+        align-items: center;
+    }
+    .columnConstruction .progressIndicator{
+        width:70%;
+    }
     .foCard .foBody .foSpec {
         display: flex;
         flex-direction: row;
@@ -1032,6 +1198,7 @@ width:80%;
 
 
 @media screen and (min-width:1023px) and (max-width:1198px) {
+    .columnConstruction .socialMediasection{flex-direction: column;justify-content: flex-start; align-items: flex-start;} 
     .foCard .foBody .foSpec {
         display: flex;
         flex-direction: row;
@@ -1249,6 +1416,9 @@ width:80%;
 
 
 @media screen and (min-width:1199px) {
+    .columnConstruction.textSide{
+        width:75%!important;
+    }
 
     .ecLogo{
         width:328px;
