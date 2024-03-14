@@ -1,0 +1,135 @@
+@import '@/assets/scss/theme';
+
+.accountPage {
+    padding: 2rem 0;
+}
+
+.accountSection h1 {
+    color: $primary-colorDesat;
+    font-size: 1.8rem;
+    padding-bottom: .4rem;
+}
+
+.accountBlocks {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.accountContent {
+    display: flex;
+    width: 49%;
+    padding: 1rem;
+    background-color: $background-color;
+    border-radius: 0.6rem;
+    border: 1px solid $background-color-quinteary;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.accountContent .ctas {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+
+.accountContent .card_info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:1px solid $background-color-secondary;
+}
+
+.accountContent .passengerInfo{
+    border-bottom:1px solid $background-color-secondary;
+
+}
+.accountContent .card_info:last-child,.accountContent .passengerInfo:last-child {
+    border-bottom:0px;
+}
+
+.userInfoContent{
+    display:flex;
+    width:100%;
+    flex-wrap: nowrap;
+    gap:1rem;
+}
+
+.userInfoContent .largerContent{
+    display:flex;
+    flex-direction: column;
+    flex-grow:2;
+}
+
+.userInfoContent .shorterContent, .pic .rowDesktop{
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.accountContent .card_info .extra-infos,
+.accountContent .passengerInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.accountContent .passengerInfo {
+    width: 100%;
+    justify-content: space-between;
+    padding: .4rem 0;
+}
+
+.title {
+    display: flex;
+    gap: .6rem;
+    padding-bottom: .6rem;
+    color: $secondary-color;
+    align-items: center;
+}
+
+.userData {
+    display: flex;
+    gap: .4rem;
+    align-items: center;
+    color: $primary-color;
+}
+
+.card_info .creditCardLogo {
+    height: 32px;
+}
+
+@media screen and (min-width: 992px) {
+    .accountSection {
+        padding: 0% 10%;
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    .accountSection {
+        padding: 0% 2%;
+        width: 100%
+    }
+
+    .accountContent {
+        width: 100%;
+    }
+
+    .shorterContent{
+        display:flex;
+        width:100%;
+    }
+
+    .userInfoContent{
+        flex-direction: row;
+        flex-wrap:wrap; 
+    }
+    .largerContent{
+        gap:.6rem;
+    }
+
+}

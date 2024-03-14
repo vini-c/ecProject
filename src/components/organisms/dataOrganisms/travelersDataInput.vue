@@ -1,10 +1,12 @@
 <template>
-    <v-btn v-if="filled === false" @click="sheet = !sheet" class="dataforFill px-2 main-btn" size="small" 
+    <v-btn v-if="newest === true && filled === false" @click="sheet = !sheet" variant="outlined" class="dataforFill px-2" size="default" 
+        rounded="xl" elevation="0">{{cta}}</v-btn>
+    <v-btn v-if="newest === false && filled === false" @click="sheet = !sheet" class="dataforFill px-2 main-btn" size="small" 
         rounded="xl" elevation="0">Preencher Dados</v-btn>
-    <v-btn v-if="filled === true" @click="sheet = !sheet" class="dataforFill px-2" size="small" variant="outlined"
+    <v-btn v-if="newest === false && filled === true" @click="sheet = !sheet" class="dataforFill px-2" size="small" variant="outlined"
         rounded="xl" elevation="0">Alterar Dados</v-btn>
 
-    <v-bottom-sheet v-model="sheet">
+    <v-bottom-sheet inset v-model="sheet">
         <v-card>
             <v-container fluid>
                 <v-row no-gutters v-if="!hasTitle">
@@ -40,7 +42,8 @@ export default {
     }),
     props: {
         cta: String,
-        filled: Boolean
+        filled: Boolean,
+        newest  : Boolean
     }
 }
 </script>

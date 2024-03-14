@@ -6,7 +6,7 @@ import Checkout from '@/components/screens/ec_checkoutPage.vue'
 import Confirm from '@/components/screens/ec_confirmationPage.vue'
 import NotFound from '@/components/screens/notFound.vue'
 import Construction from '@/components/screens/ec_construction.vue'
-
+import Account from '@/components/screens/ec_myAccount.vue'
 
 
 const routes = {
@@ -15,6 +15,7 @@ const routes = {
   '/confirmation': Confirm,
   '/results': Results,
   '/construction': Construction,
+  '/account': Account,
 
 }
 

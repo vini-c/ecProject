@@ -1,0 +1,548 @@
+@import '@/assets/scss/theme';
+
+.recommendations {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: .8rem;
+    padding:.6rem;
+}
+
+
+.recommendationCard {
+    background-color: $background-color;
+    width: 100%;
+    border-bottom: 1px solid $background-color-tertiary;
+}
+
+.recommendationCard .ciaLogo {
+    max-height: 24px;
+    max-width: 100px;
+    height: auto;
+}
+
+.recommendations .ciaLogo {
+    max-height: 24px;
+    max-width: 100px;
+    height: auto;
+}
+
+.recommendationCard .ciaChangedConnection .ciaLogo {
+    max-width: 50px;
+}
+
+.recommendations .body{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border: 1px solid $background-color-tertiary;
+    background-color: $background-color-secondary;
+
+}
+
+.recommendationCard .v-expansion-panel-title__overlay {
+    background-color: $background-color-secondary !important;
+}
+
+.recommendationCard .foBodyDetailsBar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid $background-color-secondary;
+    padding-right: .8rem;
+}
+
+.foCIAdetails .airplaneInfos {
+    gap: 1rem;
+}
+
+.foCIAdetails .ciaLogonInfos {
+    gap: 1rem;
+    align-items: center;
+}
+
+
+.ciaLogonInfos {
+    gap: 1rem;
+}
+
+.foCIAdetails {
+    display: flex;
+    background: $background-color !important;
+    color: $primary-color !important;
+    width: 100%;
+    flex-direction: column;
+    gap: .3rem;
+    border: 1px solid $background-color-tertiary;
+    font-size: .8rem;
+}
+
+.foFlightInfo .text-body {
+    font-size: .9rem !important;
+}
+
+.foFlightInfo .airport {
+    font-size: .8rem !important;
+}
+
+.foFinfoVisual {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1rem;
+}
+
+.featureDescription {
+    gap: .2rem;
+}
+
+.foFinfoVisual .foFinfoVisualRounded {
+    display: block;
+    border-radius: 100%;
+    border: 2px solid $tertiary-color;
+    width: 1rem;
+    height: 1rem;
+    margin: .2rem 0;
+}
+
+.arrivalIcon,
+.bell-icon {
+    margin-top: .1rem;
+    color: darken($gradient-color-stage2, 14%) !important;
+}
+
+.foFinfoVisual .foFinfoVisualRoundedDashed {
+    border: 2px dashed $tertiary-color !important;
+    display: block;
+    border-radius: 100%;
+    width: 1rem;
+    height: 1rem;
+    margin: .2rem 0;
+}
+
+.foFinfoVisual .foFinfoVisualLine {
+    display: flex;
+    flex: 1 0 0;
+    width: 2px;
+    background: lighten($tertiary-color, 32%);
+}
+
+.foFlightInfoIATA {
+    gap: .2rem;
+}
+
+.departureFInfo .foFinfoVisual {
+    margin-top: 1rem;
+}
+
+.foFlightInfo {
+    gap: .8rem;
+}
+
+.arrivalFInfo .foFinfoVisual {
+    margin-bottom: 1rem;
+}
+
+.detailsfoFlightInfo {
+    gap: 1rem;
+    padding: 0 0 0 0.4rem;
+    align-items: center;
+}
+
+.ciaSpecs.text-caption {
+    line-height: 1rem !important;
+}
+
+.recommendations .body .details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.bg-card,
+.recommendations .v-expansion-panel-text {
+    background-color: $background-color-secondary;
+}
+
+.recommendationCard .v-expansion-panel:not(:first-child)::after {
+    display: none !important;
+}
+
+.recommendationCard .v-expansion-panel-title__overlay {
+    background: $background-color !important;
+}
+
+
+.foDetailsContent .priceTable .priceTd {
+    text-align: right;
+    color: $primary-color;
+}
+
+
+.foDetailsContent .finalPrice {
+    display: flex;
+    justify-content: space-between;
+}
+
+.priceTable {
+    border: 1px solid $background-color-tertiary;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.featureDescription {
+    font-size: .8rem;
+}
+
+.priceVdetail {
+    background-color: $background-color-secondary;
+    border-top: solid 1px $background-color-tertiary;
+    border-radius: 0px 0px 8px 8px;
+}
+
+
+.flightPriceDetailed p {
+    font-size: .8rem;
+    padding: 0 .4rem;
+}
+
+.detailTrigger {
+    padding: 0 1rem 0 1rem !important;
+    width:44px!important;
+}
+
+.recommendationCard .v-expansion-panel--active:not(:first-child),
+.recommendationCard .v-expansion-panel--active+.v-expansion-panel {
+    margin: 0px !important;
+}
+
+
+
+.foResumeContent {
+    display: flex;
+    flex-direction: row;
+    gap:.8rem;
+    padding:.5rem;
+}
+
+
+.recommendations .header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: .8rem;
+    justify-content: stretch;
+    color: $primary-color;
+}
+
+.recommendations .orientation {
+    background: $background-color-secondary;
+    padding: .2rem .8rem;
+    border-radius: .3rem;
+}
+
+.recommendations .finalPrice{
+    display:none;
+}
+
+.recommendations .header .orientation p {
+    font-size: .66rem
+}
+
+.recommendations .header .location {
+    flex-grow: 0;
+    width:25%;
+
+}
+
+.recommendations .header .location p {
+    font-size: .8rem
+}
+
+.recommendations .options {
+    width: 70%;
+}
+
+
+.flightPriceDetailed {
+    width: 30%;
+}
+
+.recommendations .location .iata h4 {
+    display: inline-block;
+    padding: 0rem .2rem;
+    border-radius: .4rem;
+    font-size: 1.2rem;
+    border: 1px solid $background-color;
+}
+
+.recommendations .location .iata.active h4 {
+    display: inline-block;
+    padding: 0rem .2rem;
+    border-radius: .4rem;
+    font-size: 1.2rem;
+    color: $gradient-color-stage1;
+    border: 1px solid rgba($gradient-color-stage1, .4)
+}
+
+.recommendations .itineraryOption{
+    display:flex;
+    padding:.6rem;
+}
+
+.itinerarie{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    gap:.6rem;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow:2
+}
+.itinerarie .cia{
+    flex-grow:0;
+    width:19%;
+    align-items: flex-start!important;
+    flex-direction:column;
+}
+.itinerarie .cia p{
+    font-size:.66rem;
+    color:$secondary-colorDesat;
+}
+.itinerarie .data{
+    width: 44%;
+    flex-grow:0;
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap:.4rem;
+    padding-right:.7rem;
+}
+
+.itinerarie .departure,.itinerarie .return{
+    width:56px;
+}
+
+.itinerarie .data .time{
+    font-size:1.1rem;
+    font-weight:bold;
+    color:$primary-color;
+}
+.itinerarie .data .iata,.itinerarie .data .date{
+    display: none;
+}
+
+
+.itinerarie .data .hourArea{
+    display:flex;
+    align-items: center;
+    gap:.4rem
+}
+.itinerarie .duration{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    gap:.1rem;
+    flex-grow:2;
+}
+.itinerarie .duration p{
+    font-size:.66rem;
+color:$secondary-colorDesat;
+}
+.itinerarie .lugage{
+    display: flex;
+    flex-direction: column;
+    padding-left: 2%;
+    gap: 0.2rem;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.itinerarie .lugage p{
+    font-size:.66rem;
+    color:$secondary-colorDesat;
+}
+
+.itinerarie .v-selection-control{
+flex-grow:0;
+}
+
+
+.recommendations .body .v-expansion-panel-text__wrapper{
+    padding:0!important;
+}
+
+.recommendations .body .details{
+    padding:.4rem;
+}
+
+.recommendations .body .details p{font-size:.8rem;}
+.recommendations .body .details .foDetails{
+    padding:.4rem;
+}
+.recommendations .body .details .detailedText{
+    text-transform:uppercase;
+    font-weight:400!important;
+    font-size:.76rem;
+    color:$secondary-colorDesat;
+    letter-spacing: .1rem;
+}
+
+
+.recommendations .body .details .flightInfoSection{
+    margin-left:1rem;
+}
+
+@media screen and (min-width:1440px) {
+.recommendations .orientation{
+    width:26%
+}
+}
+
+
+@media screen and (max-width:1279px) {
+    .recommendations .header .location{
+        display:none;
+    }
+    .recommendations .orientation{
+        width:100%;
+        align-items: flex-start;
+    }
+    .recommendations .orientation .content{
+        flex-direction: row;
+        display:flex;
+        align-items: center;
+        gap:.4rem;
+    }
+    .itinerarie .data .iata{
+        display:block;
+    }
+    .recommendations .orientation .content p{
+        margin-top:.2rem
+    }
+    .itinerarie .cia{
+        width:14%;
+    }
+    .detailTrigger{padding: 0 !important;
+        width: 18px !important;
+        }
+        
+}
+
+
+@media screen and (max-width:1170px) {
+    .recommendations{
+        flex-direction: column;
+    }
+    .recommendations .options{
+        width:100%;
+    }
+    .recommendations .flightPriceDetailed{
+        width:100%;
+    }
+        
+}
+
+@media screen and (max-width:960px) {
+    .recommendations .header .orientation p {
+        font-size: 0.8rem;
+    }
+    .itinerarie .lugage p{
+        display:inline-block;
+    }
+    .itinerarie .lugage{
+    align-items: center;
+    justify-content: center;
+        gap:.2rem;
+        flex-direction: row;
+    }
+    .itinerarie .duration p{
+        font-size:.75rem;
+    }
+    .itinerarie .cia p{
+        display:block;
+    }
+
+    .searchResultsContent .pageTitle{
+        display:none;
+    }
+        
+}
+
+@media screen and (max-width:680px) {
+    .itinerarie .lugage{
+        align-items: center;
+        justify-content: center;
+            gap:.2rem;
+            flex-direction: column;
+        }
+}
+
+@media screen and (max-width:540px) {
+    .itinerarie .lugage p{
+        display:none;
+    }
+}
+
+@media screen and (max-width:500px) {
+.itinerarie .cia{
+    display:none!important;
+}
+.itinerarie .data{
+    width:60%;
+}
+.recommendations .itineraryOption{
+    padding: 0.6rem 0.8rem 0.6rem 0;
+}
+.itinerarie .data .time{
+    font-size:1rem;
+}
+.itinerarie .duration p{
+    font-size:.66rem;
+}
+.itinerarie .data{
+    padding:0;
+}
+.lugage .icon{
+    font-size:.9rem;
+}
+}
+
+@media screen and (min-width:1913px){
+    .itinerarie .cia {
+        flex-direction: row;
+        align-items: center !important;
+        gap: 0.5rem;
+    }
+    .recommendations .orientation{
+        width:208px;
+    }
+    .itinerarie .lugage{
+        flex-direction: row;
+        width:25%;
+        align-items: center;
+        margin-left:1.4rem;
+    }
+    .itinerarie .data{
+        width: auto;
+    }
+    .recommendations .orientation{
+        width:24%;
+    }
+    .recommendations .header .location{
+        width:25%;
+        flex-grow:0;
+    }
+}
+
+@media screen and (min-width:2400px){
+    .recommendations .orientation{
+        width:22%;
+    }
+}

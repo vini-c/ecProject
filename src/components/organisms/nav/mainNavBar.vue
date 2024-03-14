@@ -19,7 +19,7 @@
   
         </div>
         <div class="myAccountNavBtns">
-          <v-btn density="default" variant="tonal" size="small">Minha conta</v-btn>
+          <v-btn density="default"  href="#/account" variant="tonal" size="small">Minha conta</v-btn>
           <v-btn density="default" class="logoutBtn" color="red" variant="tonal" size="small"
             append-icon="mdi-logout">Sair</v-btn>
         </div>
@@ -62,7 +62,7 @@
           </template>
           <v-list>
             <v-list-item v-for="(itemsDesktop, index) in items" :key="index" :value="index">
-              <v-list-item-title>{{ itemsDesktop.title }}</v-list-item-title>
+              <v-list-item-title ><a :href="itemsDesktop.value">{{itemsDesktop.title }}</a></v-list-item-title>
             </v-list-item>
           </v-list>
         </v-menu>
@@ -79,15 +79,20 @@
     name: 'eC_mainNavBar',
     data: () => ({
       itemsDesktop: [
-        { title: 'Minha Reservas' },
-        { title: 'Minha Conta' },
+        { title: 'Acessar conta', value: '#/login'  },
+        { title: 'Minha Reservas'  },
+        { title: 'Minha Conta',value: '#/account', },
         { title: 'Sair' },
       ],
       drawer: false,
       items: [
+      {
+          title: 'Acessar conta',
+          value: '#/login',
+        },
         {
           title: 'Minha conta',
-          value: 'bookings',
+          value: '#/account',
         },
         {
           title: 'Atendimento',

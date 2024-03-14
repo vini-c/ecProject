@@ -12,7 +12,9 @@ import ec_classType from  '../atoms/classType.vue'
   <div  v-for="(flightDetails,x) in flightIndividualData" key="x" class="foDetails foDepartureDetails bg-details surface-1 rounded-lg"> 
     <div>
           <v-row cols="12" justify="space-between" class="pa-4 pb-6 align-center">
-            <p class="primaryText EC-colorContentPrimary font-weight-bold">{{ flightDetails.typeInfo }}</p>
+            <!-- <p class="primaryText EC-colorContentPrimary font-weight-bold">{{ flightDetails.typeInfo }} </p> -->
+                                            <p class="detailedText">Detalhes do
+                                            Voo de {{ flightDetails.typeInfo }}</p>
             <p class="observationText font-weight-regular  EC-colorContentSecondary">Tempo total de viagem:
               <b>{{ flightDetails.totalFlightDuration }}</b>
             </p>
@@ -44,13 +46,13 @@ import ec_classType from  '../atoms/classType.vue'
           <flightInfoArrival v-bind:arrivalInfoData="flightDetails" />
     </div>
     <div class="pt-4">
-    <v-row>
+    <v-row no-gutters>
       <div class="detailsfoFlightInfo d-flex">
         <ec_luggageType v-bind:lugaggeData="flightDetails" />
         <ec_classType v-bind:classData="flightDetails"/>
       </div>
     </v-row>
-    <v-row class="px-2 pb-3">
+    <v-row no-gutters class="px-2 pb-3">
       <div class="detailsfoFlightInfo foTextInfos">
         <p class="observationText EC-colorContentPrimary">{{ flightDetails.inFlightExtraInfos }}</p>
       </div>
