@@ -394,9 +394,25 @@ flex-grow:0;
     letter-spacing: .1rem;
 }
 
+.foCardCheckout .itinerarie .v-selection-control{
+display:none;
+}
+.itinerarie .cia .ciaLogo{
+    height:20px;
+}
 
+.flightOptionCard .v-expansion-panel-text__wrapper,.foCardCheckout .v-expansion-panel-text{
+    padding:0;
+    background:$background-color-secondary;
+}
 .recommendations .body .details .flightInfoSection{
     margin-left:1rem;
+}
+.foCardCheckout .foDetails{padding:.4rem}
+
+.foCardCheckout .flightInfoSection{padding-left:.8rem}
+.foCardCheckout .itinerarie .cia {
+    display:none
 }
 
 @media screen and (min-width:1440px) {

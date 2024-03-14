@@ -58,6 +58,11 @@
     width: 100%;
 }
 
+.foResumeContent .ciaLogo{
+    height:30px;
+    width:auto;
+}
+
 .foCardCheckout .foSpecwTitle {
     width: 100%;
     margin-bottom: .45rem;
@@ -68,6 +73,16 @@
     padding: 0rem .75rem;
     padding-top: .45rem;
     background-color: $background-color
+}
+.foCardCheckout .foDetails{padding:.4rem}
+
+.foCardCheckout .flightInfoSection{padding-left:.8rem}
+.foCardCheckout .itinerarie .cia {
+    display:none!important;
+}
+.foCardCheckout .itinerarie .data{
+    flex-grow:2;
+    padding-bottom:.4rem;   
 }
 
 .foCardCheckout .foSpecwTitle h4 {
