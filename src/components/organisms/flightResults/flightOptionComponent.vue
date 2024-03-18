@@ -79,6 +79,10 @@ import ec_FlightRequirements from '@/components/molecules/flightRequirements.vue
 
 
                     </div>
+                    <v-row no-gutters class="ga-2 pt-3" align="center" justify="center">
+                        <v-btn class="rounded-xl font-weight-bold" variant="outlined"  size="small" elevation="0"
+                        prepend-icon="mdi-plus">Ver mais opções</v-btn>
+                    </v-row>
                 </div>
                 <!-- detalhes da recomendacao -->
                 <div class="flightPriceDetailed">
