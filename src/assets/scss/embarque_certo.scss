@@ -326,8 +326,27 @@ width:80%;
     flex-direction: row;
     gap:.4rem;
     align-items: center;
+    color:#fff;
 }
 
+.columnConstruction.formSide{
+    width:40%;
+}
+
+@media screen and (max-width:1000px){
+    .columnConstruction.formSide{
+        width:auto;
+    }    
+}
+
+@media screen and (max-width:900px){
+    .constructionContent{
+        flex-direction:column;
+    }    
+    .columnConstruction{
+        padding:1% 2%;
+    }
+}
 
 .v-bottom-sheet > .v-bottom-sheet__content.v-overlay__content > .v-card, .v-bottom-sheet > .v-bottom-sheet__content.v-overlay__content > .v-sheet{
     border-radius:1rem 1rem 0 0!important;

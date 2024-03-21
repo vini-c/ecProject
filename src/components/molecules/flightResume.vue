@@ -1,49 +1,50 @@
 
 <template>
-    <div class="itinerarie" v-for="(flightDetails, x) in flightIndividualData" key="x">
+    <div class="itinerarie">
         <v-radio value="voo"></v-radio>
         <div class="d-flex cia align-center">
-            <img v-bind:src="flightDetails.ciaLogo" class="ciaLogo">
-            <p class="hideMobile font-weight-regular">{{ flightDetails.operation }}
+            <img v-bind:src="flightIndividualData.mandatoryAirline.iconUrl" class="ciaLogo">
+            <p class="hideMobile font-weight-regular">{{ flightIndividualData.mandatoryAirline.code }}
             </p>
         </div>
         <div class="data">
             <div class="departure">
-                <p class="date">{{ flightDetails.departurenumberDate }}</p>
+                <p class="date">{{ flightIndividualData.departureDate }}</p>
                 <div class="hourArea">
-                    <p class="time">{{ flightDetails.departureTime }}</p>
+                    <p class="time">{{ flightIndividualData.departureHour }}</p>
                 </div>
-                <p class="iata">{{ flightDetails.departureIATA }}</p>
+                <p class="iata">{{ flightIndividualData.departureLocation.airportCode }}</p>
             </div>
             <div class="duration">
-                <p class=" text-primary-lighter-2">{{ flightDetails.totalFlightDuration }}</p>
-                <img v-if="flightDetails.directFlight" src="../../assets/direct-Flight.svg">
-                <p v-if="flightDetails.directFlight" class="text-primary-lighter-2">Direto</p>
-                <img v-if="flightDetails.hasOneConnection" class="text-primary" src="../../assets/oneConnection-Flight.svg">
-                <p v-if="flightDetails.hasOneConnection" class="text-primary-lighter-2">1 Conexão</p>
-                <img v-if="flightDetails.hasMultipleConnection" class="text-primary"
+                <p class=" text-primary-lighter-2">{{ flightIndividualData.totalDuration }}</p>
+                <img v-if="flightIndividualData.hasDirectFlight" src="../../assets/direct-Flight.svg">
+                <p v-if="flightIndividualData.hasDirectFlight" class="text-primary-lighter-2">Direto</p>
+                <img v-if="flightIndividualData.hasConnection" class="text-primary" src="../../assets/oneConnection-Flight.svg">
+                <p v-if="flightIndividualData.hasConnection" class="text-primary-lighter-2">1 Conexão</p>
+                <img v-if="flightIndividualData.hasMultipleConnection" class="text-primary"
                     src="../../assets/moConnections-Flight.svg">
-                <p v-if="flightDetails.hasMultipleConnection" class="text-primary-lighter-2">2+ Conexões</p>
+                <p v-if="flightIndividualData.hasMultipleConnection" class="text-primary-lighter-2">2+ Conexões</p>
             </div>
             <div class="return">
-                <p class="date">{{ flightDetails.arrivalnumberDate }}</p>
+                <p class="date">{{ flightIndividualData.arrivalDate }}</p>
                 <div class="hourArea">
-                    <p class="time">{{ flightDetails.arrivalTime }}</p>
-                    <p v-if="flightDetails.overNight" class="nextDay">+1</p>
+                    <p class="time">{{ flightIndividualData.arrivalHour }}</p>
+                    <p v-if="flightIndividualData.isLayover" class="nextDay">+1</p>
                 </div>
-                <p class="iata">{{ flightDetails.arrivalIATA }}</p>
+                <p class="iata">{{ flightIndividualData.arrivalLocation.airportCode }}</p>
             </div>
         </div>
         <div class="lugage">
             <div class="icon">
-                <v-icon icon="mdi-bag-personal" size="small" class="disableContent" :class="{enableContent: flightDetails.personalBag || flightDetails.boardBag || flightDetails.checkedBag}"></v-icon>
-                <v-icon icon="mdi-bag-carry-on" size="small" class="disableContent" :class="{enableContent: flightDetails.boardBag || flightDetails.checkedBag}"></v-icon>
-                <v-icon icon="mdi-bag-suitcase" size="small" class="disableContent" :class="{enableContent: flightDetails.checkedBag}"></v-icon>
+                <v-icon icon="mdi-bag-personal" size="small" class="disableContent" :class="{enableContent: flightIndividualData.baggageType === 'Personal'||'CarryOn'||'Checked'}"></v-icon>
+                <v-icon icon="mdi-bag-carry-on" size="small" class="disableContent" :class="{enableContent: flightIndividualData.baggageType === 'CarryOn'||'Checked'}"></v-icon>
+                <v-icon icon="mdi-bag-suitcase" size="small" class="disableContent" :class="{enableContent: flightIndividualData.baggageType === 'Checked'}"></v-icon>
+
             </div>
             <div class="description">
-                <p class="observationText hideMobile" v-if="flightDetails.checkedBag">Bagagem Despachada</p>
-                <p class="observationText hideMobile" v-if="flightDetails.personalBag">Bagagem Pessoal</p>
-                <p class="observationText hideMobile" v-if="flightDetails.boardBag">Bagagem de Mão</p>
+                <p class="observationText hideMobile" v-if="flightIndividualData.baggageType === 'Checked'">Bagagem Despachada</p>
+                <p class="observationText hideMobile" v-if="flightIndividualData.baggageType === 'Personal'">Bagagem Pessoal</p>
+                <p class="observationText hideMobile" v-if="flightIndividualData.baggageType === 'CarryOn'">Bagagem de Mão</p>
             </div>
         </div>
     </div>

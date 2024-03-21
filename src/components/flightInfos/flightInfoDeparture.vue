@@ -1,5 +1,5 @@
 <template>
-<div class="flightInfoSection">
+<div class="flightInfoSection" v-for="(item, x) in flightData" key="x">
     <div class="foFlightInfo departureFInfo d-flex">
       <div class="foFinfoVisual">
         <div class="foFinfoVisualRounded">
@@ -8,7 +8,7 @@
         <div class="foFinfoVisualLine"></div>
       </div>
       <div class="foFlightInfo foFlightInfoContent">
-        <p class="text-body font-weight-bold EC-colorContentPrimary ">{{ departureInfoData.departureDate }}
+        <p class="text-body font-weight-bold EC-colorContentPrimary ">{{ departureInfoData.departure.date }}
           às {{ departureInfoData.departureTime }}
         </p>
         <div class="foFlightInfoIATA d-flex">

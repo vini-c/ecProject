@@ -8,7 +8,7 @@
       <div class="confirmationContent">
           <v-row no-gutters>
             <v-expansion-panels v-model="panel" variant="popout" multiple class="flightOptionsExpansion">
-              <ec_flightOptionComponent confirmation v-bind:flightOptionData="flightOptionData" />
+              <ec_flightRecomendations confirmation v-bind:flightOptionData="flightOptionData" />
             </v-expansion-panels>
             <v-divider></v-divider>
           </v-row>
@@ -98,7 +98,7 @@
  
 <script setup>
 import '@/components/organisms/confirmation/scss/confirmation.scss'
-import ec_flightOptionComponent from '@/components/organisms/flightResults/flightOptionComponent.vue'
+import ec_flightOptionComponent from '@/components/organisms/flightResults/flightRecomendations.vue'
 import ec_banner from '@/components/molecules/ec_banner.vue'
 
 </script>
