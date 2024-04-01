@@ -4,8 +4,7 @@
         <v-radio value="voo"></v-radio>
         <div class="d-flex cia align-center">
             <img v-bind:src="flightIndividualData.mandatoryAirline.iconUrl" class="ciaLogo">
-            <p class="hideMobile font-weight-regular">{{ flightIndividualData.mandatoryAirline.code }}
-            </p>
+            <p class="hideMobile font-weight-regular">{{ flightIndividualData.mandatoryAirline.code }}</p>
         </div>
         <div class="data">
             <div class="departure">
@@ -46,6 +45,9 @@
                 <p class="observationText hideMobile" v-if="flightIndividualData.baggageType === 'Personal'">Bagagem Pessoal</p>
                 <p class="observationText hideMobile" v-if="flightIndividualData.baggageType === 'CarryOn'">Bagagem de Mão</p>
             </div>
+        </div>
+        <div class="foBody mt-2 rounded-lg">
+                <ec_FlightResume v-bind:flightIndividualData="flightIndividualData" />
         </div>
     </div>
 </template>

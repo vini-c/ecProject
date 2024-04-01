@@ -33,11 +33,11 @@ import ec_FlightRequirements from '@/components/molecules/flightRequirements.vue
                 </div>
             </div>
 
-            <div class="d-flex align-center visibleMobile">
+            <!-- <div class="d-flex align-center visibleMobile">
                 <img v-bind:src="item.mandatoryAirline.iconUrl" class="ciaLogo"> 
                 <p class="ciaSpecs  font-weight-regular pl-4">{{ item.mandatoryAirline.code }}
                                 </p>
-            </div>
+            </div> -->
             <!-- <ec_bestOption v-if="item.betterOption" />
                             <ec_Bestprice v-if="item.betterPrice" />-->
         </div>
@@ -58,7 +58,7 @@ import ec_FlightRequirements from '@/components/molecules/flightRequirements.vue
         <v-radio-group>
             <ec_flightItinerarie v-bind:flightOptionsData="item.options"></ec_flightItinerarie>
         </v-radio-group>
-        <v-row no-gutters class="ga-2" align="center" justify="center">
+        <v-row no-gutters class="ga-2 confirmationSection" align="center" justify="center">
             <v-btn class="rounded-xl font-weight-bold primaryColor" variant="outlined" size="small" elevation="0"
                 prepend-icon="mdi-plus">Ver mais opções</v-btn>
         </v-row>

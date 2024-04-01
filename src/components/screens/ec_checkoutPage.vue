@@ -2,8 +2,8 @@
   <v-layout>
     <v-main>
   <eC_mainNavBar />
-  <ec_checkoutDesktop class="hideDesktopCheckout" v-bind:flightOptionData="flightOptionData"></ec_checkoutDesktop>
-  <ec_checkoutMobile class="hideMobileCheckout" v-bind:flightOptionData="flightOptionData"></ec_checkoutMobile>
+  <ec_checkoutDesktop class="hideDesktopCheckout" v-bind:flightOptionData="recommendations"></ec_checkoutDesktop>
+  <ec_checkoutMobile class="hideMobileCheckout" v-bind:flightOptionData="recommendations"></ec_checkoutMobile>
   <ec_secureFooter/>
 </v-main>
 </v-layout>
@@ -21,159 +21,424 @@ import ec_secureFooter from '@/components/organisms/nav/secureFooter.vue'
 export default {
   data() {
     return {
-      flightOptionData: [
-        {
-          //General flight Infos
-          type: 'Ida e Volta',
-          mainOperation: 'Latam',
-          generalInfos: '*1 mala por adulto. *Em todo voo você tem direito a levar uma bolsa pequena com seus pertences. **O limite de peso da bagagem pode variar em cada compania aérea, confira o limite exato no site oficial da companhia',
-          isRefundable: true,
-          betterPrice: false,
-          betterOption: true,
-          hasKids: true,
-          hasBabys: true,
-          personalBag: true,
-          checkedBag: false,
-          boardBag: false,
-          economyClass: false,
-          PremiumClass: false,
-          ExecutiveClass: true,
-          pageURL: "#/checkout",
-          ciaLogo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Latam-logo_-v_%28Indigo%29.svg/1600px-Latam-logo_-v_%28Indigo%29.svg.png',
-
-          // priceInfos
-          finalPrice: 'R$ 32.544',
-          Adults: '2 Adultos',
-          AdultsPrice: 'R$ 18.506',
-          Kids: '1 Criança',
-          KidsPrice: 'R$ 9.253',
-          Baby: '1 Bebê',
-          BabysPrice: 'R$ 926',
-          flightTax: 'R$ 3.859',
-          serviceTax: 'R$ 512',
-          flightDetail: [
-            {
-              // General infos
-              typeInfo: 'Ida',
-              departurenumberDate: '09/01',
-              ArrivalnumberDate: '10/01',
-              totalFlightDuration: '21h10m',
-              directFlight: false,
-              personalBag: false,
-              checkedBag: false,
-              boardBag: true,
-              economyClass: false,
-              PremiumClass: true,
-              ExecutiveClass: false,
-              operation: 'Gol',
-              number: 'AV86',
-              model: 'Airbus A320-100/200',
-              ciaLogo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/LogoGOL-Pref-FundoClaro-RGB.svg/1280px-LogoGOL-Pref-FundoClaro-RGB.svg.png',
-
-              //Departure Flight Details
-              departureDate: 'Ter, 09 de Jan de 2023',
-              departureTime: '07:30',
-              departureLocation: 'Guarulhos, São Paulo',
-              departureIATA: 'GRU',
-              departureAirport: 'Aeroporto Internacional de Guarulhos',
-              departureFlightDuration: '5h 15m',
-
-              //This flight has Connections?
-              hasConnection: true,
-              hasOneConnection: true,
-              hasMultipleConnection: false,
-              optionConnections: [
-                {
-                  changeAirplane: true,
-                  connectionoperation: 'Gol',
-                  connectionnumber: 'AV86',
-                  connectionmodel: 'Airbus A320-100/200',
-                  connectionciaLogo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/LogoGOL-Pref-FundoClaro-RGB.svg/1280px-LogoGOL-Pref-FundoClaro-RGB.svg.png',
-
-                  connectionDate: 'Ter, 09 de Jan de 2023',
-                  connectionTime: '22:55',
-                  connectionLocation: 'Bogotá, Colombia',
-                  connectionIATA: 'BOG',
-                  connectionAirport: 'Aeroporto Internacional El Nuevo Dorado',
-                  connectionFlightDuration: '3h 50m',
-                  connectionDelay: '11h 30m',
-                },
-
-              ],
-
-              //Arrival Flight Details
-              arrivalDate: 'Quar, 10 de Jan de 2023',
-              arrivalTime: '02:45',
-              arrivalLocation: 'Miami, Florida',
-              arrivalIATA: 'MIA',
-              arrivalAirport: 'Aeroporto Internacional Miami',
-              inFlightExtraInfos: '*1 mala por adulto. *Em todo voo você tem direito a levar uma bolsa pequena com seus pertences.  **O limite de peso da bagagem pode variar em cada compania aérea, confira o limite exato no site oficial da companhia',
-
-            },
-            {
-              // General infos
-              typeInfo: 'Volta',
-              departurenumberDate: '12/01',
-              ArrivalnumberDate: '21/01',
-              totalFlightDuration: '21h10m',
-              directFlight: true,
-              personalBag: false,
-              checkedBag: false,
-              boardBag: true,
-              economyClass: false,
-              PremiumClass: true,
-              ExecutiveClass: false,
-              operation: 'Gol',
-              number: 'AV86',
-              model: 'Airbus A320-100/200',
-              ciaLogo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/LogoGOL-Pref-FundoClaro-RGB.svg/1280px-LogoGOL-Pref-FundoClaro-RGB.svg.png',
-
-              //Departure Flight Details
-              departureDate: 'Ter, 12 de Jan de 2023',
-              departureTime: '14:30',
-              departureLocation: 'Miami, Florida',
-              departureIATA: 'MIA',
-              departureAirport: 'Aeroporto Internacional de Miami',
-              departureFlightDuration: '5h 15m',
-
-              //This flight has Connections?
-              hasConnection: false,
-              hasOneConnection: false,
-              hasMultipleConnection: false,
-              optionConnections: [
-                {
-                  changeAirplane: true,
-                  connectionoperation: 'Latam',
-                  connectionnumber: 'AV86',
-                  connectionmodel: 'Airbus A320-100/200',
-                  connectionciaLogo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/LogoGOL-Pref-FundoClaro-RGB.svg/1280px-LogoGOL-Pref-FundoClaro-RGB.svg.png',
-
-                  connectionDate: 'Ter, 09 de Jan de 2023',
-                  connectionTime: '22:55',
-                  connectionLocation: 'Bogotá, Colombia',
-                  connectionIATA: 'BOG',
-                  connectionAirport: 'Aeroporto Internacional El Nuevo Dorado',
-                  connectionFlightDuration: '3h 50m',
-                  connectionDelay: '11h 30m',
-                },
-
-              ],
-
-              //Arrival Flight Details
-              arrivalDate: 'Quar, 21 de Jan de 2023',
-              arrivalTime: '19:45',
-              arrivalLocation: 'Guarulhos, São Paulo',
-              arrivalIATA: 'GRU',
-              arrivalAirport: 'Aeroporto Internacional Miami',
-              inFlightExtraInfos: '*1 mala por adulto. *Em todo voo você tem direito a levar uma bolsa pequena com seus pertences.  **O limite de peso da bagagem pode variar em cada compania aérea, confira o limite exato no site oficial da companhia',
-
-            },
-
-          ],
-
-        },
-      ]
-    }
+      "recommendations": [
+                  {
+                    "itineraries": [
+                        {
+                            "type": "Outbound",
+                            "departureDate": "17/04",
+                            "departureDetailedDate": "Sáb 17 de Mar, 2024",
+                            "departureHour": "15:00",
+                            "departureLocation": {
+                                "id": 0,
+                                "airportCode": "BSB",
+                                "airportCity": "Brasília"
+                            },
+                            "arrivalLocation": {
+                                "id": 0,
+                                "airportCode": "GYN",
+                                "airportCity": "Goiânia"
+                            },
+                            "mandatoryAirline": 
+                                        {
+                                            "code": "Gol",
+                                            "iconUrl": "https://wooba-sandbox.travellink.com.br/Upload/logomarcas/companhiaico5.gif"
+                                        },
+                            "options": 
+                                [
+                                    {   
+                                        "departureDate": "17/04",
+                                        "departureHour": "15:00",
+                                        "departureLocation": 
+                                            {
+                                                "id": 0,
+                                                "airportCode": "BSB",
+                                                "airportCity": "Brasília"
+                                            },
+                                        "arrivalDate": "17/04",
+                                        "arrivalHour": "19:00",
+                                            "arrivalLocation": 
+                                            {
+                                                "id": 0,
+                                                "airportCode": "GYN",
+                                                "airportCity": "Goiânia"
+                                            },
+                                        "mandatoryAirline": 
+                                            {
+                                                "code": "Gol",
+                                                "iconUrl": "https://wooba-sandbox.travellink.com.br/Upload/logomarcas/companhiaico5.gif"
+                                            },
+                                        "baggageType": "Personal",
+                                        "hasConnection": "false",
+                                        "tripId": "9AoAAB+LCAAAAAAABADtlt9v2jAQx/+VyntNITGEH34LVNBshWZAK03THq6JAavBjpywMSH+oP0d+8d2dsLP7aGV+rYiBGff8eXufB85WxIQRh3St589+znYEFboNXfIVOSEtV1rhAlhzS5GCiCMDBvEIaPnjLA5pDmGRnbh1jB4pta6rxIeJkGWihgSRZiP2yJTVv+G54WQCqW/bsk9ivWmPVS7MbJfxmhFaFGXNq/d5rXXnrkus2/0TE493aNn9w31QYs5zFQBKWZKaavWxGQirVYqxmzyfTLmfw/h9xnXuKfhWAjgBmCQ55BHVWU5GmqsDpN1yB1+e+SsD0leLVR6dSfkEvKr4PcvzVHFIcGxwsCWOHkwxU4vamwxzy9rvDUut+X5Jqx/EdZhXtWKW+NyO56xb9YaYlBmw2O++eF4vTJ5Nt0uLqZ8seKyMP4QlwPQfPYz41Uj+koeiz9bHI+0h90y9Y8/BsHQG4bmlHr91LTJNqU3QCOyVnSwJuM12miFsZIczWVRZDmr138o9QTXOcjkSW1qhYbvPE2FfK7FalV70vWHLFWQ1FO1UCvQMeR1dGQglwJErPzaQsxtGSuRmr5vyVitjL49a3M0KhELtc+jXIWy4FqaTUo9arsWaT4XGxs3KQNNjR/aHco7jXI9UPgzszm3L7LDXZyPGLUEDnEM5XiUo40DE8rEzpi2g/55DbIQCSS87EPEczWCjcAky7Y+SOsd8QS/MebT8Kqc351zED1XbbxIxfKQYoY2u0dIbWVmamewQGuQisWyQFm+MVDxOddcxgIi2FQnJucm9bSaBSMXGvZsYhUMYQUDfS0MJQHBkfdLGChl9BQGSunfMHQs/f4pDK7rX8LQdE9g8N13GN5hKGGgbwvD/mZovBoGS4CFoboGz2Dozrw2DvEJDF7bzvQ5DBjWYY3Tm8HrNC5uBpf5JzC0m945DI/vMPy3MLzJzfAv4YPu/pnwZaLOUaHlHzSKta4Kyu1jWyyUBJEHMc9zZZ5PX5bw7g9kWWEa9AoAAA==",
+                                        // "hasDirectFlight": "true",
+                                        // "hasMultipleConnection": "false",
+                                        "isLayover": false,
+                                        "totalDuration": "17h 50min",
+                                        "segments": [
+                                                {
+                                                    "mandatoryAirline": 
+                                                        {
+                                                            "code": "Gol",
+                                                            "iconUrl": "https://wooba-sandbox.travellink.com.br/Upload/logomarcas/companhiaico5.gif"
+                                                        },
+                                                    "departure": {
+                                                        "dateInLocation": "2024-04-17T14:15:00",
+                                                        "hour": "15:00",
+                                                        "date": "Segunda-feira, 05 de Maio",
+                                                        "id": 0,
+                                                        "airportCode": "BSB",
+                                                        "airportCity": "Brasília - Distrito Federal",
+                                                        "airportName": "Aeroporto Internacional de Brasília",
+                                                    },
+                                                    "arrival": {
+                                                        "dateInLocation": "2024-04-17T16:10:00",
+                                                        "hour": "15:00",
+                                                        "date": "Segunda-feira, 05 de Maio",
+                                                        "id": 0,
+                                                        "airportCode": "GRU",
+                                                        "airportCity": "Guaruhos - São Paulo",
+                                                        "airportName": "Aeroporto Internacional de Guarulhos",
+                                                    },
+                                                    "stopQuantity": 0,
+                                                    "duration": "01:55:00",
+                                                    "baggageInfo": {
+                                                        "baggageType": "CarryOn"
+                                                    },
+                                                    "fareInfo": {
+                                                        "fareBasis": "ONJAAG1GIN",
+                                                        "fareBasisCode": "O",
+                                                        "fareFamilyName": "Promo",
+                                                        "fareFamilyCode": "PRO",
+                                                        "fareType": 2
+                                                    },
+                                                    "aircraftType": "738",
+                                                    "flightNumber": "1409",
+                                                    "tripId": "9AoAAB+LCAAAAAAABADtlt9v2jAQx/+VyntNITGEH34LVNBshWZAK03THq6JAavBjpywMSH+oP0d+8d2dsLP7aGV+rYiBGff8eXufB85WxIQRh3St589+znYEFboNXfIVOSEtV1rhAlhzS5GCiCMDBvEIaPnjLA5pDmGRnbh1jB4pta6rxIeJkGWihgSRZiP2yJTVv+G54WQCqW/bsk9ivWmPVS7MbJfxmhFaFGXNq/d5rXXnrkus2/0TE493aNn9w31QYs5zFQBKWZKaavWxGQirVYqxmzyfTLmfw/h9xnXuKfhWAjgBmCQ55BHVWU5GmqsDpN1yB1+e+SsD0leLVR6dSfkEvKr4PcvzVHFIcGxwsCWOHkwxU4vamwxzy9rvDUut+X5Jqx/EdZhXtWKW+NyO56xb9YaYlBmw2O++eF4vTJ5Nt0uLqZ8seKyMP4QlwPQfPYz41Uj+koeiz9bHI+0h90y9Y8/BsHQG4bmlHr91LTJNqU3QCOyVnSwJuM12miFsZIczWVRZDmr138o9QTXOcjkSW1qhYbvPE2FfK7FalV70vWHLFWQ1FO1UCvQMeR1dGQglwJErPzaQsxtGSuRmr5vyVitjL49a3M0KhELtc+jXIWy4FqaTUo9arsWaT4XGxs3KQNNjR/aHco7jXI9UPgzszm3L7LDXZyPGLUEDnEM5XiUo40DE8rEzpi2g/55DbIQCSS87EPEczWCjcAky7Y+SOsd8QS/MebT8Kqc351zED1XbbxIxfKQYoY2u0dIbWVmamewQGuQisWyQFm+MVDxOddcxgIi2FQnJucm9bSaBSMXGvZsYhUMYQUDfS0MJQHBkfdLGChl9BQGSunfMHQs/f4pDK7rX8LQdE9g8N13GN5hKGGgbwvD/mZovBoGS4CFoboGz2Dozrw2DvEJDF7bzvQ5DBjWYY3Tm8HrNC5uBpf5JzC0m945DI/vMPy3MLzJzfAv4YPu/pnwZaLOUaHlHzSKta4Kyu1jWyyUBJEHMc9zZZ5PX5bw7g9kWWEa9AoAAA==",
+                                                    "flightId": 0,
+                                                    "seatsRemaining": 9,
+                                                    "isConnection": false,
+                                                    "isLayover": false,
+                                                    "cabinType": "Economic",
+                                                    "hasConnection": true,
+                                                },
+                                                {
+                                                    "mandatoryAirline": 
+                                                        {
+                                                            "code": "Gol",
+                                                            "iconUrl": "https://wooba-sandbox.travellink.com.br/Upload/logomarcas/companhiaico5.gif"
+                                                        },
+                                                    "departure": {
+                                                        "dateInLocation": "2024-04-17T14:15:00",
+                                                        "hour": "15:00",
+                                                        "date": "Segunda-feira, 05 de Maio",
+                                                        "id": 0,
+                                                        "airportCode": "BSB",
+                                                        "airportCity": "Brasília - Distrito Federal",
+                                                        "airportName": "Aeroporto Internacional de Brasília",
+                                                    },
+                                                    "arrival": {
+                                                        "dateInLocation": "2024-04-17T16:10:00",
+                                                        "hour": "15:00",
+                                                        "date": "Segunda-feira, 05 de Maio",
+                                                        "id": 0,
+                                                        "airportCode": "GRU",
+                                                        "airportCity": "Guaruhos - São Paulo",
+                                                        "airportName": "Aeroporto Internacional de Guarulhos",
+                                                    },
+                                                    "stopQuantity": 0,
+                                                    "duration": "01:55:00",
+                                                    "baggageInfo": {
+                                                        "baggageType": "CarryOn"
+                                                    },
+                                                    "fareInfo": {
+                                                        "fareBasis": "ONJAAG1GIN",
+                                                        "fareBasisCode": "O",
+                                                        "fareFamilyName": "Promo",
+                                                        "fareFamilyCode": "PRO",
+                                                        "fareType": 2
+                                                    },
+                                                    "aircraftType": "738",
+                                                    "flightNumber": "1409",
+                                                    "tripId": "9AoAAB+LCAAAAAAABADtlt9v2jAQx/+VyntNITGEH34LVNBshWZAK03THq6JAavBjpywMSH+oP0d+8d2dsLP7aGV+rYiBGff8eXufB85WxIQRh3St589+znYEFboNXfIVOSEtV1rhAlhzS5GCiCMDBvEIaPnjLA5pDmGRnbh1jB4pta6rxIeJkGWihgSRZiP2yJTVv+G54WQCqW/bsk9ivWmPVS7MbJfxmhFaFGXNq/d5rXXnrkus2/0TE493aNn9w31QYs5zFQBKWZKaavWxGQirVYqxmzyfTLmfw/h9xnXuKfhWAjgBmCQ55BHVWU5GmqsDpN1yB1+e+SsD0leLVR6dSfkEvKr4PcvzVHFIcGxwsCWOHkwxU4vamwxzy9rvDUut+X5Jqx/EdZhXtWKW+NyO56xb9YaYlBmw2O++eF4vTJ5Nt0uLqZ8seKyMP4QlwPQfPYz41Uj+koeiz9bHI+0h90y9Y8/BsHQG4bmlHr91LTJNqU3QCOyVnSwJuM12miFsZIczWVRZDmr138o9QTXOcjkSW1qhYbvPE2FfK7FalV70vWHLFWQ1FO1UCvQMeR1dGQglwJErPzaQsxtGSuRmr5vyVitjL49a3M0KhELtc+jXIWy4FqaTUo9arsWaT4XGxs3KQNNjR/aHco7jXI9UPgzszm3L7LDXZyPGLUEDnEM5XiUo40DE8rEzpi2g/55DbIQCSS87EPEczWCjcAky7Y+SOsd8QS/MebT8Kqc351zED1XbbxIxfKQYoY2u0dIbWVmamewQGuQisWyQFm+MVDxOddcxgIi2FQnJucm9bSaBSMXGvZsYhUMYQUDfS0MJQHBkfdLGChl9BQGSunfMHQs/f4pDK7rX8LQdE9g8N13GN5hKGGgbwvD/mZovBoGS4CFoboGz2Dozrw2DvEJDF7bzvQ5DBjWYY3Tm8HrNC5uBpf5JzC0m945DI/vMPy3MLzJzfAv4YPu/pnwZaLOUaHlHzSKta4Kyu1jWyyUBJEHMc9zZZ5PX5bw7g9kWWEa9AoAAA==",
+                                                    "flightId": 0,
+                                                    "seatsRemaining": 9,
+                                                    "isConnection": true,
+                                                    "isLayover": false,
+                                                    "cabinType": "Economic",
+                                                    "hasConnection": false,
+                                                },
+                                                
+                                            ],
+                                    }
+                                ],
+                            "priceDetails": {
+                                "pricesPerPassenger": [
+                                    {
+                                        "type": "ADT",
+                                        "quantity": 2,
+                                        "exchange": 1,
+                                        "currency": "BRL",
+                                        "individualEquivalentFare": 176.10,
+                                        "individualFare": 176.10,
+                                        "individualBoardingCharge": 37.165,
+                                        "individualServiceCharge": 20.50,
+                                        "individualFuelSurcharge": 0,
+                                        "totalIndividualCharges": 57.665
+                                    },
+                                    {
+                                        "type": "CHD",
+                                        "quantity": 2,
+                                        "exchange": 1,
+                                        "currency": "BRL",
+                                        "individualEquivalentFare": 176.10,
+                                        "individualFare": 176.10,
+                                        "individualBoardingCharge": 37.165,
+                                        "individualServiceCharge": 20.50,
+                                        "individualFuelSurcharge": 0,
+                                        "totalIndividualCharges": 57.665
+                                    },
+                                    {
+                                        "type": "INF",
+                                        "quantity": 2,
+                                        "exchange": 1,
+                                        "currency": "BRL",
+                                        "individualEquivalentFare": 0.00,
+                                        "individualFare": 0.00,
+                                        "individualBoardingCharge": -20.00,
+                                        "individualServiceCharge": 20.50,
+                                        "individualFuelSurcharge": 0,
+                                        "totalIndividualCharges": 0.50
+                                    }
+                                ],
+                                "segmentCharges": 231.660,
+                                "totalFare": 704.40,
+                                "totalAmount": 936.060
+                            },
+                            "totalDuration": "17:50:00",
+                            "numberOfStops": 1
+                        },
+                        {
+                            "type": "Inbound",
+                            "departureDate": "17/04",
+                            "departureDetailedDate": "Sáb 17 de Mar, 2024",
+                            "departureHour": "15:00",
+                            "departureLocation": {
+                                "id": 0,
+                                "airportCode": "BSB",
+                                "airportCity": "Brasília"
+                            },
+                            "arrivalLocation": {
+                                "id": 0,
+                                "airportCode": "GYN",
+                                "airportCity": "Goiânia"
+                            },
+                            "mandatoryAirline": 
+                                        {
+                                            "code": "Gol",
+                                            "iconUrl": "https://wooba-sandbox.travellink.com.br/Upload/logomarcas/companhiaico5.gif"
+                                        },
+                            "options": 
+                                [
+                                    {   
+                                        "departureDate": "17/04",
+                                        "departureHour": "15:00",
+                                        "departureLocation": 
+                                            {
+                                                "id": 0,
+                                                "airportCode": "BSB",
+                                                "airportCity": "Brasília"
+                                            },
+                                        "arrivalDate": "17/04",
+                                        "arrivalHour": "19:00",
+                                            "arrivalLocation": 
+                                            {
+                                                "id": 0,
+                                                "airportCode": "GYN",
+                                                "airportCity": "Goiânia"
+                                            },
+                                        "mandatoryAirline": 
+                                            {
+                                                "code": "Gol",
+                                                "iconUrl": "https://wooba-sandbox.travellink.com.br/Upload/logomarcas/companhiaico5.gif"
+                                            },
+                                        "baggageType": "CarryOn",
+                                        "hasConnection": "false",
+                                        // "hasDirectFlight": "true",
+                                        // "hasMultipleConnection": "false",
+                                        "isLayover": false,
+                                        "totalDuration": "17h 50min",
+                                        "tripId": "9AoAAB+LCAAAAAAABADtlt9v2jAQx/+VyntNITGEH34LVNBshWZAK03THq6JAavBjpywMSH+oP0d+8d2dsLP7aGV+rYiBGff8eXufB85WxIQRh3St589+znYEFboNXfIVOSEtV1rhAlhzS5GC412421412421iCMDBvEIaPnjLA5pDmGRnbh1jB4pta6rxIeJkGWihgSRZiP2yJTVv+G54WQCqW/bsk9ivWmPVS7MbJfxmhFaFGXNq/d5rXXnrkus2/0TE493aNn9w31QYs5zFQBKWZKaavWxGQirVYqxmzyfTLmfw/h9xnXuKfhWAjgBmCQ55BHVWU5GmqsDpN1yB1+e+SsD0leLVR6dSfkEvKr4PcvzVHFIcGxwsCWOHkwxU4vamwxzy9rvDUut+X5Jqx/EdZhXtWKW+NyO56xb9YaYlBmw2O++eF4vTJ5Nt0uLqZ8seKyMP4QlwPQfPYz41Uj+koeiz9bHI+0h90y9Y8/BsHQG4bmlHr91LTJNqU3QCOyVnSwJuM12miFsZIczWVRZDmr138o9QTXOcjkSW1qhYbvPE2FfK7FalV70vWHLFWQ1FO1UCvQMeR1dGQglwJErPzaQsxtGSuRmr5vyVitjL49a3M0KhELtc+jXIWy4FqaTUo9arsWaT4XGxs3KQNNjR/aHco7jXI9UPgzszm3L7LDXZyPGLUEDnEM5XiUo40DE8rEzpi2g/55DbIQCSS87EPEczWCjcAky7Y+SOsd8QS/MebT8Kqc351zED1XbbxIxfKQYoY2u0dIbWVmamewQGuQisWyQFm+MVDxOddcxgIi2FQnJucm9bSaBSMXGvZsYhUMYQUDfS0MJQHBkfdLGChl9BQGSunfMHQs/f4pDK7rX8LQdE9g8N13GN5hKGGgbwvD/mZovBoGS4CFoboGz2Dozrw2DvEJDF7bzvQ5DBjWYY5233Tm8HrNC5uBpf5JzC0m945DI/vMPy3MLzJzfAv4YPu/pnwZaLOUaHlHzSKta4Kyu1jWyyUBJEHMc9zZZ5PX5bw7g9kWWEa9AoAAA==",
+                                        "segments": [
+                                                {
+                                                    "mandatoryAirline": 
+                                                        {
+                                                            "code": "Gol",
+                                                            "iconUrl": "https://wooba-sandbox.travellink.com.br/Upload/logomarcas/companhiaico5.gif"
+                                                        },
+                                                    "departure": {
+                                                        "dateInLocation": "2024-04-17T14:15:00",
+                                                        "hour": "15:00",
+                                                        "date": "Segunda-feira, 05 de Maio",
+                                                        "id": 0,
+                                                        "airportCode": "BSB",
+                                                        "airportCity": "Brasília - Distrito Federal",
+                                                        "airportName": "Aeroporto Internacional de Brasília",
+                                                    },
+                                                    "arrival": {
+                                                        "dateInLocation": "2024-04-17T16:10:00",
+                                                        "hour": "15:00",
+                                                        "date": "Segunda-feira, 05 de Maio",
+                                                        "id": 0,
+                                                        "airportCode": "GRU",
+                                                        "airportCity": "Guaruhos - São Paulo",
+                                                        "airportName": "Aeroporto Internacional de Guarulhos",
+                                                    },
+                                                    "stopQuantity": 0,
+                                                    "duration": "01:55:00",
+                                                    "baggageInfo": {
+                                                        "baggageType": "CarryOn"
+                                                    },
+                                                    "fareInfo": {
+                                                        "fareBasis": "ONJAAG1GIN",
+                                                        "fareBasisCode": "O",
+                                                        "fareFamilyName": "Promo",
+                                                        "fareFamilyCode": "PRO",
+                                                        "fareType": 2
+                                                    },
+                                                    "aircraftType": "738",
+                                                    "flightNumber": "1409",
+                                                    "tripId": "9AoAAB+LCAAAAAAABADtlt9v2jAQx/+VyntNITGEH34LVNBshWZAK03THq6JAavBjpywMSH+oP0d+8d2dsLP7aGV+rYiBGff8eXufB85WxIQRh3St589+znYEFboNXfIVOSEtV1rhAlhzS5GCiCMDBvEIaPnjLA5pDmGRnbh1jB4pta6rxIeJkGWihgSRZiP2yJTVv+G54WQCqW/bsk9ivWmPVS7MbJfxmhFaFGXNq/d5rXXnrkus2/0TE493aNn9w31QYs5zFQBKWZKaavWxGQirVYqxmzyfTLmfw/h9xnXuKfhWAjgBmCQ55BHVWU5GmqsDpN1yB1+e+SsD0leLVR6dSfkEvKr4PcvzVHFIcGxwsCWOHkwxU4vamwxzy9rvDUut+X5Jqx/EdZhXtWKW+NyO56xb9YaYlBmw2O++eF4vTJ5Nt0uLqZ8seKyMP4QlwPQfPYz41Uj+koeiz9bHI+0h90y9Y8/BsHQG4bmlHr91LTJNqU3QCOyVnSwJuM12miFsZIczWVRZDmr138o9QTXOcjkSW1qhYbvPE2FfK7FalV70vWHLFWQ1FO1UCvQMeR1dGQglwJErPzaQsxtGSuRmr5vyVitjL49a3M0KhELtc+jXIWy4FqaTUo9arsWaT4XGxs3KQNNjR/aHco7jXI9UPgzszm3L7LDXZyPGLUEDnEM5XiUo40DE8rEzpi2g/55DbIQCSS87EPEczWCjcAky7Y+SOsd8QS/MebT8Kqc351zED1XbbxIxfKQYoY2u0dIbWVmamewQGuQisWyQFm+MVDxOddcxgIi2FQnJucm9bSaBSMXGvZsYhUMYQUDfS0MJQHBkfdLGChl9BQGSunfMHQs/f4pDK7rX8LQdE9g8N13GN5hKGGgbwvD/mZovBoGS4CFoboGz2Dozrw2DvEJDF7bzvQ5DBjWYY3Tm8HrNC5uBpf5JzC0m945DI/vMPy3MLzJzfAv4YPu/pnwZaLOUaHlHzSKta4Kyu1jWyyUBJEHMc9zZZ5PX5bw7g9kWWEa9AoAAA==",
+                                                    "flightId": 0,
+                                                    "seatsRemaining": 9,
+                                                    "isConnection": false,
+                                                    "isLayover": false,
+                                                    "cabinType": "Economic",
+                                                    "hasConnection": true,
+                                                },
+                                                {
+                                                    "mandatoryAirline": 
+                                                        {
+                                                            "code": "Gol",
+                                                            "iconUrl": "https://wooba-sandbox.travellink.com.br/Upload/logomarcas/companhiaico5.gif"
+                                                        },
+                                                    "departure": {
+                                                        "dateInLocation": "2024-04-17T14:15:00",
+                                                        "hour": "15:00",
+                                                        "date": "Segunda-feira, 05 de Maio",
+                                                        "id": 0,
+                                                        "airportCode": "BSB",
+                                                        "airportCity": "Brasília - Distrito Federal",
+                                                        "airportName": "Aeroporto Internacional de Brasília",
+                                                    },
+                                                    "arrival": {
+                                                        "dateInLocation": "2024-04-17T16:10:00",
+                                                        "hour": "15:00",
+                                                        "date": "Segunda-feira, 05 de Maio",
+                                                        "id": 0,
+                                                        "airportCode": "GRU",
+                                                        "airportCity": "Guaruhos - São Paulo",
+                                                        "airportName": "Aeroporto Internacional de Guarulhos",
+                                                    },
+                                                    "stopQuantity": 0,
+                                                    "duration": "01:55:00",
+                                                    "baggageInfo": {
+                                                        "baggageType": "CarryOn"
+                                                    },
+                                                    "fareInfo": {
+                                                        "fareBasis": "ONJAAG1GIN",
+                                                        "fareBasisCode": "O",
+                                                        "fareFamilyName": "Promo",
+                                                        "fareFamilyCode": "PRO",
+                                                        "fareType": 2
+                                                    },
+                                                    "aircraftType": "738",
+                                                    "flightNumber": "1409",
+                                                    "tripId": "9AoAAB+LCAAAAAAABADtlt9v2jAQx/+VyntNITGEH34LVNBshWZAK03THq6JAavBjpywMSH+oP0d+8d2dsLP7aGV+rYiBGff8eXufB85WxIQRh3St589+znYEFboNXfIVOSEtV1rhAlhzS5GCiCMDBvEIaPnjLA5pDmGRnbh1jB4pta6rxIeJkGWihgSRZiP2yJTVv+G54WQCqW/bsk9ivWmPVS7MbJfxmhFaFGXNq/d5rXXnrkus2/0TE493aNn9w31QYs5zFQBKWZKaavWxGQirVYqxmzyfTLmfw/h9xnXuKfhWAjgBmCQ55BHVWU5GmqsDpN1yB1+e+SsD0leLVR6dSfkEvKr4PcvzVHFIcGxwsCWOHkwxU4vamwxzy9rvDUut+X5Jqx/EdZhXtWKW+NyO56xb9YaYlBmw2O++eF4vTJ5Nt0uLqZ8seKyMP4QlwPQfPYz41Uj+koeiz9bHI+0h90y9Y8/BsHQG4bmlHr91LTJNqU3QCOyVnSwJuM12miFsZIczWVRZDmr138o9QTXOcjkSW1qhYbvPE2FfK7FalV70vWHLFWQ1FO1UCvQMeR1dGQglwJErPzaQsxtGSuRmr5vyVitjL49a3M0KhELtc+jXIWy4FqaTUo9arsWaT4XGxs3KQNNjR/aHco7jXI9UPgzszm3L7LDXZyPGLUEDnEM5XiUo40DE8rEzpi2g/55DbIQCSS87EPEczWCjcAky7Y+SOsd8QS/MebT8Kqc351zED1XbbxIxfKQYoY2u0dIbWVmamewQGuQisWyQFm+MVDxOddcxgIi2FQnJucm9bSaBSMXGvZsYhUMYQUDfS0MJQHBkfdLGChl9BQGSunfMHQs/f4pDK7rX8LQdE9g8N13GN5hKGGgbwvD/mZovBoGS4CFoboGz2Dozrw2DvEJDF7bzvQ5DBjWYY3Tm8HrNC5uBpf5JzC0m945DI/vMPy3MLzJzfAv4YPu/pnwZaLOUaHlHzSKta4Kyu1jWyyUBJEHMc9zZZ5PX5bw7g9kWWEa9AoAAA==",
+                                                    "flightId": 0,
+                                                    "seatsRemaining": 9,
+                                                    "isConnection": true,
+                                                    "isLayover": false,
+                                                    "cabinType": "Economic",
+                                                    "hasConnection": false,
+                                                },
+                                                
+                                            ],
+                                    }
+                                ],
+                            "priceDetails": {
+                                "pricesPerPassenger": [
+                                    {
+                                        "type": "ADT",
+                                        "quantity": 2,
+                                        "exchange": 1,
+                                        "currency": "BRL",
+                                        "individualEquivalentFare": 176.10,
+                                        "individualFare": 176.10,
+                                        "individualBoardingCharge": 37.165,
+                                        "individualServiceCharge": 20.50,
+                                        "individualFuelSurcharge": 0,
+                                        "totalIndividualCharges": 57.665
+                                    },
+                                    {
+                                        "type": "CHD",
+                                        "quantity": 2,
+                                        "exchange": 1,
+                                        "currency": "BRL",
+                                        "individualEquivalentFare": 176.10,
+                                        "individualFare": 176.10,
+                                        "individualBoardingCharge": 37.165,
+                                        "individualServiceCharge": 20.50,
+                                        "individualFuelSurcharge": 0,
+                                        "totalIndividualCharges": 57.665
+                                    },
+                                    {
+                                        "type": "INF",
+                                        "quantity": 2,
+                                        "exchange": 1,
+                                        "currency": "BRL",
+                                        "individualEquivalentFare": 0.00,
+                                        "individualFare": 0.00,
+                                        "individualBoardingCharge": -20.00,
+                                        "individualServiceCharge": 20.50,
+                                        "individualFuelSurcharge": 0,
+                                        "totalIndividualCharges": 0.50
+                                    }
+                                ],
+                                "segmentCharges": 231.660,
+                                "totalFare": 704.40,
+                                "totalAmount": 936.060
+                            },
+                            "totalDuration": "17:50:00",
+                            "numberOfStops": 1
+                        },
+                    ],
+                    "mandatoryAirline": {
+                        "code": "Gol",
+                        "iconUrl": "https://wooba-sandbox.travellink.com.br/Upload/logomarcas/companhiaico5.gif"
+                    },
+                    "totalAdultFare": 704.40,
+                    "totalAdultBoardingCharge": 148.66,
+                    "totalAdultServiceCharge": 82.00,
+                    "totalChildFare": 704.40,
+                    "totalChildBoardingCharge": 148.66,
+                    "totalChildServiceCharge": 82.00,
+                    "totalInfantFare": 0.00,
+                    "totalInfantBoardingCharge": -80.00,
+                    "totalInfantServiceCharge": 82.00,
+                    "totalFare": 1408.80,
+                    "totalBoardingCharge": 217.32,
+                    "totalServiceCharge": 246.00,
+                    "totalTaxes": 463.32,
+                    "totalAmount": 1872.12,
+                    "baggageType": "CarryOn",
+                    "isRefundable": false,
+                    "generalInfos": "Em todo voo você tem direito a levar uma bolsa pequena com seus pertences O limite de peso da bagagem pode variar em cada compania aérea, confira o limite exato no site oficial da companhia",
+                    "sourceType": 1
+                     },
+          ]
+        
+      }
   }
 }
 </script>

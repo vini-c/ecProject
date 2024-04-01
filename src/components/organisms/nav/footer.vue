@@ -3,7 +3,7 @@
         <section class="ec_footer">
             <div class="footerContent">
                 <div class="flexContent">
-                    <div class="flex-itemContainer1">
+                    <div class="flex-itemContainer1" v-if="!simplified">
                         <div class="subscription" no-gutters>
                             <v-row no-gutters align="center" class="pb-6">
                                 <div class="columns oneThird">
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="flex-itemContainer2">
-                        <section class="socialNetworks">
+                        <section class="socialNetworks" v-if="!simplified" >
                             <v-row no-gutters align="center" class="ga-1">
                                 <h3>embarquecertooficial</h3><v-icon icon="mdi-check-decagram" size="small"
                                     color="blue"></v-icon>
@@ -54,7 +54,7 @@
                                 <v-btn icon="mdi-youtube" rounded="lg" variant="tonal" size="default" href="#" /> </v-row>
                         </section>
                         <section class="legalInfo pa-2">
-                            <v-row no-gutters>
+                            <v-row no-gutters v-if="!simplified">
                                 <h4>Informações Legais</h4>
                             </v-row>
                             <v-row no-gutters>
@@ -63,7 +63,7 @@
                                     26.012747.10.0001-6 / 26.012747.10.0002-3 Copyright 1999-2024, EMBARQUE CERTO.com Ltda.
                                     Todos os direitos reservados.</p>
 
-                                <p class="text-caption pt-3">O EMBARQUE CERTO comercializa os produtos de seus fornecedores
+                                <p   v-if="!simplified" class="text-caption pt-3">O EMBARQUE CERTO comercializa os produtos de seus fornecedores
                                     apenas de forma direta pelo seu site (www.EMBARQUECERTO.com). Não há qualquer venda por
                                     redes sociais (Facebook, Instagram, Twitter, LinkedIn, etc.). Pós-vendas - os canais
                                     oficiais de atendimento aos clientes são: por meio do telefone 11 4003 9444 e Minhas
@@ -93,5 +93,7 @@ import ec_phone_input from '@/components/atoms/dataInputs/ec_Phone_Input.vue'
 <script>
 export default {
     name: 'ec_confirmationContent',
+    props: { simplified: Boolean },
+
 }
 </script>

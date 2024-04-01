@@ -1,0 +1,211 @@
+@import '@/assets/scss/theme';
+
+
+.bg-body.login{
+    background: url('@/assets/wallpaper_login.svg'), $color-nav;
+    background-size:cover;
+    background-position:bottom right;
+    color:$background-color;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    width:100%;
+}
+
+.bg-body.login.signup{
+    background: url('@/assets/wallpaper_login.svg'), $color-nav;
+    background-size:cover;
+    background-position:bottom right;
+    color:$background-color;
+    height:auto;
+    display: flex;
+    align-items: center;
+    width:100%;
+}
+
+
+.bg-body.login .v-main{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction:column;
+}
+.LoginScreen{
+    display:flex;
+    max-width:1200px;
+    padding:2% 4%;
+    align-items: center;
+}
+
+.LoginScreen h1{
+    font-size:2.2rem;
+    line-height:2.6rem;
+}
+
+.bg-body.login .footerContent{
+    align-items: center;
+
+}
+.bg-body.login .flexContent{
+    align-items: center;
+}
+
+.bg-body.login .flex-itemContainer2{
+    width:100%;
+}
+
+.LoginScreen h2{
+    margin-top:1rem;
+    font-size:1.2rem;
+    font-weight:normal;
+}
+
+.bg-body.login .ec_footer{
+    background: transparent;
+}
+
+.LoginScreen .loginColumn{
+    width:60%;
+    color: $background-color;
+    display:flex;
+    flex-direction: column;
+    align-items: stretch;    
+}
+
+.LoginScreen .loginColumn.form{
+    width:40%;
+    background-color: $background-color;
+    color:$primary-color;
+    padding:3%;
+    border-radius:1rem;
+}
+.signUpBlock .contentBlock .signUpColumn{
+    width:50%;
+}
+
+.signUpBlock .passwordBlock{
+    background-color: $background-color-secondary;
+    border-radius:1rem;
+    margin-top:1rem;
+    margin-bottom:1rem;
+}
+
+.signUpBlock h1{
+    font-size:1.4rem;
+}
+.signUpBlock h2{
+    font-size:1rem;
+}
+.signUpBlock{
+    background-color: $background-color;
+    color:$primary-color;
+    padding:3%;
+    border-radius:1rem;
+    color:$primary-color;
+}
+
+
+.signUpBlock{
+    background-color: $background-color;
+    color:$primary-color;
+    padding:3%;
+    border-radius:1rem;
+}
+
+
+.signUpBlock .contentBlock .LoginScreen .loginColumn{
+    color:$primary-color!important;
+}
+
+.LoginScreen .loginColumn .login-divider{
+  display: flex;
+  width:100%;
+  gap:.8rem;
+  align-items: center;
+}
+.forgot .LoginScreen{
+justify-content: center;
+}
+
+.forgot .LoginScreen .loginColumn.form{
+    width:60%;
+}
+
+
+.newPassword .passRecovery{
+flex-direction:column;
+}
+
+.forgot.newPassword .LoginScreen .loginColumn.form{
+    width:100%;
+}
+
+
+.forgot.newPassword  .LoginScreen h2{
+    padding-top:0;
+    margin-top:0;
+    font-size:1.6rem;
+    font-weight:bold
+}
+.forgot.newPassword  .LoginScreen h3{
+    font-size:1rem;
+    font-weight:400;
+}
+
+.forgot.newPassword .passRecovery .rightSide{
+    width:100%;
+}
+
+.forgot.newPassword .LoginScreen .rowDesktop{
+    margin-top:0;
+}
+
+.signUpBlock {
+    display:flex;
+    flex-direction: column;
+}
+.signUpBlock .contentBlock{
+    display:flex;
+    flex-direction: row;
+    gap:1rem;
+}
+
+.signUpBlock .loginColumn, .signUpBlock .LoginScreen .loginColumn.form{
+    width:50%!important;
+    padding:0!important;
+}
+@media screen and (max-width:900px){
+    .signUpBlock .contentBlock{
+        display:flex;
+        flex-direction: column;
+        gap:1rem;
+    }
+
+    .signUpBlock .contentBlock .signUpColumn{
+        width:100%;
+    }
+    
+    
+    .LoginScreen{
+        flex-direction:column;
+        width:100%;
+        gap:2rem;
+    }
+    .LoginScreen .loginColumn{
+        width:100%;
+    }
+    .LoginScreen .loginColumn.form, .forgot .LoginScreen .loginColumn.form{
+        width:100%;
+    }
+}
+
+@media screen and (max-width:900px){
+    .LoginScreen h1{
+        font-size:1.8rem;
+        line-height:auto;
+    }
+    .LoginScreen h2{
+        font-size:1rem;
+        line-height:auto;
+    }
+}

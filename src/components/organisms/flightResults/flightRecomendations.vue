@@ -15,7 +15,7 @@ import ec_FlightRequirements from '@/components/molecules/flightRequirements.vue
             <div class="optionsContent">
                 <ec_flightOptions v-bind:flightOptionsData="item.itineraries"></ec_flightOptions>
             </div>
-                <div class="flightPriceDetailed">
+                <div class="flightPriceDetailed" v-if="!confirmation">
                     <div class="priceTable rounded-lg mt-4 mb-2">
                         <p class="text-body px-2 pt-2 pb-0 font-weight-bold EC-colorContentSecondary">Detalhamento da
                             tarifa:
@@ -60,7 +60,7 @@ import ec_FlightRequirements from '@/components/molecules/flightRequirements.vue
                 </div> 
 
         </section>
-        <div class="foBodyDetailsBar pt-3">
+        <div class="foBodyDetailsBar pt-3" v-if="!confirmation">
             <div class="foPrice justify-end pl-4">
                 <div>
                     <p class="foType  font-weight-regular fullColor">Valor Final</p>

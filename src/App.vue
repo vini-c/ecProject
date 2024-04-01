@@ -7,6 +7,11 @@ import Confirm from '@/components/screens/ec_confirmationPage.vue'
 import NotFound from '@/components/screens/notFound.vue'
 import Construction from '@/components/screens/ec_construction.vue'
 import Account from '@/components/screens/ec_myAccount.vue'
+import Login from '@/components/screens/ec_loginPage.vue'
+import forgotPassword from '@/components/screens/ec_forgotPasswordPage.vue'
+import newPassword from '@/components/screens/ec_newPasswordPage.vue'
+import signUp from '@/components/screens/ec_signUp.vue'
+
 
 
 const routes = {
@@ -16,6 +21,10 @@ const routes = {
   '/results': Results,
   '/construction': Construction,
   '/account': Account,
+  '/login': Login,
+  '/forgotPassword': forgotPassword,
+  '/new-password': newPassword,
+  '/sign-up': signUp,
 
 }
 

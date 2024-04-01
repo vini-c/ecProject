@@ -1,143 +1,94 @@
 <script setup>
 import ec_bestOption from '@/components/atoms/bestOption.vue'
 import ec_Bestprice from '@/components/atoms/bestPrice.vue'
-import ec_FlightResume from '@/components/molecules/flightResume.vue'
-import ec_FlightDetails from '@/components/molecules/flightDetails.vue'
+import ec_flightRecomendations from '@/components/organisms/flightResults/flightRecomendations.vue'
 import ec_priceRules from '@/components/molecules/priceRules.vue'
 
 </script>
 <template>
-    <section class="flightOptionCard checkoutFlightDetail rounded-lg pb-1 " v-for="(item, x) in flightOptionData" :key="x">
-        <section class="foCardCheckout">
-            <div class="foResumeContent">
-                <div class="foHeader">
-                    <div class="d-flex align-center">
-                        <img v-bind:src="item.ciaLogo" class="ciaLogo">
-                        <p>
-                        <p class="ciaSpecs hideMobile font-weight-regular pl-4">{{ item.mainOperation }}
-                        </p>
-                        </p>
-                    </div>
-                    <ec_bestOption v-if="item.betterOption" />
-                    <ec_Bestprice v-if="item.betterPrice" />
-                </div>
-                <div class="priceTable rounded-lg">
-                    <p class="text-body px-2 pt-2 pb-0 font-weight-bold EC-colorContentSecondary">Detalhamento da
-                        tarifa:
+<!--sessão lateral para resumo de passagens selecionados no checkout-->
+<section class="flightOptionCard checkoutFlightDetail rounded-lg pb-1 " v-for="(item, x) in flightOptionData" :key="x">
+    <section class="foCardCheckout">
+        <div class="foResumeContent">
+            <div class="foHeader">
+                <div class="d-flex align-center">
+                    <img v-bind:src="item.mandatoryAirline.iconUrl" class="ciaLogo">
+                    <p class="ciaSpecs hideMobile font-weight-regular pl-4">{{ item.mandatoryAirline.code }}
                     </p>
-                    <v-table class="px-2 pt-0 " density="compact">
-                        <tbody>
-                            <tr>
-                                <td>{{ item.Adults }}</td>
-                                <td class="priceTd">{{ item.AdultsPrice }}</td>
-                            </tr>
-                            <tr>
-                                <td v-if="item.hasKids">{{ item.Kids }}</td>
-                                <td v-if="item.hasKids" class="priceTd">{{ item.KidsPrice }}</td>
-                            </tr>
-                            <tr>
-                                <td v-if="item.hasBabys">{{ item.Baby }}</td>
-                                <td v-if="item.hasBabys" class="priceTd">{{ item.BabysPrice }}</td>
-                            </tr>
-                            <tr>
-                                <td>Taxa de Serviço:</td>
-                                <td class="priceTd">{{ item.serviceTax }}</td>
-                            </tr>
-                            <tr>
-                                <td>Taxa de Embarque:</td>
-                                <td class="priceTd">{{ item.flightTax }}</td>
-                            </tr>
-                        </tbody>
-                    </v-table>
-                    <div class="priceVdetail pa-2">
-                        <div class="finalPrice">
-                            <v-row no-gutters>
-                                <v-col cols="4">
-                                    <p class="text-body font-weight-bold EC-colorContentSecondary">Total:</p>
-                                </v-col>
-                                <v-col cols="8" class="pricewTag ">
-                                    <v-row no-gutters justify="end">
-                                        <p class="text-body font-weight-bold EC-colorContentPrimary">{{ item.finalPrice }}
-                                        </p>
-                                    </v-row>
-                                </v-col>
+                </div>
+            </div>
+            <div class="priceTable rounded-lg">
+                <p class="text-body px-2 pt-2 pb-0 font-weight-bold EC-colorContentSecondary">Detalhamento da tarifa:
+                </p>
+                <v-table class="px-2 pt-0 " density="compact">
+                    <tbody>
+                        <tr>
+                            <td>Adultos</td>
+                            <td class="priceTd">{{ item.totalAdultFare }}</td>
+                        </tr>
+                        <tr>
+                            <td v-if="item.totalChildFare">Crianças</td>
+                            <td v-if="item.totalChildFare" class="priceTd">{{ item.totalChildFare }}</td>
+                        </tr>
+                        <tr>
+                            <td v-if="item.totalInfantFare">Bebês</td>
+                            <td v-if="item.totalInfantFare" class="priceTd">{{ item.totalInfantFare }}</td>
+                        </tr>
+                        <tr>
+                            <td>Taxa de Serviço:</td>
+                            <td class="priceTd">{{ item.totalServiceCharge }}</td>
+                        </tr>
+                        <tr>
+                            <td>Taxa de Embarque:</td>
+                            <td class="priceTd">{{ item.totalBoardingCharge }}</td>
+                        </tr>
+                    </tbody>
+                </v-table>
+                <div class="priceVdetail pa-2">
+                    <div class="finalPrice">
+                        <v-row no-gutters>
+                            <v-col cols="4">
+                                <p class="text-body font-weight-bold EC-colorContentSecondary">Total:</p>
+                            </v-col>
+                            <v-col cols="8" class="pricewTag ">
+                                <v-row no-gutters justify="end">
+                                    <p class="text-body font-weight-bold EC-colorContentPrimary">{{ item.totalAmount }}
+                                    </p>
+                                </v-row>
+                            </v-col>
+                        </v-row>
+                    </div>
+                </div>
+            </div>
+            <div class="foBody mt-2 rounded-lg">
+                <!--bloco de regras de preço-->
+                <ec_priceRules exchanges="" refundable="" />
+            </div>
+            <div class="foBodyDetailsBar pt-3">
+                <div class="detailsfoFlightInfo d-flex">
+                    <div class="lugage">
+                        <div class="icon mb-2 d-flex">
+                            <v-row align="center" no-gutters>
+                                <v-icon icon="mdi-bag-personal" size="small" class="disableContent" :class="{enableContent: item.baggageType === 'Personal'||'CarryOn'||'Checked'}"></v-icon>
+                                <v-icon icon="mdi-bag-carry-on" size="small" class="disableContent" :class="{enableContent: item.baggageType === 'CarryOn'||'Checked'}"></v-icon>
+                                <v-icon icon="mdi-bag-suitcase" size="small" class="disableContent" :class="{enableContent: item.baggageType === 'Checked'}"></v-icon>
+                                <p class="ml-2 hideMobile" v-if="item.baggageType === 'Checked'">Bagagem Despachada</p>
+                                <p class="ml-2 hideMobile" v-if="item.baggageType === 'Personal'">Bagagem Pessoal</p>
+                                <p class="ml-2 hideMobile" v-if="item.baggageType === 'CarryOn'">Bagagem de Mão</p>
                             </v-row>
                         </div>
                     </div>
                 </div>
-                <div class="foBody mt-2 rounded-lg">
-                    <ec_priceRules exchanges="" refundable="" />
-                </div>
-                <div class="foBodyDetailsBar pt-3">
-                    <div class="detailsfoFlightInfo d-flex">
-                        <div class="EC-colorContentPrimary d-flex" v-if="item.checkedBag">
-                            <v-icon icon="mdi-bag-personal" size="x-small" class="enableContent"></v-icon>
-                            <v-icon icon="mdi-bag-carry-on" size="x-small" class="enableContent"></v-icon>
-                            <v-icon icon="mdi-bag-suitcase" size="x-small" class="enableContent"></v-icon>
-                            <p class="observationText hideMobile">Bagagem Despachada</p>
-                        </div>
-                        <div class="EC-colorContentPrimary d-flex" v-if="item.boardBag">
-                            <v-icon icon="mdi-bag-personal" size="x-small" class="enableContent"></v-icon>
-                            <v-icon icon="mdi-bag-carry-on" size="x-small" class="enableContent"></v-icon>
-                            <v-icon icon="mdi-bag-suitcase-off-outline" size="x-small" class="disableContent"></v-icon>
-                            <p class="observationText hideMobile">Bagagem de Mão</p>
-
-                        </div>
-                        <div class="EC-colorContentPrimary d-flex" v-if="item.personalBag">
-                            <v-icon icon="mdi-bag-personal" class="enableContent" size="x-small"></v-icon>
-                            <v-icon icon="mdi-bag-carry-on-off" class="disableContent" size="x-small"></v-icon>
-                            <v-icon icon="mdi-bag-suitcase-off-outline" class="disableContent" size="x-small"></v-icon>
-                            <p class="observationText hideMobile">Bagagem Pessoal</p>
-                        </div>
-                        <div v-if="item.economyClass" class="iconFlexEC EC-colorContentPrimary">
-                            <v-icon icon="mdi-seat-recline-normal" class="enableContent"></v-icon>
-                            <p class="observationText">Econômica</p>
-                        </div>
-                        <div v-if="item.PremiumClass" class="iconFlexEC EC-colorContentPrimary">
-                            <v-icon icon="mdi-seat-recline-extra" class="enableContent"></v-icon>
-                            <p class="observationText">Premium Economy</p>
-                        </div>
-                        <div v-if="item.ExecutiveClass" class="iconFlexEC EC-colorContentPrimary">
-                            <v-icon icon="mdi-seat-flat-angled" class="enableContent"></v-icon>
-                            <p class="observationText">Executiva</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="foBody mt-2 rounded-lg">
-                    <ec_FlightResume v-bind:flightIndividualData="item.flightDetail" />
-                </div>
-                <div class="flightDetailsCheckout">
-
-                    <v-expansion-panels variant="accordion"  v-model="panel"  multiple class="flightOptionsExpansion">
-                    <v-expansion-panel elevation="0" expand v-model="panel" class="rounded-lg foExpansion">
-                        <v-expansion-panel-title class="fodetailTrigger bg-card" v-slot="{ open }">
-                            <div class="foActionBar">
-                                <v-btn class="rounded-xl justify-end" size="x-small" elevation="0" variant="text">Detalhes do
-                                    Voo</v-btn>
-                            </div>
-                        </v-expansion-panel-title>
-                        <v-expansion-panel-text>
-                            <section class="foDetailsContentCheckout ">
-                                <!-- flightDetails Departure -->
-                                <ec_FlightDetails v-bind:flightIndividualData="item.flightDetail" />
-                                <!-- PricenDetails -->
-                            </section>
-                        </v-expansion-panel-text>
-
-                    </v-expansion-panel>
-                </v-expansion-panels>
-
-
-
-
-                </div>
             </div>
-
-        </section>
-
-
-
+            <div class="foBody mt-2 rounded-lg checkoutNconfirmation">
+                <v-expansion-panels variant="popout" multiple class="flightOptionsExpansion">
+                  <ec_flightRecomendations confirmation actionSection v-bind:recommendations="flightOptionData" />
+                </v-expansion-panels>            
+            </div>
+        </div>
     </section>
+</section>
+
 </template>
 
 <script>

@@ -432,6 +432,81 @@ display:none;
     width:70%;
 flex-direction:column;}
 
+
+.checkoutNconfirmation .recommendations{
+    padding:0;margin:0;
+}
+
+.checkoutNconfirmation .recommendations .optionsContent{
+    width:100%;
+}
+
+.checkoutNconfirmation .recommendations .header .location{
+    display:none;
+}
+.checkoutNconfirmation .recommendations .orientation{
+    width:100%;
+}
+.checkoutNconfirmation .recommendations .confirmationSection, .checkoutNconfirmation .recommendations .v-input__details {display:none;}
+
+.checkoutNconfirmation .recommendations .itinerarie .lugage{
+    display:none;
+}
+
+.checkoutNconfirmation .recommendations .orientation{
+    background-color: $background-color;
+    padding:0;
+}
+.checkoutNconfirmation .recommendations .orientation .v-row{
+    flex-wrap:nowrap!important
+}
+
+.checkoutNconfirmation .recommendations .header .orientation p {
+    margin-top:.2rem;
+}
+
+.checkoutNconfirmation .recommendations .orientation .content{
+    width:100%;
+    justify-content: space-between;
+}
+
+.checkoutNconfirmation .recommendations .orientation .content{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    gap:.4rem;
+}
+
+.checkoutNconfirmation .itinerarie .departure, .itinerarie .return {
+    width: 56px;
+    gap: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkoutNconfirmation .recommendations .itinerarie .data .iata{
+    display:inline-block;
+    font-size:.8rem;
+}
+
+.checkoutNconfirmation .recommendations .body .details .flightInfoSection{
+    margin:0;
+    padding-left:.3rem;
+}
+
+.checkoutNconfirmation .recommendations .body .details .foCIAdetails{
+    flex-direction: column;
+}
+
+.checkoutNconfirmation .recommendations .body .details .foCIAdetails .ciaLogonInfos{
+    align-items: flex-start;
+    width:100%;
+}
+
+.checkoutNconfirmation .recommendationCard{
+    padding-bottom:0!important;
+    border:none!important;
+}
 @media screen and (min-width:1440px) {
 .recommendations .orientation{
     width:26%
@@ -490,6 +565,19 @@ flex-direction:column;}
 
 .visibleMobile{display:none!important};
 
+@media screen and (max-width:1024px) {
+    .confirmationContent .recommendations .optionsContent{
+        flex-direction: column!important;
+        
+    }
+    .confirmationContent .recommendations .detailTrigger{
+        display:inline-block!important;
+    }
+
+.mobileCheckoutInfos .foCardCheckout .recommendationCard .v-expansion-panel-title{
+    background-color: $background-color-secondary!important;
+}
+}
 @media screen and (max-width:960px) {
     .visibleMobile{display:inline-block!important};
     .recommendations .header .orientation p {
@@ -524,6 +612,10 @@ flex-direction:column;}
             gap:.2rem;
             flex-direction: column;
         }
+
+        .mobileResumeCheckout .hideMobile{
+            display:inline-block!important;
+        }
 }
 
 @media screen and (max-width:540px) {
@@ -542,6 +634,15 @@ flex-direction:column;}
 .recommendations .itineraryOption{
     padding: 0.6rem 0.8rem 0.6rem 0;
 }
+
+.mobileResumeCheckout .recommendations .itineraryOption{
+    padding: 0.6rem;
+}
+
+.mobileResumeCheckout .foCardCheckout .itinerarie .data{
+    padding-bottom:0;
+}
+
 .itinerarie .data .time{
     font-size:1rem;
 }

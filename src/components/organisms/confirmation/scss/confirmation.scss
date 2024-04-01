@@ -29,6 +29,60 @@
     margin-top:.75rem;
 }
 
+.confirmationContent .recommendations .optionsContent{
+    width:auto;
+    gap:1rem;
+}
+
+.confirmationContent .recommendations .header .location{
+    display:none;
+}
+.confirmationContent .recommendations .orientation{
+    width:100%;
+}
+
+.confirmationContent .recommendations .optionsContent{
+    flex-direction: row;
+    width:100%;
+}
+
+.confirmationContent .recommendationCard{
+    padding-bottom:0!important;
+}
+
+.confirmationContent .recommendations .v-radio-group .v-input__details{
+    display:none;
+}
+
+.confirmationContent .recommendations .options{
+    margin:0;
+}
+
+.confirmationContent .recommendations .itinerarie .cia{
+    margin-left:.8rem;
+}
+
+.confirmationContent .recommendations .itinerarie .v-selection-control{
+    display:none;
+}
+
+.confirmationContent .recommendations .detailTrigger{
+    display:none;
+}
+
+.confirmationContent .recommendations .itinerarie .data .iata {
+    display:inline-block;
+    font-size:.8rem;
+}
+.confirmationContent .recommendations .confirmationSection{
+    display:none;
+}
+
+.confirmationContent .itinerarie .departure, .confirmationContent .itinerarie .return {
+    width: 56px;
+    display: flex;
+    flex-direction: column;
+}
 .mobileResizerCol{
     padding:0 1rem!important;
 }
@@ -70,6 +124,7 @@
 .mobileResizerCol{
     padding:0!important;
 }
+
 
 
 }

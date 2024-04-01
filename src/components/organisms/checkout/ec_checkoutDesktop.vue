@@ -159,8 +159,7 @@
           <v-col cols="4">
             <div class="flightData pl-4">
               <!-- dados do voo -->
-              <ec_flightOptionCheckout v-bind:flightOptionData="flightOptionData"/>
-              
+              <ec_flightOptionCheckout v-bind:flightOptionData="flightOptionData"/>              
             </div>
           </v-col>
         </v-row>
