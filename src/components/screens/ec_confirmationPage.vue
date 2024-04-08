@@ -432,7 +432,14 @@
                     "baggageType": "CarryOn",
                     "isRefundable": false,
                     "generalInfos": "Em todo voo você tem direito a levar uma bolsa pequena com seus pertences O limite de peso da bagagem pode variar em cada compania aérea, confira o limite exato no site oficial da companhia",
-                    "sourceType": 1
+                    "sourceType": 1,
+                    "banner" : "true",
+                    "pageUrl":"#/confirmation",
+                    "bannerType":"error",
+                    "bannerTitle":"Erro no processamento",
+                    "bannerMessage":"Sua compra não foi aprovada, por favor confira os dados do método de pagamento",
+                    "bannerCTA":"Alterar dados de pagamento",
+                    "bannerUrl":"#/checkout",
                      },
           ]
         

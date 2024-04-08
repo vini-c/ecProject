@@ -306,6 +306,17 @@
         display: flex
     }
 
+    .confirmationPrice{
+        flex-direction:column!important;
+    }
+    .confirmationPrice .priceTable{
+        width:100%!important;
+    }
+
+    .confirmationPrice .finalPrice{
+        width:100%!important;
+    }
+
     .rowDesktop {
         width: 100%;
         flex-direction: column;

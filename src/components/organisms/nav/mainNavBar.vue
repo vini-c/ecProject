@@ -25,8 +25,12 @@
         </div>
       </div>
       </section>
-      <section class="navBarMobile">
-        <v-list :items="items"></v-list>
+      <section class="navBarMobile"> 
+        <v-list>
+            <v-list-item v-for="(itemsDesktop, index) in items" :key="index" :value="index">
+              <v-list-item-title><a :href="itemsDesktop.value">{{itemsDesktop.title }}</a></v-list-item-title>
+            </v-list-item>
+          </v-list>
       </section>
   
       <template v-slot:append>
@@ -48,10 +52,10 @@
         <v-divider vertical class="hideTablet" inset></v-divider>
         <v-btn size="small" href="#/confirmation" class="hideTablet" type="plain" density="default">Confirmation</v-btn>
         <v-divider vertical class="hideTablet" inset></v-divider>
-        <v-btn size="small" class="hideTablet" type="plain" density="default">Atendimento</v-btn>
+        <!-- <v-btn size="small" class="hideTablet" type="plain" density="default">Atendimento</v-btn>
         <v-divider vertical class="hideTablet" inset></v-divider>
         <v-btn size="small" class="hideTablet" type="plain" density="default">Precisa de ajuda</v-btn>
-        <v-divider vertical class="hideTablet" inset></v-divider>
+        <v-divider vertical class="hideTablet" inset></v-divider> -->
         <v-menu class="hideTablet">
           <template v-slot:activator="{ props }">
             <v-btn size="small" class="userMenu hideTablet" type="plain" v-bind="props">
@@ -78,12 +82,6 @@
   export default {
     name: 'eC_mainNavBar',
     data: () => ({
-      itemsDesktop: [
-        { title: 'Acessar conta', value: '#/login'  },
-        { title: 'Minha Reservas'  },
-        { title: 'Minha Conta',value: '#/account', },
-        { title: 'Sair' },
-      ],
       drawer: false,
       items: [
       {
@@ -91,16 +89,20 @@
           value: '#/login',
         },
         {
+          title: 'Minha Reservas',
+           value: '#/bookings'
+        },
+        {
           title: 'Minha conta',
           value: '#/account',
         },
         {
           title: 'Atendimento',
-          value: 'attendance',
+          value: '#/attendance',
         },
         {
-          title: 'Preciso de Ajuda',
-          value: 'helpcenter',
+          title: 'Preciso de ajuda',
+          value: '#/helpcenter',
         }
       ],
     }),

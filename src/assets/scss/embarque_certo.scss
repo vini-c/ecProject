@@ -333,10 +333,24 @@ width:80%;
     width:40%;
 }
 
+.cancelation .recommendations{
+    padding:0!important;
+}
 @media screen and (max-width:1000px){
     .columnConstruction.formSide{
         width:auto;
     }    
+    .cancelation .recommendations .optionsContent{
+        flex-direction:column!important;
+        gap:0!important;
+    }
+    .cancelation .recommendations .optionsContent .options{
+        margin-bottom:0!important;
+    }
+
+    .cancelation .recommendations .optionsContent .itinerarie{
+        padding-left:.8rem;
+    }
 }
 
 @media screen and (max-width:900px){
@@ -371,7 +385,80 @@ width:80%;
     align-content: center;
 }
 
+.widthResizer, .accountSection{
+    max-width:1800px!important;
+    margin:0 auto;
+}
 
+
+.backgroundAttendance{
+    background:$background-color;
+    border-radius:.8rem;
+}
+
+.contentResizer{
+    max-width:1200px;
+    width:100%;
+    margin:0 auto;
+}
+
+.cancelation .recommendations{
+    width:100%;
+}
+.cancelation .recommendations .optionsContent{
+    width:100%;
+    flex-direction:row;
+    gap:1rem;
+}
+
+.cancelation .itinerarie .v-selection-control,.cancelation .detailTrigger{
+    display:none;
+}
+
+.cancelation .confirmationSection{
+    display:none;
+}
+
+.cancelation .recommendationCard{
+    padding:0!important;
+    border:0!important;
+}
 @media screen and (max-width:700px){
     .tisingSection{display:none;}
+}
+
+
+
+
+@media screen and (min-width:1920px){
+    .v-toolbar__content, .v-toolbar__extension{
+        max-width:1920px;
+        margin:0 auto;
+    }
+
+    .navBar .desktopFlightSelector .v-input--horizontal{
+        display:flex;   
+    }
+
+    .v-navigation-drawer{
+        width:25% !important;
+        padding-left:2%;
+    }
+
+    .flightResults .searchResultsContent{
+        margin:0 auto;
+    }
+    .flightResults .ec_footer .footerContent{
+        padding-left: 13%!important;
+    }
+}
+
+@media screen and (min-width:2100px){
+    .flightResults .ec_footer .footerContent{
+        padding-left: 16%!important;
+    }
+    .v-navigation-drawer{
+        width:25% !important;
+        padding-left:6%;
+    }
 }

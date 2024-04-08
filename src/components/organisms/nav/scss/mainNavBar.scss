@@ -92,6 +92,10 @@
     .navBar .hideTablet{
         display:none!important
     }
+
+    .navBarMobile .v-list-item-title a{
+        color:$background-color;
+    }
 }
 @media screen and (min-width:801px) {
     .navBar .hideTablet{

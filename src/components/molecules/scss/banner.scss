@@ -1,7 +1,7 @@
-@import '@/assets/scss/theme';
+@import '@/assets/scss/theme.scss';
 
 .ecBanner{
-    background:$background-color-quartiary;
+    background:$background-color-tertiary;
     border-radius:.60rem;
     border:2px solid $background-color-quinteary;
     color:$primary-color;
@@ -12,9 +12,24 @@
 
 
 .ecBanner.positive{
-    background:$background-color-secondary;
-    border-radius:.60rem;
-    border:2px solid $background-color-tertiary;
+    background:$background-positive;
+    border:2px solid $background-positive-2;
     color:$primary-color;
-    padding:.3rem;
+}
+
+
+.desktopFlightSelector .v-input__control{
+    width:100%
+}
+
+.ecBanner.error{
+    background:$background-error;
+    border:2px solid $background-error-2;
+    color:$primary-color;
+}
+
+.ecBanner.warning{
+        background:$background-warning;
+        border:2px solid $background-warning-2;
+        color:$primary-color;
 }

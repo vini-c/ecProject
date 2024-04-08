@@ -383,9 +383,10 @@ import ec_notFoundContent from '@/components/molecules/ec_notFoundContent.vue'
                                 "totalAmount": 936.060
                             },
                             "totalDuration": "17:50:00",
-                            "numberOfStops": 1
+                            "numberOfStops": 1,
+                         
                         },
-                        {
+                        {   
                             "type": "Inbound",
                             "departureDate": "17/04",
                             "departureDetailedDate": "Sáb 17 de Mar, 2024",
@@ -558,6 +559,7 @@ import ec_notFoundContent from '@/components/molecules/ec_notFoundContent.vue'
                                         "hasConnection": "false",
                                         // "hasDirectFlight": "true",
                                         // "hasMultipleConnection": "false",
+                                        "pageURL":"#/checkout",
                                         "isLayover": false,
                                         "totalDuration": "17h 50min",
                                         "tripId": "9AoAAB+LCAAAAAAABADtlt9v2jAQx/+VyntNITGEH34LVNBshWZAK03THq6JAavBjpywMSH+oP0d+8d2dsLP7aGV+rYiBGff8eXufB85WxIQRh3St589+znYEFboNXfIVOSEtV1rhAlhzS5GC412421412421iCMDBvEIaPnjLA5pDmGRnbh1jB4pta6rxIeJkGWihgSRZiP2yJTVv+G54WQCqW/bsk9ivWmPVS7MbJfxmhFaFGXNq/d5rXXnrkus2/0TE493aNn9w31QYs5zFQBKWZKaavWxGQirVYqxmzyfTLmfw/h9xnXuKfhWAjgBmCQ55BHVWU5GmqsDpN1yB1+e+SsD0leLVR6dSfkEvKr4PcvzVHFIcGxwsCWOHkwxU4vamwxzy9rvDUut+X5Jqx/EdZhXtWKW+NyO56xb9YaYlBmw2O++eF4vTJ5Nt0uLqZ8seKyMP4QlwPQfPYz41Uj+koeiz9bHI+0h90y9Y8/BsHQG4bmlHr91LTJNqU3QCOyVnSwJuM12miFsZIczWVRZDmr138o9QTXOcjkSW1qhYbvPE2FfK7FalV70vWHLFWQ1FO1UCvQMeR1dGQglwJErPzaQsxtGSuRmr5vyVitjL49a3M0KhELtc+jXIWy4FqaTUo9arsWaT4XGxs3KQNNjR/aHco7jXI9UPgzszm3L7LDXZyPGLUEDnEM5XiUo40DE8rEzpi2g/55DbIQCSS87EPEczWCjcAky7Y+SOsd8QS/MebT8Kqc351zED1XbbxIxfKQYoY2u0dIbWVmamewQGuQisWyQFm+MVDxOddcxgIi2FQnJucm9bSaBSMXGvZsYhUMYQUDfS0MJQHBkfdLGChl9BQGSunfMHQs/f4pDK7rX8LQdE9g8N13GN5hKGGgbwvD/mZovBoGS4CFoboGz2Dozrw2DvEJDF7bzvQ5DBjWYY5233Tm8HrNC5uBpf5JzC0m945DI/vMPy3MLzJzfAv4YPu/pnwZaLOUaHlHzSKta4Kyu1jWyyUBJEHMc9zZZ5PX5bw7g9kWWEa9AoAAA==",
@@ -726,9 +728,11 @@ import ec_notFoundContent from '@/components/molecules/ec_notFoundContent.vue'
                     "baggageType": "CarryOn",
                     "isRefundable": false,
                     "generalInfos": "Em todo voo você tem direito a levar uma bolsa pequena com seus pertences O limite de peso da bagagem pode variar em cada compania aérea, confira o limite exato no site oficial da companhia",
-                    "sourceType": 1
+                    "sourceType": 1,
+                    "pageURL":"#/checkout",
                      },
                      {
+                        "pageURL":"#/checkout",
                     "itineraries": [
                         {
                             "type": "Outbound",

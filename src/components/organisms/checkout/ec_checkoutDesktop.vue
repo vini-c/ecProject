@@ -11,10 +11,10 @@
         <v-row no-gutters>
           <v-col cols="8">
 
-            <ec_banner title="Poucos assentos disponíveis"
+            <ec_banner type="warning" title="Poucos assentos disponíveis"
                 subtitle="Apenas 4 lugares disponíveis para o voo selecionado"></ec_banner>
 
-            <div class="paymentData">
+            <div class="paymentData mt-4">
 
               <v-expansion-panels v-model="panel" multiple variant="accordion">
                 <v-expansion-panel id="travelersData" expand v-model="panel" elevation="0" class="travelersData">

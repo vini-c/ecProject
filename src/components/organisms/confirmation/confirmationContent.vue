@@ -1,15 +1,69 @@
 <template>
   <div class="bg-body confirmationPage">
     <!-- Banners de feedback -->
-      <ec_banner positive title="Reserva confirmada" subtitle="Sua passagem foi emitida" class="mt-4"></ec_banner>
-      <ec_banner waiting title="Reserva em processamento" subtitle="Sua compra foi solicitada, aguarde a confirmação de emissão da passagem." class="mt-4"></ec_banner>
-      <ec_banner error title="Erro no processamento" subtitle="Sua compra não foi aprovada, por favor confira os dados do método de pagamento." actionName="Alterar dados de pagamento" actionValue="#" class="mt-4"></ec_banner>
+
+    <section v-for="(item, x) in flightOptionData" :key="x" class="mb-3 confirmationContent">
+      <ec_banner :type="item.bannerType" :title="item.bannerTitle" :subtitle="item.bannerMessage" :actionName="item.bannerCTA" :actionValue="item.bannerUrl" v-if="item.banner"/>
+    </section>
+      
     <!-- Conteúdo -->
       <div class="confirmationContent">
           <v-row no-gutters>
-            <v-expansion-panels v-model="panel" variant="popout" multiple class="flightOptionsExpansion">
-              <ec_flightRecomendations confirmation v-bind:recommendations="flightOptionData" />
-            </v-expansion-panels>
+            <div class="flightData">
+                <v-expansion-panels v-model="panel" variant="popout" multiple class="flightOptionsExpansion">
+                  <ec_flightRecomendations confirmation v-bind:recommendations="flightOptionData" />
+                  <section class="confirmationPrice" v-for="(item, x) in flightOptionData" :key="x" >
+                    
+                    <div class="foBody mt-2 rounded-lg">
+                        <!--bloco de regras de preço-->
+                        <ec_priceRules exchanges="" refundable="" />
+                    </div>
+                    <div class="priceTable rounded-lg">
+                      <p class="text-body px-2 pt-2 pb-0 font-weight-bold EC-colorContentSecondary">Detalhamento da tarifa:</p>
+                        <v-table class="px-2 pt-0 " density="compact">
+                            <tbody>
+                                <tr>
+                                    <td>Adultos</td>
+                                    <td class="priceTd">{{ item.totalAdultFare }}</td>
+                                </tr>
+                                <tr>
+                                    <td v-if="item.totalChildFare">Crianças</td>
+                                    <td v-if="item.totalChildFare" class="priceTd">{{ item.totalChildFare }}</td>
+                                </tr>
+                                <tr>
+                                    <td v-if="item.totalInfantFare">Bebês</td>
+                                    <td v-if="item.totalInfantFare" class="priceTd">{{ item.totalInfantFare }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Taxa de Serviço:</td>
+                                    <td class="priceTd">{{ item.totalServiceCharge }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Taxa de Embarque:</td>
+                                    <td class="priceTd">{{ item.totalBoardingCharge }}</td>
+                                </tr>
+                            </tbody>
+                        </v-table>
+                        <div class="priceVdetail pa-2">
+                            <div class="finalPrice">
+                                <v-row no-gutters>
+                                    <v-col cols="4">
+                                        <p class="text-body font-weight-bold EC-colorContentSecondary">Total:</p>
+                                    </v-col>
+                                    <v-col cols="8" class="pricewTag ">
+                                        <v-row no-gutters justify="end">
+                                            <p class="text-body font-weight-bold EC-colorContentPrimary">{{ item.totalAmount }}
+                                            </p>
+                                        </v-row>
+                                    </v-col>
+                                </v-row>
+                            </div>
+                        </div>
+                    </div>
+                  </section>
+                </v-expansion-panels>
+            </div>
+              
             <v-divider></v-divider>
           </v-row>
           <v-row no-gutters class="mobileResizerCol mb-2">
@@ -87,6 +141,7 @@
           </v-row>
             <v-divider></v-divider>
           <v-row no-gutters class="pa-4 ga-2"  justify="end">
+            <v-btn class="rounded-lg mobileButtons" size="default" variant="tonal" href="#/cancelation" elevation="0">Cancelar reserva</v-btn>
             <v-btn class="rounded-lg mobileButtons justify-end" size="default" variant="tonal" elevation="0">Enviar por WhatsApp</v-btn>
             <v-btn class="rounded-lg mobileButtons justify-end" size="default" variant="tonal" elevation="0">Check-in</v-btn>
             <v-btn class="rounded-lg mobileButtons justify-end" size="default" variant="tonal" elevation="0">Minhas reservas</v-btn>
@@ -100,6 +155,8 @@
 import '@/components/organisms/confirmation/scss/confirmation.scss'
 import ec_flightRecomendations from '@/components/organisms/flightResults/flightRecomendations.vue'
 import ec_banner from '@/components/molecules/ec_banner.vue'
+import ec_priceRules from '@/components/molecules/priceRules.vue'
+
 
 </script>
  

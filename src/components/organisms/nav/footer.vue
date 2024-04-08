@@ -32,7 +32,7 @@
                             </v-row>
                         </div>
                     </div>
-                    <div class="flex-itemContainer2">
+                    <div class="flex-itemContainer2 ">
                         <section class="socialNetworks" v-if="!simplified" >
                             <v-row no-gutters align="center" class="ga-1">
                                 <h3>embarquecertooficial</h3><v-icon icon="mdi-check-decagram" size="small"

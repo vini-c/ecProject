@@ -1,0 +1,129 @@
+@import '@/assets/scss/theme';
+
+.bookings .v-container{
+    display:flex;
+    justify-content: center;
+}
+
+.searchResultsContent{
+    max-width:1200px;
+    width:100%;
+}
+
+
+.bookings .v-expansion-panel-title{
+    font-size:1.1rem;
+    font-weight:600;
+}
+.bookings .v-expansion-panel{
+    background-color: $background-color-secondary;
+}
+
+.bookings .v-expansion-panel-title__overlay{
+    background-color: $background-color-tertiary!important;
+
+}
+
+
+.bookings .v-expansion-panel-text__wrapper{
+    padding:0 1rem 1rem 1rem;
+}
+.bookings .recommendations .optionsContent{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+}
+
+.bookings .bookingContent{
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    justify-content: flex-start;
+    gap:1rem;
+    align-items: center;
+}
+
+.bookings .bookingContent .date{
+font-size:.8em;
+font-weight:500;
+color:$primary-color;
+}
+
+.bookings .bookingContent .location{
+    display:flex;
+    flex-direction:row;
+    align-items: center; 
+    gap:1rem;   
+}
+ .bookings .bookingContent .location .location-title{
+    display:flex;
+    flex-direction:row;
+    align-items: center; 
+    gap:.4rem;   
+}
+.bookings .bookingContent .location p{
+    font-size:1.4em;
+font-weight:600;
+}
+.bookings .bookingContent .location p.observationText{
+    font-size:.8rem;
+    font-weight:400;
+}
+
+.bookings .bookingContent .lugage{
+    align-items:center;
+}
+
+.bookings .bookingTitle{
+    width:100%;
+    padding-left:1rem;
+}
+.bookings .bookingTitle .heading{
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+    
+}
+
+
+.concluded .recommendationCard{
+    opacity:.5;
+}
+
+.bookings .plane{
+        transform: rotate(45deg);
+}
+
+
+@media screen and (max-width:700px){
+    .bg-body.flightResults.bookings{width:100%;}
+    .bookings .bookingContent {
+        flex-direction: column!important;
+        justify-content: flex-start;
+        align-items:flex-start;
+    }
+    .bookings .bookingContent .location{
+        flex-direction: column!important;
+        justify-content: flex-start;
+        align-items:flex-start;
+    }
+    .bookings .lugage .icon{
+        font-size:1.2rem!important;
+    }
+    .bookings .bookingContent .location{
+        gap:0rem!important;
+    }
+    .bookings .bookingContent .lugage{
+        width:100%;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+    }
+    .bookings .bookingContent .cia{
+        width:100%;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        margin-top:.4rem;
+    }
+}
+

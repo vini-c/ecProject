@@ -1,8 +1,10 @@
 <template>
     <section class="searchEngineBig">
+        <div class="widthResizer">
         <h1>As melhores passagens aéreas estão aqui...</h1>
         <p>Busque passagens aéreas no melhor serviço de compra de passagens do Brasil.</p>
-        <div class="searchEngineContainer searchTopBar_content">
+        </div>
+        <div class="searchEngineContainer searchTopBar_content widthResizer">
             <div class="typeSelector">
                 <div class="searchEngineSelector">
                     <v-radio-group class="flightTypeselectorBigSearch " hide-details="true">

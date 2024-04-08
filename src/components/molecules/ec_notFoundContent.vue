@@ -8,9 +8,9 @@
         <div class="contentSide">
             <h1>{{title}}</h1>
             <p>{{subtitle}}</p>
-            <v-row  v-if="mainAction || secondaryAction"  no-gutters class="ga-2 mt-4 mobileActions" align="center" justify="flex-start">
-                <v-btn  v-if="mainAction" class="rounded-xl main-btn font-weight-bold"  elevation="0">{{mainActionName}}</v-btn>
-            <v-btn v-if="secondaryAction" class="rounded-xl font-weight-bold"  variant="outlined">{{secondaryActionName}}</v-btn>
+            <v-row  v-if="mainActionName || secondaryActionName"  no-gutters class="ga-2 mt-4 mobileActions" align="center" justify="flex-start">
+                <v-btn  v-if="mainActionName" href={{mainactionValue}} class="rounded-xl main-btn font-weight-bold"  elevation="0">{{mainActionName}}</v-btn>
+            <v-btn v-if="secondaryActionName" href={{secondaryActionValue}} class="rounded-xl font-weight-bold"  variant="outlined">{{secondaryActionName}}</v-btn>
             </v-row>    
         </div>
        

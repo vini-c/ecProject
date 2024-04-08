@@ -31,3 +31,12 @@ $gradient-colorgreen-stage-2: #AEEF7B;
 
 $color-error: #970000;
 $color-positive: #0a8131;
+
+$background-positive: lighten($color-positive, 65%);
+$background-positive-2: lighten($color-positive, 58%);
+
+$background-error: lighten($color-error, 65%);
+$background-error-2: lighten($color-error, 58%);
+
+$background-warning: lighten($gradient-color-stage2, 20%);
+$background-warning-2: lighten($gradient-color-stage2, 12%);

@@ -11,6 +11,10 @@ import Login from '@/components/screens/ec_loginPage.vue'
 import forgotPassword from '@/components/screens/ec_forgotPasswordPage.vue'
 import newPassword from '@/components/screens/ec_newPasswordPage.vue'
 import signUp from '@/components/screens/ec_signUp.vue'
+import bookings from '@/components/screens/ec_mybookings.vue'
+import helpcenter from '@/components/screens/ec_helpcenter.vue'
+import attendance from '@/components/screens/ec_attendance.vue'
+import cancelation from '@/components/screens/ec_cancelation.vue'
 
 
 
@@ -25,6 +29,10 @@ const routes = {
   '/forgotPassword': forgotPassword,
   '/new-password': newPassword,
   '/sign-up': signUp,
+  '/bookings': bookings,
+  '/helpcenter': helpcenter,
+  '/attendance': attendance,  
+  '/cancelation': cancelation,  
 
 }
 
@@ -37,6 +45,16 @@ window.addEventListener('hashchange', () => {
 const currentView = computed(() => {
   return routes[currentPath.value.slice(1) || '/'] || NotFound
 })
+</script>
+
+<script>
+// import { createApp } from 'vue';
+// import App from './App.vue';
+// import VueSplide from '@splidejs/vue-splide';
+
+// const app = createApp( App );
+// app.use( VueSplide );
+// app.mount( '#app' );
 </script>
 
 <template>

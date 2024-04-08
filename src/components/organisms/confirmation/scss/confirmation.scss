@@ -1,9 +1,13 @@
 @import '@/assets/scss/theme';
 
-
+.confirmationPage{
+    
+}
 .confirmationContent{
     background-color:$background-color;
     border-radius:1rem;
+    max-width:1200px;
+    margin:0 auto;
 }
 
 .confirmationContent .foCard .foResumeContent{
@@ -18,8 +22,20 @@
 .confirmationContent .foCardCheckout .v-expansion-panel, .v-expansion-panels, .paymentData{
     background-color:transparent;
 }
-
-
+.confirmationPrice{
+    display:flex;
+    flex-direction:row;
+    gap:1rem;
+    padding:1rem;
+}
+.confirmationPrice .priceVdetail{
+    height:100%;
+    display:flex;
+    align-items:center;
+}
+.confirmationPrice .priceTable{
+    width:50%;  
+}
 .confirmationContent .travelersRow{
     display:flex;
     justify-content: space-between;

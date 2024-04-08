@@ -36,7 +36,6 @@
         </div>
         </a>
         </section>
-    
     </div>
 </template>
 <script>

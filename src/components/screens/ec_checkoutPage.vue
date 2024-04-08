@@ -14,7 +14,6 @@ import eC_mainNavBar from '@/components/organisms/nav/mainNavBar.vue'
 import ec_checkoutDesktop from '@/components/organisms/checkout/ec_checkoutDesktop.vue'
 import ec_checkoutMobile from '@/components/organisms/checkout/ec_checkoutMobile.vue'
 import ec_secureFooter from '@/components/organisms/nav/secureFooter.vue'
-
 </script>
 
 <script>

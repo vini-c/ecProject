@@ -44,10 +44,17 @@ import ec_FlightRequirements from '@/components/molecules/flightRequirements.vue
                                 </tr>
                             </tbody>
                         </v-table>
-                        <div class="priceVdetail pa-2" v-if="item.isRefundable">
+                        <div class="priceVdetail pa-2">
                             <div class="d-flex py-1 justify-end" >
-                                <div 
-                                    class="d-flex align-center flex-row featureDescription errorType">
+                                <v-table class="w-100 bgList-color">
+                                    <tbody class="w-100">
+                                        <tr>
+                                            <td>Valor Final:</td>
+                                            <td class="priceTd"><h4>R$ {{ item.totalAmount }}</h4></td>
+                                        </tr>
+                                    </tbody>
+                                </v-table>
+                                <div  v-if="item.isRefundable" class="d-flex align-center flex-row featureDescription errorType">
                                     <v-icon icon="mdi-alert-outline" size="x-small"></v-icon>
                                     <p class="">Tarifa não reembolsável</p>
                                 </div>

@@ -1,6 +1,7 @@
 <template>
     <div class="flightPromo destinations">
                 <div :style="{ backgroundImage: 'url(' + item.destinationPic + ')' }"  v-for="(item, x) in destinationPromo" :key="x" class="cardContent">
+                <!-- <SplideSlide> -->
                     <a :href=item.pageURL >
                             <div class="contentDetail">
                                 <div v-if="item.hasDiscount" class="discountViewer"><b>{{ item.priceDiscount }}</b>
@@ -16,6 +17,7 @@
                                 </div>
                         </div>
                     </a>
+                <!-- </SplideSlide> -->
                 </div>
     </div>
 </template>

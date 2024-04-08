@@ -1,35 +1,43 @@
 <template>
     <v-layout>
        <eC_mainNavBar />
-       <div class="bg-body">    
+       <div class="bg-body ">    
          <v-main>
+            <div class="">
             <ec_mainSearchEngine></ec_mainSearchEngine>
            <div class="homeContent">
-            <section class="bordedDetail pa-3 my-4 rounded-xl">
+            <section class="bordedDetail widthResizer pa-3 my-4 rounded-xl">
                 <section class="lastFlights pt-2">
                     <h2 class="pl-2 pb-2">Passagens de última hora</h2>
-                    <ec_PromoFlights v-bind:lastFlightsData="lastFlightsData"></ec_PromoFlights>
+                            <ec_PromoFlights v-bind:lastFlightsData="lastFlightsData"></ec_PromoFlights>                        
                 </section>
                 <section class="cheaperDestinations pt-4">
                     <h2 class="pl-2 pb-2">Destinos mais baratos</h2>
-                    <ec_PromoDestinations v-bind:destinationPromo="cheaperDestinationsData"></ec_PromoDestinations>
-                </section>
-            </section>
-            <section class="bordedDetail pa-3 my-4 rounded-xl">
-                <section class="lastFlights pt-2">
-                    <h2 class="pl-2 pb-2">Destinos nacionais</h2>
-                    <ec_PromoDestinations v-bind:destinationPromo="nationalDestinationsData"></ec_PromoDestinations>
+                        <!-- <Splide :options="{ rewind: true }" aria-label="My Favorite Images"> -->
+                            <ec_PromoDestinations v-bind:destinationPromo="cheaperDestinationsData"></ec_PromoDestinations>
+                        <!-- </Splide> -->
 
                 </section>
-                <section class="cheaperDestinations pt-6">
+            </section>
+            <section class="bordedDetail widthResizer pa-3 my-4 rounded-xl">
+                <section class="lastFlights pt-2">
+                    <h2 class="pl-2 pb-2">Destinos nacionais</h2>
+                    <!-- <Splide :options="{ rewind: true }" aria-label="My Favorite Images"> -->
+                    <ec_PromoDestinations v-bind:destinationPromo="nationalDestinationsData"></ec_PromoDestinations>
+                    <!-- </Splide> -->
+                </section>
+                <section class="cheaperDestinations widthResizer pt-6">
                     <h2 class="pl-2 pb-2">Destinos internacionais</h2>
+                    
                     <ec_PromoDestinations v-bind:destinationPromo="internationalDestinationsData"></ec_PromoDestinations>
                 </section>
             </section>
+        
            
            
             </div>
            <ec_footer/>
+        </div>
          </v-main>
  
        </div>
@@ -48,7 +56,12 @@
    </script>
    
    <script>
+
+    // import { Splide, SplideSlide } from '@splidejs/vue-splide';
+
+
    export default {
+
      data() {
            return {
                lastFlightsData: [
