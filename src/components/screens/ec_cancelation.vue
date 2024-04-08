@@ -16,7 +16,28 @@
                         </v-col>
                     </v-row>
                     <v-row no-gutters class=" ga-2"  justify="end">
-                        <v-btn class="rounded-lg justify-end" color="#f00" size="default" variant="outlined" elevation="0">Cancelar reserva </v-btn>
+
+                        <v-dialog max-width="500">
+                            <template v-slot:activator="{ props: activatorProps }">
+                                <v-btn v-bind="activatorProps" class="rounded-lg justify-end" color="#f00" size="default" variant="outlined" elevation="0">Cancelar reserva </v-btn>
+                            </template>
+                            <template v-slot:default="{ isActive }">
+                                <v-card title="Cancelamento de reserva">
+                                <v-card-text>
+                                    <p>O Embarque Certo recebeu seu pedido de cancelamento.</p>
+                                </v-card-text>
+                                <v-card-actions>
+                                    <v-spacer></v-spacer>
+                                    <v-btn variant="outlined"
+                                    text="Acompanhar cancelamento"
+                                    href="#/bookings"
+                                    ></v-btn>
+                                </v-card-actions>
+                                </v-card>
+                            </template>
+                        </v-dialog>
+
+
                     </v-row>
                 </section>
             </div>
