@@ -55,6 +55,7 @@ color:$primary-color;
     flex-direction:row;
     align-items: center; 
     gap:1rem;   
+    padding:.8rem .8rem 0 .8rem ;
 }
  .bookings .bookingContent .location .location-title{
     display:flex;
@@ -77,15 +78,23 @@ font-weight:600;
 
 .bookings .bookingTitle{
     width:100%;
-    padding-left:1rem;
 }
 .bookings .bookingTitle .heading{
     display:flex;
     width:100%;
     justify-content: space-between;
+    align-items:center;
+    background-color: $background-color-secondary;
+    padding:.2rem;
+    padding-left:.8rem;
+    border-radius:.4rem;
     
 }
 
+.bookings .bookingTitle .heading p{
+    font-size:.85rem;
+    font-weight:600;
+}
 
 .concluded .recommendationCard{
     opacity:.5;
@@ -125,5 +134,6 @@ font-weight:600;
         flex-direction: row-reverse;
         margin-top:.4rem;
     }
+
 }
 

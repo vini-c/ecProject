@@ -192,7 +192,7 @@ color: $content-colorInvert !important;
     flex-direction: row;
     justify-content: stretch;
     align-items: center;
-    width: 100%
+    flex-grow:2;
 }
 
 .searchEngineBig .illustrationBrand .line {
@@ -216,9 +216,6 @@ color: $content-colorInvert !important;
     justify-content: flex-start;
 }
 
-.searchEngineSelector {
-    width: 30%;
-}
 
 
 .radioButtonSearchArea .v-label{
@@ -549,9 +546,6 @@ color: $content-colorInvert !important;
         display: none;
     }
 
-    .searchEngineSelector {
-        width: 40%;
-    }
 }
 
 @media screen and (max-width: 1024px) {

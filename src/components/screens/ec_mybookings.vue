@@ -311,7 +311,6 @@
                     "bookingconcluded": [
                     {  
                         "pageUrl":"#/confirmation",
-                               "canceled": "true",
                                 "departureDate": "17/04",
                                 "departureDetailedDate": "Sáb 17 de Mar, 2024",
                                 "departureHour": "15:00",

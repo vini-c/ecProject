@@ -197,6 +197,10 @@ flex-direction:column;
     .LoginScreen .loginColumn.form, .forgot .LoginScreen .loginColumn.form{
         width:100%;
     }
+
+    .bg-body.login{
+        height:auto;
+    }
 }
 
 @media screen and (max-width:900px){

@@ -511,6 +511,10 @@ flex-direction:column;}
     padding-bottom:0!important;
     border:none!important;
 }
+
+.confirmationContent .recommendations .itineraryOption{
+    padding-left:.8rem;
+}
 @media screen and (min-width:1440px) {
 .recommendations .orientation{
     width:26%

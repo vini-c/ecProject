@@ -9,7 +9,7 @@
                 <p class="mb-4 px-3">Fale com a equipe EmbarqueCerto para um atendimento especializado e personalizado.</p>
                 <section class="backgroundAttendance pa-4">
                     <v-row>
-                        <v-col cols="12" md="4">
+                        <v-col cols="12" md="3">
                             <v-text-field
                                 label="Nome"
                                 hide-details
@@ -17,7 +17,7 @@
                                 variant="outlined"
                             ></v-text-field>
                         </v-col>
-                        <v-col cols="12" md="4">
+                        <v-col cols="12" md="3">
                             <v-text-field
                                 label="E-mail"
                                 hide-details
@@ -25,19 +25,33 @@
                                 variant="outlined"
                             ></v-text-field>
                         </v-col>
-                        <v-col
-                        cols="12"
-                        md="4"
-                        >
-                        <v-text-field
-                            label="Telefone"
-                            hide-details
-                            required
+                        <v-col cols="12" md="3">
+                            <v-text-field
+                                label="Telefone"
+                                hide-details
+                                required
+                                variant="outlined"
+                            ></v-text-field>
+                        </v-col>    
+                        <v-col cols="12" md="3">
+                            <v-text-field
+                                label="Número de Reserva"
+                                hide-details
+                                required
+                                variant="outlined"
+                            ></v-text-field>
+                        </v-col>       
+                    </v-row>
+                    <v-row no gutters>
+                        <v-col cols="12" md="12">
+                            <v-select
+                            label="Selecione o assunto"
+                            :items="['Bagagens','Cancelamento','Dúvidas', 'Reservas','Reembolso', 'Sugestões']"
                             variant="outlined"
-                        ></v-text-field>
+                            ></v-select>                        
                         </v-col>
                     </v-row>
-                    <v-row>
+                    <v-row no-gutters>
                         <v-col cols="12" md="12">
                             <v-textarea variant="outlined" label="Mensagem"></v-textarea>
                         </v-col>

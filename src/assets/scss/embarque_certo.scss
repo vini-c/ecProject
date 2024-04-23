@@ -4,6 +4,9 @@
     font-family: Inter, sans-serif !important;
 }
 
+.v-layout{
+    display:block!important;
+}
 html {
     font-family: Inter, sans-serif !important;
     scroll-behavior: smooth;
@@ -43,7 +46,9 @@ html {
     color: $tertiary-color !important;
 }
 
-
+.splide__arrow:disabled{
+    opacity:0!important;
+}
 .bg-body {
     background-color: $background-color-tertiary;
 }
@@ -360,6 +365,7 @@ width:80%;
     .columnConstruction{
         padding:1% 2%;
     }
+
 }
 
 .v-bottom-sheet > .v-bottom-sheet__content.v-overlay__content > .v-card, .v-bottom-sheet > .v-bottom-sheet__content.v-overlay__content > .v-sheet{
@@ -423,8 +429,13 @@ width:80%;
     padding:0!important;
     border:0!important;
 }
+
+.splide{width:100%;}
 @media screen and (max-width:700px){
     .tisingSection{display:none;}
+    .mobileBlock{
+        width:100%;
+    }
 }
 
 

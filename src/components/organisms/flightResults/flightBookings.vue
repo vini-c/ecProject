@@ -10,12 +10,12 @@ import ec_banner from '@/components/molecules/ec_banner.vue'
     <section class="recommendationCard rounded-lg mb-2" :class="{ canceled: item.canceled === 'true' }" v-for="(item, x) in bookings" :key="x">
         <section class="recommendations">
             <div class="optionsContent">
-                <ec_banner :type="item.bannerType" :title="item.bannerTitle" :subtitle="item.bannerMessage" :actionName="item.bannerCTA" :actionValue="item.bannerUrl" v-if="item.banner"/>
                 <div class="bookingOption">
                         <div class="bookingContent">
                             <div class="bookingTitle">
                                 <div class="heading">
                                     <p class="date">{{ item.departureDetailedDate }}</p>
+                                    <ec_banner class="mini ml-2" :type="item.bannerType" :title="item.bannerTitle" v-if="item.banner"/>
                                 </div>
                                 <div class="location"> 
                                     <div class="location-title">
@@ -40,26 +40,34 @@ import ec_banner from '@/components/molecules/ec_banner.vue'
                                         <p class="observationText">{{ item.mandatoryAirline.code }}
                                         </p>
                                     </div>
-                                    
+
                                 </div>
                                
                                 
                             </div>
-                            <div class="detailsfoFlightInfo d-flex h-100">
-                                <div class="flex-row justify-end h-100">
-                                    <v-row no-gutters class="ga-2 h-100" justify="end" align-items="end">
-                                        <v-btn block class="rounded-xl font-weight-bold" variant="outlined" elevation="0" :href=item.pageUrl>
+                           
+                        </div>
+                        <div class="detailsfoFlightInfo d-flex py-3" v-if="!item.canceled">
+                            <v-row no-gutters class="ga-2 h-100" justify="start" align-items="center">
+                                        <v-btn class="rounded-xl font-weight-bold mobileBlock" size="small" variant="outlined" elevation="0" :href=item.pageUrl>
                                             Ver detalhes
                                         </v-btn>
-                                        <v-btn v-if="!item.banner" block class="rounded-xl font-weight-bold" variant="outlined" elevation="0" :href=item.pageUrl>
+                                        <v-btn class="rounded-xl font-weight-bold mobileBlock"  size="small" variant="outlined" elevation="0" :href=item.pageUrl>
+                                            Solicitar Reembolso
+                                        </v-btn>
+                                        <v-btn class="rounded-xl font-weight-bold mobileBlock" size="small" variant="outlined" elevation="0" :href=item.pageUrl>
+                                            Alterar Reserva
+                                        </v-btn>
+                                        <v-btn class="rounded-xl font-weight-bold mobileBlock" size="small" variant="outlined" elevation="0" :href=item.pageUrl>
+                                            Enviar por e-mail
+                                        </v-btn>
+                                        <v-btn v-if="!item.banner" size="small"  class="rounded-xl font-weight-bold mobileBlock" variant="outlined" elevation="0" :href=item.pageUrl>
                                             Bilhete de embarque
                                         </v-btn>
-                                    </v-row>
-                                </div>
-                            </div>
+                            </v-row>
                         </div>
                             
-                        </div>
+                 </div>
 
             </div>
         </section>

@@ -1,10 +1,10 @@
 <template>
-    <div class="ecBanner py-4" :class="type" >
-      <v-row no-gutters align="center">
-          <v-icon class="pa-8" icon="mdi-alert-outline" size="large"  v-if="type === 'warning'"></v-icon>
-          <v-icon class="pa-8 successIcon" icon="mdi-check-circle-outline" size="x-large" v-if="type === 'positive'"></v-icon>
-          <v-icon class="pa-8 " icon="mdi-clock-outline" size="x-large"  v-if="type === 'waiting'"></v-icon>
-          <v-icon class="pa-8 errorIcon" icon="mdi-alert-circle-outline" size="x-large" v-if="type === 'error'"></v-icon>
+    <div class="ecBanner" :class="type" >
+      <v-row no-gutters class="ga-2" align="center">
+          <v-icon  icon="mdi-alert-outline" size="large"  v-if="type === 'warning'"></v-icon>
+          <v-icon class="successIcon" icon="mdi-check-circle-outline" size="x-large" v-if="type === 'positive'"></v-icon>
+          <v-icon  icon="mdi-clock-outline" size="x-large"  v-if="type === 'waiting'"></v-icon>
+          <v-icon class=" errorIcon" icon="mdi-alert-circle-outline" size="x-large" v-if="type === 'error'"></v-icon>
         <v-col>
           <h4>{{title}}</h4>
           <p>{{subtitle}}</p>              
@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import '@/components/molecules/scss/banner.scss'
+  import '@/components/molecules/scss/banner.scss'
 </script>
 <script>
 export default {
